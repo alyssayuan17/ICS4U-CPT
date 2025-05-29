@@ -4,6 +4,8 @@ public class Main {
         System.out.println("hiiiii");
 
         hiMinna();
+
+        //test
     }
 
     public static void hiMinna(){
