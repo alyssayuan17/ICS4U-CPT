@@ -2,6 +2,6 @@ import java.util.ArrayList;
 
 public class Ingredient {
     //instance variables 
-    private static String name; 
-    private static ArrayList <Ingredient> ingredients = new ArrayList<>(); 
+    private String name; 
+    private ArrayList <Ingredient> ingredients = new ArrayList<>(); 
 }

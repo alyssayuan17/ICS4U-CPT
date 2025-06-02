@@ -1,5 +1,5 @@
 public class Recipe {
     //instance variables
-    private static String name; 
-    private static int qty; 
+    private String name; 
+    private int qty; 
 }
