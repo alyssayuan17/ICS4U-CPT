@@ -11,3 +11,5 @@ public class Account {
     private static String preferVeg; //options: green || red + orange
     private static String preferMeat; //options: no || red || seafood || poultry
     // test comment
+
+}
