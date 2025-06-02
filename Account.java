@@ -10,3 +10,4 @@ public class Account {
     private static boolean preferAltProtein; //beans, tofu, etc.
     private static String preferVeg; //options: green || red + orange
     private static String preferMeat; //options: no || red || seafood || poultry
+    // test comment
