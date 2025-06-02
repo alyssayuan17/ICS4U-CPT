@@ -12,7 +12,7 @@ public class Account {
     private static String preferVeg; //options: green || red + orange
     
     public static Account accountSetupAndPreferenceSurvey(){
-
+        
     }
 
 }
