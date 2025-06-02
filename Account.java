@@ -15,62 +15,6 @@ public class Account {
 
     }*/
 
-    
-    
-    public static ArrayList<Day> getDays() {
-        return days;
-    }
-
-    public static void setDays(ArrayList<Day> days) {
-        Account.days = days;
-    }
-
-    public static ArrayList<Recipe> getRecipes() {
-        return recipes;
-    }
-
-    public static void setRecipes(ArrayList<Recipe> recipes) {
-        Account.recipes = recipes;
-    }
-
-    public static boolean isVegetarian() {
-        return vegetarian;
-    }
-
-    public static void setVegetarian(boolean vegetarian) {
-        Account.vegetarian = vegetarian;
-    }
-
-    public static String getPreferMeat() {
-        return preferMeat;
-    }
-
-    public static void setPreferMeat(String preferMeat) {
-        Account.preferMeat = preferMeat;
-    }
-
-    public static boolean isPreferAltProtein() {
-        return preferAltProtein;
-    }
-
-    public static void setPreferAltProtein(boolean preferAltProtein) {
-        Account.preferAltProtein = preferAltProtein;
-    }
-
-    public static boolean isPreferCarbs() {
-        return preferCarbs;
-    }
-
-    public static void setPreferCarbs(boolean preferCarbs) {
-        Account.preferCarbs = preferCarbs;
-    }
-
-    public static String getPreferVeg() {
-        return preferVeg;
-    }
-
-    public static void setPreferVeg(String preferVeg) {
-        Account.preferVeg = preferVeg;
     // constructor
     public Account(boolean vegetarian, String preferMeat, boolean preferAltProtein, boolean preferCarbs,
             String preferVeg) {
@@ -80,10 +24,62 @@ public class Account {
         this.preferCarbs = preferCarbs;
         this.preferVeg = preferVeg;
     }
-    
-    // public static Account accountSetupAndPreferenceSurvey(){
-        
-    // }
+
+    public ArrayList<Day> getDays() {
+        return days;
+    }
+
+    public ArrayList<Recipe> getRecipes() {
+        return recipes;
+    }
+
+    public boolean isVegetarian() {
+        return vegetarian;
+    }
+
+    public String getPreferMeat() {
+        return preferMeat;
+    }
+
+    public boolean isPreferAltProtein() {
+        return preferAltProtein;
+    }
+
+    public boolean isPreferCarbs() {
+        return preferCarbs;
+    }
+
+    public String getPreferVeg() {
+        return preferVeg;
+    }
+
+    public void setDays(ArrayList<Day> days) {
+        this.days = days;
+    }
+
+    public void setRecipes(ArrayList<Recipe> recipes) {
+        this.recipes = recipes;
+    }
+
+    public void setVegetarian(boolean vegetarian) {
+        this.vegetarian = vegetarian;
+    }
+
+    public void setPreferMeat(String preferMeat) {
+        this.preferMeat = preferMeat;
+    }
+
+    public void setPreferAltProtein(boolean preferAltProtein) {
+        this.preferAltProtein = preferAltProtein;
+    }
+
+    public void setPreferCarbs(boolean preferCarbs) {
+        this.preferCarbs = preferCarbs;
+    }
+
+    public void setPreferVeg(String preferVeg) {
+        this.preferVeg = preferVeg;
+    }
 
     
 
