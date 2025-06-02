@@ -6,9 +6,9 @@ public class Account {
 
     //more instance variables that store preferences from initial dietary needs survey 
     private static boolean vegetarian; 
-    private static boolean preferCarbs;
-    private static boolean preferAltProtein; //beans, tofu, etc.
-    private static String preferVeg; //options: green || red + orange
     private static String preferMeat; //options: no || red || seafood || poultry
+    private static boolean preferAltProtein; //beans, tofu, etc.
+    private static boolean preferCarbs;
+    private static String preferVeg; //options: green || red + orange
 
 }
