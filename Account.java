@@ -81,6 +81,4 @@ public class Account {
         this.preferVeg = preferVeg;
     }
 
-    
-
 }
