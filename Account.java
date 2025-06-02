@@ -10,5 +10,9 @@ public class Account {
     private static boolean preferAltProtein; //beans, tofu, etc.
     private static boolean preferCarbs;
     private static String preferVeg; //options: green || red + orange
+    
+    public static Account accountSetupAndPreferenceSurvey(){
+
+    }
 
 }
