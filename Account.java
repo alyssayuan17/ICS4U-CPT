@@ -11,9 +11,9 @@ public class Account {
     private boolean preferCarbs;
     private String preferVeg; //options: green || red + orange
     
-    /*public static Account accountSetupAndPreferenceSurvey(){
+    public static Account accountSetupAndPreferenceSurvey(){
 
-    }*/
+    }
 
     // constructor
     public Account(boolean vegetarian, String preferMeat, boolean preferAltProtein, boolean preferCarbs,
