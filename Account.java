@@ -15,7 +15,15 @@ public class Account {
 
     }*/
 
-    
+    // constructor
+    public Account(boolean vegetarian, String preferMeat, boolean preferAltProtein, boolean preferCarbs,
+            String preferVeg) {
+        this.vegetarian = vegetarian;
+        this.preferMeat = preferMeat;
+        this.preferAltProtein = preferAltProtein;
+        this.preferCarbs = preferCarbs;
+        this.preferVeg = preferVeg;
+    }
     
     public static ArrayList<Day> getDays() {
         return days;
@@ -71,14 +79,6 @@ public class Account {
 
     public static void setPreferVeg(String preferVeg) {
         Account.preferVeg = preferVeg;
-    // constructor
-    public Account(boolean vegetarian, String preferMeat, boolean preferAltProtein, boolean preferCarbs,
-            String preferVeg) {
-        this.vegetarian = vegetarian;
-        this.preferMeat = preferMeat;
-        this.preferAltProtein = preferAltProtein;
-        this.preferCarbs = preferCarbs;
-        this.preferVeg = preferVeg;
     }
     
     // public static Account accountSetupAndPreferenceSurvey(){
