@@ -1,9 +1,15 @@
 import java.util.ArrayList;
 
 public class Account {
+    
+    //instance variables for storage of days and recipes
     private ArrayList <Day> days = new ArrayList<>(); //they can add days. each day has a breakfast, lunch, dinner 
     private ArrayList <Recipe> recipes = new ArrayList<>(); //contains preset 9 recipes + any custom recipes user creates 
 
+    //instance variables for account info 
+    private String firstName; 
+    private String lastName;
+    
     //more instance variables that store preferences from initial dietary needs survey 
     private boolean vegetarian; 
     private String preferMeat; //options: no || red || seafood || poultry
@@ -11,12 +17,13 @@ public class Account {
     private boolean preferCarbs;
     private String preferVeg; //options: green || red + orange
     
-    /*public static Account accountSetupAndPreferenceSurvey(){
+    public static Account accountSetupAndPreferenceSurvey(){
 
-    }*/
+    }
 
     // constructor
-    public Account(boolean vegetarian, String preferMeat, boolean preferAltProtein, boolean preferCarbs,
+    public Account(String firstName, String lastName,
+        boolean vegetarian, String preferMeat, boolean preferAltProtein, boolean preferCarbs,
             String preferVeg) {
         this.vegetarian = vegetarian;
         this.preferMeat = preferMeat;
