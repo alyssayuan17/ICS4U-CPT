@@ -16,9 +16,9 @@ public class Account {
     
     //more instance variables that store preferences from initial dietary needs survey 
     private boolean vegetarian; 
-    private String preferMeat; //options: none || red || seafood || poultry
-    private boolean preferAltProtein; //beans, tofu, etc.
+    private String preferMeat; //options: red || seafood || poultry || no preference
     private boolean preferCarbs;
+    private boolean preferAltProtein; //beans, tofu, etc.
     private String preferVeg; //options: green || red + orange
     
     public static Account accountSetupAndPreferenceSurvey(){
@@ -38,10 +38,48 @@ public class Account {
                 vegetarian = false; 
             } else {
                 System.out.println("Invalid input. Please try again.");
+                input = in.nextLine();
             }
         }
 
-        
+        String preferMeat = "no preference";
+        if (vegetarian == false) { //ask for meat preferences ... if vegetarian == true, preferMeat is set to none initially 
+            System.out.print("Meat preferences? \na) red \nb) poultry \nc) seafood and fish \nd) no preference \n(a/b/c/d): ");
+            input = in.nextLine();
+            while (!input.equalsIgnoreCase("a") && !input.equalsIgnoreCase("b") && !input.equalsIgnoreCase("c") && !input.equalsIgnoreCase("d")) {
+                if (input.equalsIgnoreCase("a")) {
+                    preferMeat = "red";
+                } else if (input.equalsIgnoreCase("b")) {
+                    preferMeat = "poultry"; 
+                } else if (input.equalsIgnoreCase("c")) {
+                    preferMeat = "seafood";
+                } else if (input.equalsIgnoreCase("d")) {
+                    preferMeat = "no preference";
+                } else {
+                    System.out.println("Invalid input. Please try again.");
+                    input = in.nextLine();
+                }
+            }
+        }
+
+        boolean preferCarbs = false; //for meat lovers, set preferCarbs to false 
+        if (vegetarian == true || preferMeat.equalsIgnoreCase("none")) { //run if statement for people who don't prefer meat 
+            System.out.print("Do you prefer a low-carb diet? (y/n): ");
+            input = in.nextLine();
+            
+
+            while (!input.equalsIgnoreCase("y") && !input.equalsIgnoreCase("n")) {
+            if (input.equalsIgnoreCase("y")) {
+                vegetarian = true; 
+            } else if (input.equalsIgnoreCase("n")) {
+                vegetarian = false; 
+            } else {
+                System.out.println("Invalid input. Please try again.");
+                input = in.nextLine();
+            }
+        }
+
+        }
 
 
        //return Account ();
