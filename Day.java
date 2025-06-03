@@ -15,15 +15,6 @@ public class Day {
         this.groceryList = groceryList;
     }
 
-    public void createGroceryList(Ingredient [] breakfast, Ingredient [] lunch, Ingredient [] dinner) {
-        for (int i = 0; i < breakfast.length; i++) {
-            if (!groceryList.contains(breakfast[i])
-                groceryList.add(breakfast[i].getName);
-            }
-        }
-
-    }
-
     public void createGroceryList(Ingredient [] breakfast, Ingredient [] lunch, Ingredint [] dinner) {
         for (int i = 0; i < breakfast.length; i++) {
             if (groceryList.containsKey(breakfast[i].getName())) { //an ingredient appears more than once (ie. two or more recipes contain same ingredient)
