@@ -78,7 +78,8 @@ public class Account {
             }
         }
 
-        boolean preferAltProtein = false; 
+        boolean preferAltProtein = false;
+        
 
 
        //return Account ();
