@@ -8,14 +8,14 @@ public class Day {
     //private ArrayList <Ingredient> groceryList = new ArrayList<>();
     private HashMap <String, Ingredient> groceryList = new HashMap<>();
     
-    public Day(Recipe breakfast, Recipe lunch, Recipe dinner, ArrayList<Ingredient> groceryList) {
+    public Day(Recipe breakfast, Recipe lunch, Recipe dinner, HashMap <String, Ingredient> groceryList) {
         this.breakfast = breakfast;
         this.lunch = lunch;
         this.dinner = dinner;
         this.groceryList = groceryList;
     }
 
-    public void createGroceryList(Ingredient [] breakfast, Ingredient [] lunch, Ingredint [] dinner) {
+    public void createGroceryList(Ingredient [] breakfast, Ingredient [] lunch, Ingredient [] dinner) {
         for (int i = 0; i < breakfast.length; i++) {
             if (groceryList.containsKey(breakfast[i].getName())) { //an ingredient appears more than once (ie. two or more recipes contain same ingredient)
                 Ingredient old = groceryList.get(breakfast[i].getName()); //get the Ingredient value in the HashMap from the String key Ingredient name 
