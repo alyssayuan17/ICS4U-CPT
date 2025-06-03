@@ -1,8 +1,10 @@
-import java.util.ArrayList; 
 
 public class Ingredient {
     //instance variables 
     private String name; 
+    private int qty;
+    
+    public Ingredient(String name, int qty) {
     private String qty; 
 
     public Ingredient(String name, String qty) {
@@ -25,10 +27,13 @@ public class Ingredient {
     public void setQty(String qty) {
         this.qty = qty;
     }
+<<<<<<< HEAD
+=======
 
     
 
     
     
+>>>>>>> bfde2f6f584482f5a073d349b190a7fb41d4417a
     
 }
