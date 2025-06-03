@@ -1,9 +1,9 @@
-import java.util.ArrayList; 
 
 public class Ingredient {
     //instance variables 
     private String name; 
     private int qty;
+    
     public Ingredient(String name, int qty) {
         this.name = name;
         this.qty = qty;
@@ -20,8 +20,5 @@ public class Ingredient {
     public void setQty(int qty) {
         this.qty = qty;
     }
-
-    
-    
     
 }
