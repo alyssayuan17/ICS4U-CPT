@@ -1,5 +1,7 @@
+import java.util.ArrayList;
+
 public class Recipe {
     //instance variables
     private String name; 
-    private int qty; 
+    private ArrayList <Ingredient> ingredients = new ArrayList<>(); 
 }
