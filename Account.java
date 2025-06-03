@@ -41,7 +41,10 @@ public class Account {
             }
         }
 
-        
+        String preferMeat = "none";
+        if (vegetarian == false) { //ask for meat preferences 
+            System.out.print("");
+        }
 
 
        //return Account ();
