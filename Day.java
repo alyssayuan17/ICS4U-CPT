@@ -13,6 +13,7 @@ public class Day {
         this.groceryList = groceryList;
     }
 
+    //to do: qty was changed from int to String 
     public void createGroceryList(Ingredient [] breakfast, Ingredient [] lunch, Ingredient [] dinner) {
         for (int i = 0; i < breakfast.length; i++) {
             if (groceryList.containsKey(breakfast[i].getName())) { //an ingredient appears more than once (ie. two or more recipes contain same ingredient)

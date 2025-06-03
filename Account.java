@@ -66,20 +66,19 @@ public class Account {
         if (vegetarian == true || preferMeat.equalsIgnoreCase("none")) { //run if statement for people who don't prefer meat 
             System.out.print("Do you prefer a low-carb diet? (y/n): ");
             input = in.nextLine();
-            
-
             while (!input.equalsIgnoreCase("y") && !input.equalsIgnoreCase("n")) {
-            if (input.equalsIgnoreCase("y")) {
-                vegetarian = true; 
-            } else if (input.equalsIgnoreCase("n")) {
-                vegetarian = false; 
-            } else {
-                System.out.println("Invalid input. Please try again.");
-                input = in.nextLine();
+                if (input.equalsIgnoreCase("y")) { //if they want low-carb, set preferCarbs to false 
+                    preferCarbs = false; 
+                } else if (input.equalsIgnoreCase("n")) {
+                    preferCarbs = true; 
+                } else {
+                    System.out.println("Invalid input. Please try again.");
+                    input = in.nextLine();
+                }
             }
         }
 
-        }
+        boolean preferAltProtein = false; 
 
 
        //return Account ();
