@@ -1,11 +1,9 @@
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Day {
     private Recipe breakfast; 
     private Recipe lunch; 
-    private Recipe dinner; 
-    //private ArrayList <Ingredient> groceryList = new ArrayList<>();
+    private Recipe dinner;
     private HashMap <String, Ingredient> groceryList = new HashMap<>();
     
     public Day(Recipe breakfast, Recipe lunch, Recipe dinner, HashMap <String, Ingredient> groceryList) {
