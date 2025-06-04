@@ -78,11 +78,39 @@ public class Account {
             }
         }
 
-        boolean preferAltProtein = false;
-        if 
+        boolean preferAltProtein = false; //this preference will be set to false in the cases where the if statement does not run, as those cases already have a preference selected 
+        if (vegetarian == true && preferCarbs == false) { //no preference selected yet - refer to tree in work log if confused 
+            System.out.print("Do you prefer alternative proteins such as beans and tofu? (y/n): ");
+            input = in.nextLine();
+            while (!input.equalsIgnoreCase("y") && !input.equalsIgnoreCase("n")) {
+                if (input.equalsIgnoreCase("y")) { //if they like altProtein, set to true 
+                    preferAltProtein = true; 
+                } else if (input.equalsIgnoreCase("n")) { //if they don't like, set to false 
+                    preferAltProtein = false; 
+                } else {
+                    System.out.println("Invalid input. Please try again.");
+                    input = in.nextLine();
+                }
+            }
+        }
 
+        String preferVeg = "green"; //default unless indicated otherwise 
+        if (vegetarian == true && preferCarbs == false && preferAltProtein == false) {
+            System.out.print("Do you prefer: \na) green vegetables \nb) red + orange vegetables \n(a/b): ");
+            input = in.nextLine();
+            while (!input.equalsIgnoreCase("a") && !input.equalsIgnoreCase("b")) {
+                if (input.equalsIgnoreCase("a")) { //if they like altProtein, set to true 
+                    preferVeg = "green";
+                } else if (input.equalsIgnoreCase("b")) { //if they don't like, set to false 
+                    preferVeg = "red + orange";
+                } else {
+                    System.out.println("Invalid input. Please try again.");
+                    input = in.nextLine();
+                }
+            }
+        }
 
-        // return new Account(firstName, lastName);
+        return new Account(firstName, lastName, vegetarian, preferMeat, preferAltProtein, preferCarbs, preferVeg);
     }
 
     // constructor
