@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner; 
 
 public class Account {
@@ -7,8 +8,9 @@ public class Account {
     static Scanner in = new Scanner(System.in); 
     
     //instance variables for storage of days and recipes
-    private ArrayList <Day> days = new ArrayList<>(); //they can add days. each day has a breakfast, lunch, dinner 
-    private ArrayList <Recipe> recipes = new ArrayList<>(); //contains preset 9 recipes + any custom recipes user creates 
+    //todo: maybe change hashmap to arraylist 
+    private HashMap <String, Day> days = new HashMap<>(); //they can add days. each day has a breakfast, lunch, dinner 
+    private HashMap <String, Recipe> recipes = new HashMap <>(); //contains preset 9 recipes + any custom recipes user creates 
 
     //instance variables for account info 
     private String firstName; 
@@ -111,6 +113,28 @@ public class Account {
         }
 
         return new Account(firstName, lastName, vegetarian, preferMeat, preferAltProtein, preferCarbs, preferVeg);
+    }
+
+    public void createCustomRecipe() {
+        System.out.print("What is the name of your recipe? ");
+        Recipe customRecipe = new Recipe(in.nextLine());
+
+        String input; 
+        int count = 1; 
+        ArrayList <Ingredient> ingredients = new ArrayList<>();
+        do {
+            System.out.print("Enter done to stop. \nEnter name of ingredient " + count + ": ");
+            input = in.nextLine();
+            if (input.trim().equalsIgnoreCase("done")) {
+
+            } else {
+                Ingredient temp = addCustomIngredient(input); 
+                ingredients.add(temp);
+            }
+        } while (!input.trim().equalsIgnoreCase("done"));
+        
+        //smth smth arrayList ingredients as a parameter 
+        //method print recipe rahhhh 
     }
 
     // constructor
