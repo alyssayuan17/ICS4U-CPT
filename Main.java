@@ -8,6 +8,92 @@ public class Main {
     public static void main(String[] args) {
         
         // create ArrayList for recipe ingredients
+
+        // breakfast
+        ArrayList<Ingredient> arrVeggieBagelSandwich = new ArrayList<>(); // veg, carbs
+        arrVeggieBagelSandwich.add(new Ingredient("Bagel", "1"));
+        arrVeggieBagelSandwich.add(new Ingredient("Cream cheese", "2 tbsp"));
+        arrVeggieBagelSandwich.add(new Ingredient("Tomato", "2 slice(s)"));
+        arrVeggieBagelSandwich.add(new Ingredient("Cucumber", "3 slice(s)"));
+        arrVeggieBagelSandwich.add(new Ingredient("Lettuce", "1"));
+        arrVeggieBagelSandwich.add(new Ingredient("Olive oil", "1 tsp"));
+        arrVeggieBagelSandwich.add(new Ingredient("Salt", "1/4 tsp"));
+        arrVeggieBagelSandwich.add(new Ingredient("Black pepper", "1/4 tsp"));
+
+        ArrayList<Ingredient> arrBeanVeggieScramble = new ArrayList<>(); // veg, low carbs, beans
+        arrBeanVeggieScramble.add(new Ingredient("Egg whites", "3"));  
+        arrBeanVeggieScramble.add(new Ingredient("Black beans (cooked, rinsed)", "1/4 cup"));  
+        arrBeanVeggieScramble.add(new Ingredient("Spinach", "1/2 cup (chopped)"));  
+        arrBeanVeggieScramble.add(new Ingredient("Bell pepper", "1/4 (diced)"));  
+        arrBeanVeggieScramble.add(new Ingredient("Onion", "1/4 (diced)"));  
+        arrBeanVeggieScramble.add(new Ingredient("Garlic", "1 clove (minced)"));  
+        arrBeanVeggieScramble.add(new Ingredient("Olive oil", "1 tsp"));  
+
+        ArrayList<Ingredient> arrGreenEggScramble = new ArrayList<>(); // veg, low carbs, no beans, greens
+        arrGreenEggScramble.add(new Ingredient("Eggs", "2"));
+        arrGreenEggScramble.add(new Ingredient("Egg whites", "2"));
+        arrGreenEggScramble.add(new Ingredient("Spinach", "1 cup (chopped)"));
+        arrGreenEggScramble.add(new Ingredient("Kale", "1/2 cup (chopped)"));
+        arrGreenEggScramble.add(new Ingredient("Mushrooms", "1/4 cup (sliced)"));
+        arrGreenEggScramble.add(new Ingredient("Olive oil", "1 tsp"));
+        arrGreenEggScramble.add(new Ingredient("Salt", "1/4 tsp"));
+        arrGreenEggScramble.add(new Ingredient("Black pepper", "1/4 tsp"));
+
+        ArrayList<Ingredient> arrRedOrangeVeggieSalad = new ArrayList<>(); // veg, low carbs, no beans, red + orange
+        arrRedOrangeVeggieSalad.add(new Ingredient("Red bell pepper", "1 (sliced)"));
+        arrRedOrangeVeggieSalad.add(new Ingredient("Carrot", "1 (shredded)"));
+        arrRedOrangeVeggieSalad.add(new Ingredient("Cherry tomatoes", "1/2 cup (halved)"));
+        arrRedOrangeVeggieSalad.add(new Ingredient("Orange bell pepper", "1/2 (sliced)"));
+        arrRedOrangeVeggieSalad.add(new Ingredient("Olive oil", "1 tbsp"));
+        arrRedOrangeVeggieSalad.add(new Ingredient("Red wine vinegar", "1 tbsp"));
+        arrRedOrangeVeggieSalad.add(new Ingredient("Salt", "1/4 tsp"));
+        arrRedOrangeVeggieSalad.add(new Ingredient("Black pepper", "1/4 tsp"));
+
+        ArrayList <Ingredient> arrPancakes = new ArrayList<>(); // not veg, no meat pref, no veg pref, carbs
+        arrPancakes.add(new Ingredient("All-purpose flour", "1 cup"));
+        arrPancakes.add(new Ingredient("Milk", "3/4 cup"));
+        arrPancakes.add(new Ingredient("Egg", "1"));
+        arrPancakes.add(new Ingredient("Baking powder", "2 tsp"));
+        arrPancakes.add(new Ingredient("Sugar", "2 tbsp"));
+        arrPancakes.add(new Ingredient("Salt", "1/4 tsp"));
+
+        ArrayList<Ingredient> arrCrustlessQuiche = new ArrayList<>(); // not veg, no meat pref, no veg pref, low carbs
+        arrCrustlessQuiche.add(new Ingredient("Eggs", "3"));
+        arrCrustlessQuiche.add(new Ingredient("Heavy cream", "1/4 cup"));
+        arrCrustlessQuiche.add(new Ingredient("Cheddar cheese", "1/2 cup"));
+        arrCrustlessQuiche.add(new Ingredient("Spinach", "1/2 cup"));
+        arrCrustlessQuiche.add(new Ingredient("Mushrooms", "1/4 cup"));
+        arrCrustlessQuiche.add(new Ingredient("Salt", "1/4 tsp"));
+        arrCrustlessQuiche.add(new Ingredient("Black pepper", "1/4 tsp"));
+
+        ArrayList<Ingredient> arrSteakAndEggs = new ArrayList<>(); // not veg, pref meat, red meat
+        arrSteakAndEggs.add(new Ingredient("Striploin steak", "1"));
+        arrSteakAndEggs.add(new Ingredient("Eggs", "2"));
+        arrSteakAndEggs.add(new Ingredient("Butter", "1 tbsp"));
+        arrSteakAndEggs.add(new Ingredient("Salt", "1/2 tsp"));
+        arrSteakAndEggs.add(new Ingredient("Black pepper", "1/4 tsp"));
+
+        ArrayList<Ingredient> arrSmokedSalmonBagel = new ArrayList<>(); // not veg, pref meat, seafood
+        arrSmokedSalmonBagel.add(new Ingredient("Bagel", "1"));
+        arrSmokedSalmonBagel.add(new Ingredient("Cream cheese", "2 tbsp"));
+        arrSmokedSalmonBagel.add(new Ingredient("Smoked salmon", "75 g"));
+        arrSmokedSalmonBagel.add(new Ingredient("Cucumber", "3 slices"));
+        arrSmokedSalmonBagel.add(new Ingredient("Red onion", "2 tbsp (thinly sliced)"));
+        arrSmokedSalmonBagel.add(new Ingredient("Lemon wedge", "1"));
+
+        ArrayList<Ingredient> arrTurkeyBaconAndEggs = new ArrayList<>(); // not veg, pref meat, poultry
+        arrTurkeyBaconAndEggs.add(new Ingredient("Turkey bacon", "3 slices"));
+        arrTurkeyBaconAndEggs.add(new Ingredient("Eggs", "2"));
+        arrTurkeyBaconAndEggs.add(new Ingredient("Butter", "1 tbsp"));
+        arrTurkeyBaconAndEggs.add(new Ingredient("Salt", "1/4 tsp"));
+        arrTurkeyBaconAndEggs.add(new Ingredient("Black pepper", "1/4 tsp"));
+
+        // create breakfast recipes
+        Recipe veggieBagelSandwich = new Recipe("Veggie bagel sandwich", arrVeggieBagelSandwich);
+
+        // lunch
+
+        // dinner
         ArrayList <Ingredient> arrVegetarianPizza = new ArrayList<>(); // veg, carbs
         arrVegetarianPizza.add(new Ingredient("Pizza dough", "250 g"));
         arrVegetarianPizza.add(new Ingredient("Tomato sauce", "1/3 cup(s)"));
@@ -81,7 +167,7 @@ public class Main {
         arrBakedChickenBreast.add(new Ingredient("Salt", "1/2 tsp"));
         arrBakedChickenBreast.add(new Ingredient("Black pepper", "1/4 tsp"));
 
-        // create recipes
+        // create lunch recipes
         Recipe vegetarianPizza = new Recipe("Vegetarian pizza", arrVegetarianPizza);
         Recipe riceAndBeans = new Recipe("Rice and beans", arrRiceAndBeans);
         Recipe gardenSalad = new Recipe("Garden salad", arrGardenSalad);
