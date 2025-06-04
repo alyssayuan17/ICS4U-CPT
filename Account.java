@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner; 
 
 public class Account {
@@ -113,6 +114,19 @@ public class Account {
         }
 
         return new Account(firstName, lastName, vegetarian, preferMeat, preferAltProtein, preferCarbs, preferVeg);
+    }
+
+    public Recipe findRecipeByName() { // search method for user recipe search
+        System.out.println("What is the name of the recipe you wish to search for? ");
+        Recipe searchKey = new Recipe(in.nextLine());
+
+        // linear search through recipes map
+        for (Map.Entry <String, Recipe> searchRecipe : recipes.entrySet()) {
+            if (searchRecipe.getKey().equals(searchKey)) {
+                return searchRecipe.getValue(); // return the recipe if found
+            }
+        }
+        return null; // return null if recipe not found
     }
 
     public void createCustomRecipe() {
