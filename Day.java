@@ -40,7 +40,7 @@ public class Day {
         return dinner;
     }
 
-    public ArrayList<Ingredient> getGroceryList() {
+    public HashMap<String, Ingredient> getGroceryList() {
         return groceryList;
     }
 
@@ -58,9 +58,8 @@ public class Day {
         this.dinner = dinner;
     }
 
-    public void setGroceryList(ArrayList<Ingredient> groceryList) {
+    public void setGroceryList(HashMap<String, Ingredient> groceryList) {
         this.groceryList = groceryList;
     }
 
-    
 }
