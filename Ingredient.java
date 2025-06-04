@@ -7,6 +7,7 @@ public class Ingredient {
     public Ingredient(String name, String qty) {
         this.name = name;
         this.qty = qty;
+        //to do: maybe add ingredient type 
     }
 
     public String getName() {

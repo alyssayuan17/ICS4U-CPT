@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.ArrayList; 
 
 public class Day {
     private Recipe breakfast; 
@@ -13,15 +14,37 @@ public class Day {
         this.groceryList = groceryList;
     }
 
-    //to do: qty was changed from int to String 
-    public void createGroceryList(Ingredient [] breakfast, Ingredient [] lunch, Ingredient [] dinner) {
-        for (int i = 0; i < breakfast.length; i++) {
-            if (groceryList.containsKey(breakfast[i].getName())) { //an ingredient appears more than once (ie. two or more recipes contain same ingredient)
-                Ingredient fromList = groceryList.get(breakfast[i].getName()); //get the Ingredient value in the HashMap from the String key Ingredient name 
-                fromList.setQty(fromList.getQty() + breakfast[i].getQty()); //new qty = old qty + qty to be added 
-                groceryList.replace(breakfast[i].getName(), fromList); //replace Ingredient value with updated Ingredient (qty of Ingredient has been updated)
+    public void createGroceryList(ArrayList <Ingredient> breakfast, ArrayList <Ingredient> lunch, ArrayList <Ingredient> dinner) {
+        addToGroceryList(breakfast); 
+        addToGroceryList(lunch); 
+        addToGroceryList(dinner);
+    }
+
+    public void addToGroceryList (ArrayList <Ingredient> breakfast) {
+        for (Ingredient i : breakfast) {
+
+            String name = i.getName();
+            String qty = i.getQty();
+
+            if (groceryList.containsKey(name)) {
+
+                Ingredient fromList = groceryList.get(name);
+                String qtyFromList = fromList.getQty();
+
+                String [] arrQtyFromList = qtyFromList.split(" ");
+                double numQtyFromList = Double.parseDouble(arrQtyFromList[0]);
+                double numQtyToAdd = Double.parseDouble(qty.split(" ")[0]);
+
+                String temp = String.valueOf(numQtyFromList + numQtyToAdd);
+                if (arrQtyFromList.length > 1) {
+                    for (int j = 1; j < arrQtyFromList.length-1; j++) {
+                        temp += " " + arrQtyFromList[j];
+                    }
+                }
+                fromList.setQty(temp);
+                groceryList.replace(name, fromList);
             } else {
-                groceryList.put(breakfast[i].getName(), breakfast[i]);
+                groceryList.put(name, i); 
             }
         }
     }
