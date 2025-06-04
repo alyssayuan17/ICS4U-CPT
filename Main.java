@@ -2,11 +2,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class Main {
 
+    static Scanner in = new Scanner(System.in);
+    static Account myAccount = Account.accountSetupAndPreferenceSurvey();
+
     public static void main(String[] args) {
-
-        Scanner in = new Scanner(System.in);
-
-        Account myAccount = Account.accountSetupAndPreferenceSurvey();
 
         ArrayList <Ingredient> vegetarianPizza = new ArrayList<>(); // veg, carbs
         vegetarianPizza.add(new Ingredient("Pizza dough", "250 g"));
