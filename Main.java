@@ -5,7 +5,10 @@ public class Main {
 
     static Scanner in = new Scanner(System.in);
     static Account myAccount = Account.accountSetupAndPreferenceSurvey();
-    HashMap<String,Integer> map = myAccount.getMap();
+
+    public HashMap <String, Recipe> getMap() {
+        return recipes; // e.g. a field of type HashMap<String,Recipe>
+    }
 
     public static void main(String[] args) {
         

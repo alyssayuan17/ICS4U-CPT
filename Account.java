@@ -149,7 +149,7 @@ public class Account {
     }
 
     //another constructor with all instance variables?
-    public Account(String firstName, String lastName, boolean vegetarian, String preferMeat, boolean preferAltProtein, boolean preferCarbs, String preferVeg, ArrayList <Day> days, ArrayList <Recipe> recipes) {
+    public Account(String firstName, String lastName, boolean vegetarian, String preferMeat, boolean preferAltProtein, boolean preferCarbs, String preferVeg, HashMap <String, Day> days, HashMap <String, Recipe> recipes) {
         this.vegetarian = vegetarian;
         this.preferMeat = preferMeat;
         this.preferAltProtein = preferAltProtein;
@@ -159,11 +159,11 @@ public class Account {
         this.recipes = recipes; 
     }
 
-    public ArrayList<Day> getDays() {
+    public HashMap<String, Day> getDays() {
         return days;
     }
 
-    public ArrayList<Recipe> getRecipes() {
+    public HashMap<String, Recipe> getRecipes() {
         return recipes;
     }
 
@@ -187,11 +187,11 @@ public class Account {
         return preferVeg;
     }
 
-    public void setDays(ArrayList<Day> days) {
+    public void setDays(HashMap<String, Day> days) {
         this.days = days;
     }
 
-    public void setRecipes(ArrayList<Recipe> recipes) {
+    public void setRecipes(HashMap<String, Recipe> recipes) {
         this.recipes = recipes;
     }
 
