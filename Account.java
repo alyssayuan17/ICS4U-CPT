@@ -137,6 +137,18 @@ public class Account {
         //method print recipe rahhhh 
     }
 
+    public Ingredient addCustomIngredient (String name) {
+
+        int done = 0; 
+        String qty; 
+        do {
+            if () {
+                done = 1;
+            }
+        } while (done == 0); 
+        return new Ingredient (name, qty); 
+    }
+
     // constructor
     public Account(String firstName, String lastName,
         boolean vegetarian, String preferMeat, boolean preferAltProtein, boolean preferCarbs,
