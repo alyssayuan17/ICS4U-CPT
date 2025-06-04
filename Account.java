@@ -69,7 +69,7 @@ public class Account {
             while (!input.equalsIgnoreCase("y") && !input.equalsIgnoreCase("n")) {
                 if (input.equalsIgnoreCase("y")) { //if they want low-carb, set preferCarbs to false 
                     preferCarbs = false; 
-                } else if (input.equalsIgnoreCase("n")) {
+                } else if (input.equalsIgnoreCase("n")) { //if they don't want a low-carb diet, set preferCarbs to true 
                     preferCarbs = true; 
                 } else {
                     System.out.println("Invalid input. Please try again.");
@@ -79,7 +79,7 @@ public class Account {
         }
 
         boolean preferAltProtein = false;
-        
+        if 
 
 
        //return Account ();
