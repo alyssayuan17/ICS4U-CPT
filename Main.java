@@ -17,12 +17,12 @@ public class Main {
         arrVeggieBagelSandwich.add(new Ingredient("Cucumber", "3 slice(s)"));
         arrVeggieBagelSandwich.add(new Ingredient("Lettuce", "1"));
         arrVeggieBagelSandwich.add(new Ingredient("Olive oil", "1 tsp"));
-        arrVeggieBagelSandwich.add(new Ingredient("Salt", "1/4 tsp"));
-        arrVeggieBagelSandwich.add(new Ingredient("Black pepper", "1/4 tsp"));
+        arrVeggieBagelSandwich.add(new Ingredient("Salt", "0.25 tsp"));
+        arrVeggieBagelSandwich.add(new Ingredient("Black pepper", "0.25 tsp"));
 
         ArrayList<Ingredient> arrBeanVeggieScramble = new ArrayList<>(); // veg, low carbs, beans
         arrBeanVeggieScramble.add(new Ingredient("Egg whites", "3"));  
-        arrBeanVeggieScramble.add(new Ingredient("Black beans (cooked, rinsed)", "1/4 cup(s)"));  
+        arrBeanVeggieScramble.add(new Ingredient("Black beans (cooked, rinsed)", "0.25 cup(s)"));  
         arrBeanVeggieScramble.add(new Ingredient("Spinach", "1/2 cup(s) (chopped)"));  
         arrBeanVeggieScramble.add(new Ingredient("Bell pepper", "1/4 (diced)"));  
         arrBeanVeggieScramble.add(new Ingredient("Onion", "1/4 (diced)"));  
