@@ -10,6 +10,10 @@ public class Recipe {
         this.ingredients = ingredients;
     }
 
+    public Recipe(String name) {
+        this.name = name; 
+    }
+
     // getters
 
     public String getName() {
