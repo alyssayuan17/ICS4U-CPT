@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner; 
 
 public class Account {
@@ -116,6 +117,19 @@ public class Account {
         return new Account(firstName, lastName, vegetarian, preferMeat, preferAltProtein, preferCarbs, preferVeg);
     }
 
+    public Recipe findRecipeByName() { // search method for user recipe search
+        System.out.println("What is the name of the recipe you wish to search for? ");
+        Recipe searchKey = new Recipe(in.nextLine());
+
+        // linear search through recipes map
+        for (Map.Entry <String, Recipe> searchRecipe : recipes.entrySet()) {
+            if (searchRecipe.getKey().equals(searchKey)) {
+                return searchRecipe.getValue(); // return the recipe if found
+            }
+        }
+        return null; // return null if recipe not found
+    }
+
     public void createCustomRecipe() {
         System.out.print("What is the name of your recipe? ");
         Recipe customRecipe = new Recipe(in.nextLine());
@@ -162,7 +176,7 @@ public class Account {
     }
 
     //another constructor with all instance variables?
-    public Account(String firstName, String lastName, boolean vegetarian, String preferMeat, boolean preferAltProtein, boolean preferCarbs, String preferVeg, ArrayList <Day> days, ArrayList <Recipe> recipes) {
+    public Account(String firstName, String lastName, boolean vegetarian, String preferMeat, boolean preferAltProtein, boolean preferCarbs, String preferVeg, HashMap <String, Day> days, HashMap <String, Recipe> recipes) {
         this.vegetarian = vegetarian;
         this.preferMeat = preferMeat;
         this.preferAltProtein = preferAltProtein;
@@ -172,11 +186,11 @@ public class Account {
         this.recipes = recipes; 
     }
 
-    public ArrayList<Day> getDays() {
+    public HashMap<String, Day> getDays() {
         return days;
     }
 
-    public ArrayList<Recipe> getRecipes() {
+    public HashMap<String, Recipe> getRecipes() {
         return recipes;
     }
 
@@ -200,11 +214,11 @@ public class Account {
         return preferVeg;
     }
 
-    public void setDays(ArrayList<Day> days) {
+    public void setDays(HashMap<String, Day> days) {
         this.days = days;
     }
 
-    public void setRecipes(ArrayList<Recipe> recipes) {
+    public void setRecipes(HashMap<String, Recipe> recipes) {
         this.recipes = recipes;
     }
 

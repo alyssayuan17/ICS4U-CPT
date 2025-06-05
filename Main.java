@@ -1,11 +1,9 @@
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Scanner;
 public class Main {
 
     static Scanner in = new Scanner(System.in);
     static Account myAccount = Account.accountSetupAndPreferenceSurvey();
-    HashMap<String,Integer> map = myAccount.getMap();
 
     public static void main(String[] args) {
 
@@ -361,9 +359,4 @@ public class Main {
         // based on user survey results we equate one of the recipes to equal each: breakfast, lunch, dinner
 
     }
-
-    public static boolean linearSearchKey(Account.recipes<String, Integer>map, String key) {
-
-    }
-
 }
