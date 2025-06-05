@@ -11,6 +11,7 @@ public class Account {
     //todo: maybe change hashmap to arraylist 
     private HashMap <String, Day> days = new HashMap<>(); //they can add days. each day has a breakfast, lunch, dinner 
     private HashMap <String, Recipe> recipes = new HashMap <>(); //contains preset 9 recipes + any custom recipes user creates 
+    private HashMap <String, String> ingredientUnits = new HashMap <>(); // key=ingredient name, value=unit 
 
     //instance variables for account info 
     private String firstName; 
