@@ -14,6 +14,10 @@ public class Recipe {
         this.name = name; 
     }
 
+    public void printRecipe(Recipe recipe) {
+        //to do 
+    }
+
     // getters
 
     public String getName() {

@@ -130,7 +130,7 @@ public class Account {
         return null; // return null if recipe not found
     }
 
-    public void createCustomRecipe() {
+    public void createCustomRecipe(HashMap <String, String> unitsGuide) {
         System.out.print("What is the name of your recipe? ");
         Recipe customRecipe = new Recipe(in.nextLine());
 
@@ -140,28 +140,43 @@ public class Account {
         do {
             System.out.print("Enter done to stop. \nEnter name of ingredient " + count + ": ");
             input = in.nextLine();
-            if (input.trim().equalsIgnoreCase("done")) {
-
-            } else {
+            if (!input.trim().equalsIgnoreCase("done")) {
                 Ingredient temp = addCustomIngredient(input); 
                 ingredients.add(temp);
             }
+            count++;
         } while (!input.trim().equalsIgnoreCase("done"));
+        System.out.println("Recipe completed!");
         
-        //smth smth arrayList ingredients as a parameter 
-        //method print recipe rahhhh 
+        customRecipe.setIngredients(ingredients); //once ingredient list is completed, add ingredient list under the user's custom recipe 
+        recipes.add(customRecipe); //add new recipe to list of recipes in account 
+
+        Recipe.printRecipe(customRecipe);
     }
 
-    public Ingredient addCustomIngredient (String name) {
+    public Ingredient addCustomIngredient (String name, HashMap <String, String> unitsGuide) {
+        if (!unitsGuide.containsKey(name.toLowerCase())) { //must add to unitsGuide
+            System.out.print("Enter the unit you would like to use for <" + name + ">: ");
+            String unit = in.nextLine();
+            unitsGuide.put(name.toLowerCase(), unit.toLowerCase());
+        }
+        System.out.print("How many <" + unitsGuide.get(name.toLowerCase()) + "> of <" + name + "> to add? ");
+        double qtyNum = doubleInput();
+        String qty = qtyNum + " " + unitsGuide.get(name.toLowerCase());// amt and unit 
+        return new Ingredient (name, qty);
+    }
 
+    public static double doubleInput() {
+        double num = 0; 
         int done = 0; 
-        String qty; 
-        do {
-            if () {
-                done = 1;
+        do { 
+            try {
+                num = Double.parseDouble(in.nextLine());
+            } catch (Exception e) {
+                System.out.println("Incorrect input. Please try again.");
             }
-        } while (done == 0); 
-        return new Ingredient (name, qty); 
+        } while (done == 0);
+        return num; 
     }
 
     // constructor
