@@ -188,7 +188,7 @@ public class Main {
         arrEdamameSpinachSalad.add(new Ingredient("Shelled edamame", "0.5 cup(s)"));
         arrEdamameSpinachSalad.add(new Ingredient("Spinach", "2 cup(s)"));
         arrEdamameSpinachSalad.add(new Ingredient("Cucumber", "0.5"));
-        arrEdamameSpinachSalad.add(new Ingredient("Red bell pepper", "0.25 (diced)"));
+        arrEdamameSpinachSalad.add(new Ingredient("Red bell pepper", "0.25"));
         arrEdamameSpinachSalad.add(new Ingredient("Olive oil", "1 tbsp"));
         arrEdamameSpinachSalad.add(new Ingredient("Lemon juice", "1 tbsp"));
         arrEdamameSpinachSalad.add(new Ingredient("Salt", "0.25 tsp"));
