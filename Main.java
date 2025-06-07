@@ -372,31 +372,40 @@ public class Main {
         Recipe smokedSalmon = new Recipe("Smoked salmon", arrSmokedSalmon);        
         Recipe bakedChickenBreast = new Recipe("Baked chicken breast", arrBakedChickenBreast);
 
-        System.out.println("Which meal would you like to plan? ");
-        System.out.println("  a) Breakfast");
-        System.out.println("  b) Lunch");
-        System.out.println("  c) Dinner");
-        System.out.println("  d) All three");
-        String choice = in.nextLine().trim().toLowerCase();
+        
+        String exit; 
 
-        while (!choice.equals("a") && !choice.equals("b") && !choice.equals("c") && !choice.equals("d")) {
-            System.out.println("Invalid choice. Please enter a, b, c, or d: ");
-            choice = in.nextLine().trim().toLowerCase();
-        }
+        do { // do-while loop to produce recipes until user wishes to exit
 
-        if (choice.equals("a") || choice.equals("d")) {
-            pickBreakfast();
-        }
+            System.out.println("Which meal would you like to plan? (type 'exit' to end)");
+            exit = in.nextLine();  
+            System.out.println("  a) Breakfast");
+            System.out.println("  b) Lunch");
+            System.out.println("  c) Dinner");
+            System.out.println("  d) All three");
+            String choice = in.nextLine().trim().toLowerCase();
 
-        if (choice.equals("b") || choice.equals("d")) {
-            pickLunch();
-        }
+            // if user enters invalid inputs, loop until the input is accepted
+            while (!choice.equals("a") && !choice.equals("b") && !choice.equals("c") && !choice.equals("d")) {
+                System.out.println("Invalid choice. Please enter a, b, c, or d: ");
+                choice = in.nextLine().trim().toLowerCase();
+            }
 
-        if (choice.equals("c") || choice.equals("d")) {
-            pickDinner();
-        }
+            if (choice.equals("a") || choice.equals("d")) {
+                pickBreakfast(); // if user chooses to plan breakfast/plan all, call method to plan their breakfast
+            }
 
-        System.out.println("Your meal(s) for today: \n");
+            if (choice.equals("b") || choice.equals("d")) {
+                pickLunch(); // same for lunch
+            }
+
+            if (choice.equals("c") || choice.equals("d")) {
+                pickDinner(); // same for dinner
+            }
+
+        } while (!exit.equalsIgnoreCase("exit")); // if user enters 'exit', exit the do-while loop
+
+        System.out.println("Your meal(s) for today: \n"); // finally, print user's planned meals for the day
 
         // print only what user asked for
         if (breakfast != null) {
@@ -411,8 +420,9 @@ public class Main {
             System.out.println("Dinner: " + dinner.getName());
         }
 
-        // based on user survey results we equate one of the recipes to equal each: breakfast, lunch, dinner
     }
+
+    // based on user survey results we equate one of the recipes to equal each: breakfast, lunch, dinner
 
     public static void pickBreakfast() {
         if (myAccount.isVegetarian()) {
