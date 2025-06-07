@@ -447,6 +447,33 @@ public class Main {
     }
 
     public static void pickDinner() {
-        
+        if (myAccount.isVegetarian()) {
+            if (myAccount.isPreferCarbs()) {
+                lunch = vegetarianPizza;
+            } else if (myAccount.isPreferAltProtein()) {
+                breakfast = riceAndBeans;
+            } else { // low carb, no alt protein --> pick veg by colour
+                if (myAccount.getPreferVeg().equalsIgnoreCase("green")) {
+                    breakfast = gardenSalad;
+                } else {
+                    breakfast = moroccanBeetSalad;
+                }
+            }
+        } else {
+            String meat = myAccount.getPreferMeat().toLowerCase();
+            if (meat.equalsIgnoreCase("red")) {
+                breakfast = steak;
+            } else if (meat.equalsIgnoreCase("seafood")) {
+                breakfast = smokedSalmon;
+            } else if (meat.equalsIgnoreCase("poultry")) {
+                breakfast = bakedChickenBreast;
+            } else {
+                if (meat.equalsIgnoreCase("carbs")) {
+                    breakfast = spaghettiBolognese;
+                } else {
+                    breakfast = eggCasserole;
+                }
+            }
+        }
     }
 }
