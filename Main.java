@@ -5,6 +5,14 @@ public class Main {
     static Scanner in = new Scanner(System.in);
     static Account myAccount = Account.accountSetupAndPreferenceSurvey();
 
+    static Recipe breakfast, lunch, dinner;
+    // breakfast recipes
+    static Recipe veggieBagelSandwich, beanVeggieScramble, greenEggScramble, redOrangeVeggieSalad, pancakes, crustlessQuiche, steakAndEggs, smokedSalmonBagel, turkeyBaconAndEggs;
+    // lunch recipes
+    static Recipe veggieWrap, edamameSpinachSalad, spinachAvocadoSalad, redOrangeLunchSalad, BLTSandwich, eggSaladLettuceWrap, beefBurger, tunaMeltSandwich, chickenCaesarSalad;
+    // dinner recipes
+    static Recipe vegetarianPizza, riceAndBeans, gardenSalad, moroccanBeetSalad, spaghettiBolognese, eggCasserole, steak, smokedSalmon, bakedChickenBreast;
+
     public static void main(String[] args) {
         
         // create ArrayList for recipe ingredients
@@ -284,7 +292,54 @@ public class Main {
         Recipe smokedSalmon = new Recipe("Smoked salmon", arrSmokedSalmon);        
         Recipe bakedChickenBreast = new Recipe("Baked chicken breast", arrBakedChickenBreast);
 
-        // based on user survey results we equate one of the recipes to equal each: breakfast, lunch, dinner
+        pickBreakfast();
+        pickLunch();
+        pickDinner();
 
+        System.out.println("Your meals for today: \n");
+        System.out.println("Breakfast: " + breakfast.getName());
+        System.out.println("Lunch: " + lunch.getName());
+        System.out.println("Dinner: " + dinner.getName());
+
+        // based on user survey results we equate one of the recipes to equal each: breakfast, lunch, dinner
+    }
+
+    public static void pickBreakfast() {
+        if (myAccount.isVegetarian()) {
+            if (myAccount.isPreferCarbs()) {
+                breakfast = veggieBagelSandwich;
+            } else if (myAccount.isPreferAltProtein()) {
+                breakfast = beanVeggieScramble;
+            } else { // low carb, no alt protein --> pick veg by colour
+                if (myAccount.getPreferVeg().equalsIgnoreCase("green")) {
+                    breakfast = greenEggScramble;
+                } else {
+                    breakfast = redOrangeVeggieSalad;
+                }
+            }
+        } else {
+            String meat = myAccount.getPreferMeat().toLowerCase();
+            if (meat.equalsIgnoreCase("red")) {
+                breakfast = steakAndEggs;
+            } else if (meat.equalsIgnoreCase("seafood")) {
+                breakfast = smokedSalmonBagel;
+            } else if (meat.equalsIgnoreCase("poultry")) {
+                breakfast = turkeyBaconAndEggs;
+            } else {
+                if (meat.equalsIgnoreCase("carbs")) {
+                    breakfast = pancakes;
+                } else {
+                    breakfast = crustlessQuiche;
+                }
+            }
+        }
+    }
+
+    public static void pickLunch() {
+        
+    }
+
+    public static void pickDinner() {
+        
     }
 }

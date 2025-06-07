@@ -23,6 +23,8 @@ public class Account {
     private boolean preferCarbs;
     private boolean preferAltProtein; //beans, tofu, etc.
     private String preferVeg; //options: green || red + orange
+
+    private String meal; // to determine breakfast, lunch, or dinner
     
     public static Account accountSetupAndPreferenceSurvey(){
 
@@ -30,6 +32,10 @@ public class Account {
         String firstName = in.nextLine();
         System.out.print("Enter last name: ");
         String lastName = in.nextLine(); 
+
+        System.out.println("What meal would you like to plan? (breakfast, lunch, dinner)"); // obtain meal to plan
+        String meal = in.nextLine();
+
 
         System.out.print("Vegetarian? (y/n): ");
         String input = in.nextLine();
@@ -57,7 +63,14 @@ public class Account {
                 } else if (input.equalsIgnoreCase("c")) {
                     preferMeat = "seafood";
                 } else if (input.equalsIgnoreCase("d")) {
-                    preferMeat = "no preference";
+                    // preferMeat = "no preference";
+                    System.out.println("Would you prefer a dish with carbs or low carbs? (a/b)");
+                    String prefCarbs = in.nextLine();
+                    if (prefCarbs.equalsIgnoreCase("a")) {
+                        preferMeat = "carbs";
+                    } else {
+                        preferMeat = "low carbs";
+                    }
                 } else {
                     System.out.println("Invalid input. Please try again.");
                     input = in.nextLine();
@@ -239,6 +252,22 @@ public class Account {
 
     public void setPreferVeg(String preferVeg) {
         this.preferVeg = preferVeg;
+    }
+
+    public static Scanner getIn() {
+        return in;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getMeal() {
+        return meal;
     }
 
 }

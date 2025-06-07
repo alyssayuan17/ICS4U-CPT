@@ -1,5 +1,5 @@
-import java.util.HashMap;
-import java.util.ArrayList; 
+import java.util.ArrayList;
+import java.util.HashMap; 
 
 public class Day {
     private Recipe breakfast; 
@@ -84,5 +84,7 @@ public class Day {
     public void setGroceryList(HashMap<String, Ingredient> groceryList) {
         this.groceryList = groceryList;
     }
+
+    
 
 }
