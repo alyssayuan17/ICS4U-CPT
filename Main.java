@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
+
 public class Main {
 
     static Scanner in = new Scanner(System.in);
@@ -414,7 +416,34 @@ public class Main {
     }
 
     public static void pickLunch() {
-        
+        if (myAccount.isVegetarian()) {
+            if (myAccount.isPreferCarbs()) {
+                lunch = veggieWrap;
+            } else if (myAccount.isPreferAltProtein()) {
+                breakfast = edamameSpinachSalad;
+            } else { // low carb, no alt protein --> pick veg by colour
+                if (myAccount.getPreferVeg().equalsIgnoreCase("green")) {
+                    breakfast = spinachAvocadoSalad;
+                } else {
+                    breakfast = redOrangeLunchSalad;
+                }
+            }
+        } else {
+            String meat = myAccount.getPreferMeat().toLowerCase();
+            if (meat.equalsIgnoreCase("red")) {
+                breakfast = beefBurger;
+            } else if (meat.equalsIgnoreCase("seafood")) {
+                breakfast = tunaMeltSandwich;
+            } else if (meat.equalsIgnoreCase("poultry")) {
+                breakfast = chickenCaesarSalad;
+            } else {
+                if (meat.equalsIgnoreCase("carbs")) {
+                    breakfast = BLTSandwich;
+                } else {
+                    breakfast = eggSaladLettuceWrap;
+                }
+            }
+        }
     }
 
     public static void pickDinner() {
