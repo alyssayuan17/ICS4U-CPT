@@ -372,14 +372,44 @@ public class Main {
         Recipe smokedSalmon = new Recipe("Smoked salmon", arrSmokedSalmon);        
         Recipe bakedChickenBreast = new Recipe("Baked chicken breast", arrBakedChickenBreast);
 
-        pickBreakfast();
-        pickLunch();
-        pickDinner();
+        System.out.println("Which meal would you like to plan? ");
+        System.out.println("  a) Breakfast");
+        System.out.println("  b) Lunch");
+        System.out.println("  c) Dinner");
+        System.out.println("  d) All three");
+        String choice = in.nextLine().trim().toLowerCase();
 
-        System.out.println("Your meals for today: \n");
-        System.out.println("Breakfast: " + breakfast.getName());
-        System.out.println("Lunch: " + lunch.getName());
-        System.out.println("Dinner: " + dinner.getName());
+        while (!choice.equals("a") && !choice.equals("b") && !choice.equals("c") && !choice.equals("d")) {
+            System.out.println("Invalid choice. Please enter a, b, c, or d: ");
+            choice = in.nextLine().trim().toLowerCase();
+        }
+
+        if (choice.equals("a") || choice.equals("d")) {
+            pickBreakfast();
+        }
+
+        if (choice.equals("b") || choice.equals("d")) {
+            pickLunch();
+        }
+
+        if (choice.equals("c") || choice.equals("d")) {
+            pickDinner();
+        }
+
+        System.out.println("Your meal(s) for today: \n");
+
+        // print only what user asked for
+        if (breakfast != null) {
+            System.out.println("Breakfast: " + breakfast.getName());
+        }
+
+        if (lunch != null) {
+            System.out.println("Lunch: " + lunch.getName());
+        }
+
+        if (dinner != null) {
+            System.out.println("Dinner: " + dinner.getName());
+        }
 
         // based on user survey results we equate one of the recipes to equal each: breakfast, lunch, dinner
     }
