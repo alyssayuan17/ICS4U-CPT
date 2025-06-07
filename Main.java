@@ -420,27 +420,27 @@ public class Main {
             if (myAccount.isPreferCarbs()) {
                 lunch = veggieWrap;
             } else if (myAccount.isPreferAltProtein()) {
-                breakfast = edamameSpinachSalad;
+                lunch = edamameSpinachSalad;
             } else { // low carb, no alt protein --> pick veg by colour
                 if (myAccount.getPreferVeg().equalsIgnoreCase("green")) {
-                    breakfast = spinachAvocadoSalad;
+                    lunch = spinachAvocadoSalad;
                 } else {
-                    breakfast = redOrangeLunchSalad;
+                    lunch = redOrangeLunchSalad;
                 }
             }
         } else {
             String meat = myAccount.getPreferMeat().toLowerCase();
             if (meat.equalsIgnoreCase("red")) {
-                breakfast = beefBurger;
+                lunch = beefBurger;
             } else if (meat.equalsIgnoreCase("seafood")) {
-                breakfast = tunaMeltSandwich;
+                lunch = tunaMeltSandwich;
             } else if (meat.equalsIgnoreCase("poultry")) {
-                breakfast = chickenCaesarSalad;
+                lunch = chickenCaesarSalad;
             } else {
                 if (meat.equalsIgnoreCase("carbs")) {
-                    breakfast = BLTSandwich;
+                    lunch = BLTSandwich;
                 } else {
-                    breakfast = eggSaladLettuceWrap;
+                    lunch = eggSaladLettuceWrap;
                 }
             }
         }
@@ -449,29 +449,29 @@ public class Main {
     public static void pickDinner() {
         if (myAccount.isVegetarian()) {
             if (myAccount.isPreferCarbs()) {
-                lunch = vegetarianPizza;
+                dinner = vegetarianPizza;
             } else if (myAccount.isPreferAltProtein()) {
-                breakfast = riceAndBeans;
+                dinner = riceAndBeans;
             } else { // low carb, no alt protein --> pick veg by colour
                 if (myAccount.getPreferVeg().equalsIgnoreCase("green")) {
-                    breakfast = gardenSalad;
+                    dinner = gardenSalad;
                 } else {
-                    breakfast = moroccanBeetSalad;
+                    dinner = moroccanBeetSalad;
                 }
             }
         } else {
             String meat = myAccount.getPreferMeat().toLowerCase();
             if (meat.equalsIgnoreCase("red")) {
-                breakfast = steak;
+                dinner = steak;
             } else if (meat.equalsIgnoreCase("seafood")) {
-                breakfast = smokedSalmon;
+                dinner = smokedSalmon;
             } else if (meat.equalsIgnoreCase("poultry")) {
-                breakfast = bakedChickenBreast;
+                dinner = bakedChickenBreast;
             } else {
                 if (meat.equalsIgnoreCase("carbs")) {
-                    breakfast = spaghettiBolognese;
+                    dinner = spaghettiBolognese;
                 } else {
-                    breakfast = eggCasserole;
+                    dinner = eggCasserole;
                 }
             }
         }
