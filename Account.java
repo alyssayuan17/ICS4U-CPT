@@ -34,10 +34,6 @@ public class Account {
         System.out.print("Enter last name: ");
         String lastName = in.nextLine(); 
 
-        System.out.println("What meal would you like to plan? (breakfast, lunch, dinner)"); // obtain meal to plan
-        String meal = in.nextLine();
-
-
         System.out.print("Vegetarian? (y/n): ");
         String input = in.nextLine();
         boolean vegetarian = false; 
