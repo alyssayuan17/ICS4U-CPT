@@ -420,8 +420,27 @@ public class Main {
             System.out.println("Dinner: " + dinner.getName());
         }
 
-    }
+        System.out.println("Would you like to find a recipe by name? (y/n)\n");
+        String searchRecipe = in.nextLine();
 
+        if (searchRecipe.equalsIgnoreCase("y")) { // if user wants to search for recipe...
+            Recipe foundRecipe = myAccount.findRecipeByName(); // call method to search for recipe 
+
+            if (foundRecipe != null) { // if recipe is found...
+                System.out.println("Recipe found: " + foundRecipe.getName()); // return the name of the found recipe 
+
+            } else { // if no recipe is found...
+                System.out.println("Recipe not found. Would you like to add a custom recipe? (y/n)"); // ask user if they want to add their own custome recipe
+                String addRecipe = in.nextLine();
+
+                if (addRecipe.equalsIgnoreCase("y")) {
+                    myAccount.createCustomRecipe(unitsGuide); // if yes, call method
+                } 
+
+            }
+        }
+    }
+    
     // based on user survey results we equate one of the recipes to equal each: breakfast, lunch, dinner
 
     public static void pickBreakfast() {

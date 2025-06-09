@@ -186,6 +186,7 @@ public class Account {
         do { 
             try {
                 num = Double.parseDouble(in.nextLine());
+                done = 1; // exit loop on valid input
             } catch (Exception e) {
                 System.out.println("Incorrect input. Please try again.");
             }
