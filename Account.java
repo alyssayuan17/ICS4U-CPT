@@ -35,18 +35,18 @@ public class Account {
         String lastName = in.nextLine(); 
 
         System.out.print("Vegetarian? (y/n): ");
-        String input = in.nextLine();
+        String input = "";
         boolean vegetarian = false; 
-        while (!input.equalsIgnoreCase("y") && !input.equalsIgnoreCase("n")) {
+        do {
+            input = in.nextLine();
             if (input.equalsIgnoreCase("y")) {
                 vegetarian = true; 
             } else if (input.equalsIgnoreCase("n")) {
                 vegetarian = false; 
             } else {
                 System.out.println("Invalid input. Please try again.");
-                input = in.nextLine();
             }
-        }
+        } while (!input.equalsIgnoreCase("y") && !input.equalsIgnoreCase("n"));
 
         String preferMeat = "no preference";
         if (vegetarian == false) { //ask for meat preferences ... if vegetarian == true, preferMeat is set to none initially 
