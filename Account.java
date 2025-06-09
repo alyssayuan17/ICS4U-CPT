@@ -145,7 +145,8 @@ public class Account {
 
     public void createCustomRecipe(HashMap <String, String> unitsGuide) {
         System.out.print("What is the name of your recipe? ");
-        Recipe customRecipe = new Recipe(in.nextLine());
+        String recipeName = in.nextLine();
+        Recipe customRecipe = new Recipe(recipeName); //create new recipe object by the name of recipeName
 
         String input; 
         int count = 1; 
@@ -154,7 +155,7 @@ public class Account {
             System.out.print("Enter done to stop. \nEnter name of ingredient " + count + ": ");
             input = in.nextLine();
             if (!input.trim().equalsIgnoreCase("done")) {
-                Ingredient temp = addCustomIngredient(input); 
+                Ingredient temp = addCustomIngredient(input, unitsGuide); 
                 ingredients.add(temp);
             }
             count++;
@@ -162,7 +163,7 @@ public class Account {
         System.out.println("Recipe completed!");
         
         customRecipe.setIngredients(ingredients); //once ingredient list is completed, add ingredient list under the user's custom recipe 
-        recipes.add(customRecipe); //add new recipe to list of recipes in account 
+        recipes.put(recipeName, customRecipe); //put new recipe in hashmap list of recipes in account 
 
         Recipe.printRecipe(customRecipe);
     }

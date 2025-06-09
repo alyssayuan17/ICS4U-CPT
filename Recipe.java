@@ -14,8 +14,12 @@ public class Recipe {
         this.name = name; 
     }
 
-    public void printRecipe(Recipe recipe) {
-        //to do 
+    public static void printRecipe(Recipe recipe) {
+        System.out.println("NAME: " + recipe.getName());
+        System.out.println("\nINGREDIENTS: \n");
+        for (Ingredient i : recipe.getIngredients()) { //for each Ingredient object in the recipe's ingredient list 
+            System.out.println("\t- " + i.getName() + ", " + i.getQty());
+        }
     }
 
     // getters
