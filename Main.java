@@ -181,15 +181,15 @@ public class Main {
         arrTurkeyBaconAndEggs.add(new Ingredient("Black pepper", "0.25 tsp"));
 
         // create breakfast recipes
-        Recipe veggieBagelSandwich = new Recipe("Veggie bagel sandwich", arrVeggieBagelSandwich);
-        Recipe beanVeggieScramble = new Recipe("Bean veggie scramble", arrBeanVeggieScramble);
-        Recipe greenEggScramble = new Recipe("Green egg scramble", arrGreenEggScramble);
-        Recipe redOrangeVeggieSalad = new Recipe("Red orange veggie salad", arrRedOrangeVeggieSalad);
-        Recipe pancakes = new Recipe("Pancakes", arrPancakes);
-        Recipe crustlessQuiche = new Recipe("Crustless quiche", arrCrustlessQuiche);
-        Recipe steakAndEggs = new Recipe("Steak and eggs", arrSteakAndEggs);
-        Recipe smokedSalmonBagel = new Recipe("Smoked salmon bagel", arrSmokedSalmonBagel);
-        Recipe turkeyBaconAndEggs = new Recipe("Turkey bacon and eggs", arrTurkeyBaconAndEggs);
+        veggieBagelSandwich = new Recipe("Veggie bagel sandwich", arrVeggieBagelSandwich);
+        beanVeggieScramble = new Recipe("Bean veggie scramble", arrBeanVeggieScramble);
+        greenEggScramble = new Recipe("Green egg scramble", arrGreenEggScramble);
+        redOrangeVeggieSalad = new Recipe("Red orange veggie salad", arrRedOrangeVeggieSalad);
+        pancakes = new Recipe("Pancakes", arrPancakes);
+        crustlessQuiche = new Recipe("Crustless quiche", arrCrustlessQuiche);
+        steakAndEggs = new Recipe("Steak and eggs", arrSteakAndEggs);
+        smokedSalmonBagel = new Recipe("Smoked salmon bagel", arrSmokedSalmonBagel);
+        turkeyBaconAndEggs = new Recipe("Turkey bacon and eggs", arrTurkeyBaconAndEggs);
 
 
         // lunch
@@ -280,15 +280,15 @@ public class Main {
         arrChickenCaesarSalad.add(new Ingredient("Black pepper", "0.25 tsp"));
 
         // create lunch recipes
-        Recipe veggieWrap = new Recipe("Veggie wrap", arrVeggieWrap);
-        Recipe edamameSpinachSalad = new Recipe("Edamame spinach salad", arrEdamameSpinachSalad);
-        Recipe spinachAvocadoSalad = new Recipe("Spinach avocado salad", arrSpinachAvocadoSalad);
-        Recipe redOrangeLunchSalad = new Recipe("Red orange lunch salad", arrRedOrangeLunchSalad);
-        Recipe BLTSandwich = new Recipe("BLT sandwich", arrBLTSandwich);
-        Recipe eggSaladLettuceWrap = new Recipe("Egg salad lettuce wrap", arrEggSaladLettuceWrap);
-        Recipe beefBurger = new Recipe("Beef burger", arrBeefBurger);
-        Recipe tunaMeltSandwich = new Recipe("Tuna melt sandwich", arrTunaMeltSandwich);
-        Recipe chickenCaesarSalad = new Recipe("Chicken caesar salad", arrChickenCaesarSalad);
+        veggieWrap = new Recipe("Veggie wrap", arrVeggieWrap);
+        edamameSpinachSalad = new Recipe("Edamame spinach salad", arrEdamameSpinachSalad);
+        spinachAvocadoSalad = new Recipe("Spinach avocado salad", arrSpinachAvocadoSalad);
+        redOrangeLunchSalad = new Recipe("Red orange lunch salad", arrRedOrangeLunchSalad);
+        BLTSandwich = new Recipe("BLT sandwich", arrBLTSandwich);
+        eggSaladLettuceWrap = new Recipe("Egg salad lettuce wrap", arrEggSaladLettuceWrap);
+        beefBurger = new Recipe("Beef burger", arrBeefBurger);
+        tunaMeltSandwich = new Recipe("Tuna melt sandwich", arrTunaMeltSandwich);
+        chickenCaesarSalad = new Recipe("Chicken caesar salad", arrChickenCaesarSalad);
 
 
         // dinner
@@ -366,15 +366,15 @@ public class Main {
         arrBakedChickenBreast.add(new Ingredient("Black pepper", "0.25 tsp"));
 
         // create dinner recipes
-        Recipe vegetarianPizza = new Recipe("Vegetarian pizza", arrVegetarianPizza);
-        Recipe riceAndBeans = new Recipe("Rice and beans", arrRiceAndBeans);
-        Recipe gardenSalad = new Recipe("Garden salad", arrGardenSalad);
-        Recipe moroccanBeetSalad = new Recipe("Moroccan beet salad", arrMoroccanBeetSalad);
-        Recipe spaghettiBolognese = new Recipe("Spaghetti bolognese", arrSpaghettiBolognese);
-        Recipe eggCasserole = new Recipe("Egg casserole", arrEggCasserole);
-        Recipe steak = new Recipe("Steak", arrSteak);
-        Recipe smokedSalmon = new Recipe("Smoked salmon", arrSmokedSalmon);        
-        Recipe bakedChickenBreast = new Recipe("Baked chicken breast", arrBakedChickenBreast);
+        vegetarianPizza = new Recipe("Vegetarian pizza", arrVegetarianPizza);
+        riceAndBeans = new Recipe("Rice and beans", arrRiceAndBeans);
+        gardenSalad = new Recipe("Garden salad", arrGardenSalad);
+        moroccanBeetSalad = new Recipe("Moroccan beet salad", arrMoroccanBeetSalad);
+        spaghettiBolognese = new Recipe("Spaghetti bolognese", arrSpaghettiBolognese);
+        eggCasserole = new Recipe("Egg casserole", arrEggCasserole);
+        steak = new Recipe("Steak", arrSteak);
+        smokedSalmon = new Recipe("Smoked salmon", arrSmokedSalmon);        
+        bakedChickenBreast = new Recipe("Baked chicken breast", arrBakedChickenBreast);
 
         System.out.print("Which meal would you like to plan? \n\ta) Breakfast \n\tb) Lunch \n\tc) Dinner \n\td) All three \nEnter: (a/b/c/d/exit): ");
         String choice = ""; 
@@ -593,7 +593,7 @@ public class Main {
         System.out.println("GROCERY LIST:");
         System.out.println("\nINGREDIENTS: \n");
         for (String i : groceryList.keySet()) { //for each Ingredient object in the recipe's ingredient list 
-            System.out.println("\t- " + i + ", " + groceryList.get(i) + " " + unitsGuide);
+            System.out.println("\t- " + i + ", " + groceryList.get(i) + " " + unitsGuide.get(i));
         }
     }
 }
