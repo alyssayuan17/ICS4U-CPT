@@ -376,11 +376,17 @@ public class Main {
         smokedSalmon = new Recipe("Smoked salmon", arrSmokedSalmon);        
         bakedChickenBreast = new Recipe("Baked chicken breast", arrBakedChickenBreast);
 
+
+        // initiate program
+
+        myAccount.askForName(); // call method, set up user's account name
+
+        // ask user to pick which meal to plan before calling survey method
         System.out.print("Which meal would you like to plan? \n\ta) Breakfast \n\tb) Lunch \n\tc) Dinner \n\td) All three \nEnter: (a/b/c/d/exit): ");
         String choice = ""; 
+
         do { // do-while loop to produce recipes until user wishes to exit
 
-            
             choice = in.nextLine().trim().toLowerCase();
 
             if (choice.equals("a")) {
@@ -413,7 +419,7 @@ public class Main {
 
         } while (!choice.equalsIgnoreCase("exit")); // if user enters 'exit', exit the do-while loop
 
-        Account.accountSetupAndPreferenceSurvey();
+        myAccount.askForPrefs(); // now, call second account method to ask for user's preferences via survey
 
         System.out.println("Your recommended meal(s) for today: \n"); // finally, print user's planned meals for the day
 

@@ -26,13 +26,16 @@ public class Account {
     private String preferVeg; //options: green || red + orange
 
     private String meal; // to determine breakfast, lunch, or dinner
-    
-    public static Account accountSetupAndPreferenceSurvey(){
 
+    public static Account askForName() { // first account method to set up name
         System.out.print("Enter first name: ");
         String firstName = in.nextLine();
         System.out.print("Enter last name: ");
         String lastName = in.nextLine(); 
+        return new Account(firstName, lastName);
+    }
+    
+    public Account askForPrefs(){ // second account method to set up user preferences
 
         System.out.print("Vegetarian? (y/n): ");
         String input = "";
@@ -123,7 +126,12 @@ public class Account {
             } while (!input.equalsIgnoreCase("a") && !input.equalsIgnoreCase("b"));
         }
 
-        return new Account(firstName, lastName, vegetarian, preferMeat, preferAltProtein, preferCarbs, preferVeg);
+        return this;
+    }
+
+    public Account(String firstName, String lastName) { // account constructor
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     public Recipe findRecipeByName() { // search method for user recipe search
