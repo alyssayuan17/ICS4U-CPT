@@ -27,15 +27,20 @@ public class Account {
 
     private String meal; // to determine breakfast, lunch, or dinner
 
-    public static Account askForName() { // first account method to set up name
+    public static Account askForName(Scanner in) { // first account method to set up name
         System.out.print("Enter first name: ");
         String firstName = in.nextLine();
         System.out.print("Enter last name: ");
         String lastName = in.nextLine(); 
         return new Account(firstName, lastName);
     }
+
+    public Account(String firstName, String lastName) { // account name constructor
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
     
-    public Account askForPrefs(){ // second account method to set up user preferences
+    public Account askForPrefs(Scanner in){ // second account method to set up user preferences
 
         System.out.print("Vegetarian? (y/n): ");
         String input = "";
@@ -126,12 +131,27 @@ public class Account {
             } while (!input.equalsIgnoreCase("a") && !input.equalsIgnoreCase("b"));
         }
 
+        this.vegetarian       = vegetarian;
+        this.preferMeat       = preferMeat;
+        this.preferCarbs      = preferCarbs;
+        this.preferAltProtein = preferAltProtein;
+        this.preferVeg        = preferVeg;
         return this;
     }
 
-    public Account(String firstName, String lastName) { // account constructor
-        this.firstName = firstName;
-        this.lastName = lastName;
+    // account preference survey constructor
+    public Account(HashMap<String, Day> days, HashMap<String, Recipe> recipes, HashMap<String, String> ingredientUnits,
+            boolean vegetarian, String preferMeat, boolean preferCarbs, boolean preferAltProtein, String preferVeg,
+            String meal) {
+        this.days = days;
+        this.recipes = recipes;
+        this.ingredientUnits = ingredientUnits;
+        this.vegetarian = vegetarian;
+        this.preferMeat = preferMeat;
+        this.preferCarbs = preferCarbs;
+        this.preferAltProtein = preferAltProtein;
+        this.preferVeg = preferVeg;
+        this.meal = meal;
     }
 
     public Recipe findRecipeByName() { // search method for user recipe search

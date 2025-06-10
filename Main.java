@@ -379,11 +379,15 @@ public class Main {
 
         // initiate program
 
-        myAccount.askForName(); // call method, set up user's account name
+        myAccount = Account.askForName(in); // call method to ask for name, store into static field
 
         // ask user to pick which meal to plan before calling survey method
         System.out.print("Which meal would you like to plan? \n\ta) Breakfast \n\tb) Lunch \n\tc) Dinner \n\td) All three \nEnter: (a/b/c/d/exit): ");
         String choice = ""; 
+
+        myAccount = myAccount.askForPrefs(in); // now, call second account method to ask for user's preferences via survey
+
+        String again;
 
         do { // do-while loop to produce recipes until user wishes to exit
 
@@ -417,24 +421,25 @@ public class Main {
                 setDinner(); // same for dinner
             }
 
-        } while (!choice.equalsIgnoreCase("exit")); // if user enters 'exit', exit the do-while loop
+            System.out.println("Your recommended meal(s) for today: \n"); // finally, print user's planned meals for the day
 
-        myAccount.askForPrefs(); // now, call second account method to ask for user's preferences via survey
+            // print only what user asked for
+            if (choice.equals("a") || choice.equals("d")) {
+                System.out.println("Breakfast: " + breakfast.getName());
+            }
 
-        System.out.println("Your recommended meal(s) for today: \n"); // finally, print user's planned meals for the day
+            if (choice.equals("b") || choice.equals("d")) {
+                System.out.println("Lunch: " + lunch.getName());
+            }
 
-        // print only what user asked for
-        if (choice.equals("a") || choice.equals("d")) {
-            System.out.println("Breakfast: " + breakfast.getName());
-        }
+            if (choice.equals("c") || choice.equals("d")) {
+                System.out.println("Dinner: " + dinner.getName());
+            }
 
-        if (choice.equals("b") || choice.equals("d")) {
-            System.out.println("Lunch: " + lunch.getName());
-        }
+            System.out.println("Plan another meal? (y/n)\n");
+            again = in.nextLine().trim().toLowerCase();
 
-        if (choice.equals("c") || choice.equals("d")) {
-            System.out.println("Dinner: " + dinner.getName());
-        }
+        } while (again.equals("y")); // if user enters 'exit', exit the do-while loop
 
         
         System.out.println("Would you like to find another recipe by name? (y/n)\n");
