@@ -12,7 +12,7 @@ public class Main {
     static Recipe vegetarianPizza, riceAndBeans, gardenSalad, moroccanBeetSalad, spaghettiBolognese, eggCasserole, steak, smokedSalmon, bakedChickenBreast;
 
     static Scanner in = new Scanner(System.in);
-    static Account myAccount = Account.accountSetupAndPreferenceSurvey();
+    static Account myAccount;
     static Recipe breakfast; 
     static Recipe lunch; 
     static Recipe dinner; 
@@ -412,6 +412,8 @@ public class Main {
             }
 
         } while (!choice.equalsIgnoreCase("exit")); // if user enters 'exit', exit the do-while loop
+
+        Account.accountSetupAndPreferenceSurvey();
 
         System.out.println("Your recommended meal(s) for today: \n"); // finally, print user's planned meals for the day
 
