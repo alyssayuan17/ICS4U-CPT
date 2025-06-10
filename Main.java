@@ -88,6 +88,7 @@ public class Main {
             {"vegetable broth", "cup(s)"},
             {"white/brown rice", "cup(s)"}
         };
+        
         HashMap <String, String> unitsGuide =  new HashMap <>();
         for (int i = 0; i < ingredientUnits.length; i++) {
             String name = ingredientUnits[i][0];
@@ -373,17 +374,16 @@ public class Main {
         Recipe bakedChickenBreast = new Recipe("Baked chicken breast", arrBakedChickenBreast);
 
         
-        String exit; 
+        String choice; 
 
         do { // do-while loop to produce recipes until user wishes to exit
 
-            System.out.println("Which meal would you like to plan? (type 'exit' to end)");
-            exit = in.nextLine();  
+            System.out.println("Which meal would you like to plan?");
             System.out.println("  a) Breakfast");
             System.out.println("  b) Lunch");
             System.out.println("  c) Dinner");
             System.out.println("  d) All three");
-            String choice = in.nextLine().trim().toLowerCase();
+            choice = in.nextLine().trim().toLowerCase();
 
             // if user enters invalid inputs, loop until the input is accepted
             while (!choice.equals("a") && !choice.equals("b") && !choice.equals("c") && !choice.equals("d")) {
@@ -403,24 +403,25 @@ public class Main {
                 pickDinner(); // same for dinner
             }
 
-        } while (!exit.equalsIgnoreCase("exit")); // if user enters 'exit', exit the do-while loop
+        } while (!choice.equalsIgnoreCase("exit")); // if user enters 'exit', exit the do-while loop
 
-        System.out.println("Your meal(s) for today: \n"); // finally, print user's planned meals for the day
+        System.out.println("Your recommended meal(s) for today: \n"); // finally, print user's planned meals for the day
 
         // print only what user asked for
-        if (breakfast != null) {
+        if (choice.equals("a") || choice.equals("d")) {
             System.out.println("Breakfast: " + breakfast.getName());
         }
 
-        if (lunch != null) {
+        if (choice.equals("b") || choice.equals("d")) {
             System.out.println("Lunch: " + lunch.getName());
         }
 
-        if (dinner != null) {
+        if (choice.equals("c") || choice.equals("d")) {
             System.out.println("Dinner: " + dinner.getName());
         }
 
-        System.out.println("Would you like to find a recipe by name? (y/n)\n");
+        
+        System.out.println("Would you like to find another recipe by name? (y/n)\n");
         String searchRecipe = in.nextLine();
 
         if (searchRecipe.equalsIgnoreCase("y")) { // if user wants to search for recipe...
