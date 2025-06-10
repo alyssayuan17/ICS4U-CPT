@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
@@ -377,16 +376,6 @@ public class Main {
         Recipe smokedSalmon = new Recipe("Smoked salmon", arrSmokedSalmon);        
         Recipe bakedChickenBreast = new Recipe("Baked chicken breast", arrBakedChickenBreast);
 
-        
-        String choice; 
-
-        do { // do-while loop to produce recipes until user wishes to exit
-
-            System.out.println("Which meal would you like to plan?");
-            System.out.println("  a) Breakfast");
-            System.out.println("  b) Lunch");
-            System.out.println("  c) Dinner");
-            System.out.println("  d) All three");
         System.out.print("Which meal would you like to plan? \n\ta) Breakfast \n\tb) Lunch \n\tc) Dinner \n\td) All three \nEnter: (a/b/c/d/exit): ");
         String choice = ""; 
         do { // do-while loop to produce recipes until user wishes to exit
@@ -395,15 +384,15 @@ public class Main {
             choice = in.nextLine().trim().toLowerCase();
 
             if (choice.equals("a")) {
-                pickBreakfast(); // if user chooses to plan breakfast, call method to plan their breakfast
+                setBreakfast(); // if user chooses to plan breakfast, call method to plan their breakfast
             } else if (choice.equals("b")) {
-                pickLunch(); //same for lunch 
+                setLunch(); //same for lunch 
             } else if (choice.equals("c")) {
-                pickDinner();
+                setDinner();
             } else if (choice.equals("d")) {
-                pickBreakfast();
-                pickLunch();
-                pickDinner();
+                setBreakfast();
+                setLunch();
+                setDinner();
             } else if (choice.equals("exit")) {
               //
             } else { // if user enters invalid inputs, loop until the input is accepted
@@ -411,15 +400,15 @@ public class Main {
             }
 
             if (choice.equals("a") || choice.equals("d")) {
-                pickBreakfast(); // if user chooses to plan breakfast/plan all, call method to plan their breakfast
+                setBreakfast(); // if user chooses to plan breakfast/plan all, call method to plan their breakfast
             }
 
             if (choice.equals("b") || choice.equals("d")) {
-                pickLunch(); // same for lunch
+                setLunch(); // same for lunch
             }
 
             if (choice.equals("c") || choice.equals("d")) {
-                pickDinner(); // same for dinner
+                setDinner(); // same for dinner
             }
 
         } while (!choice.equalsIgnoreCase("exit")); // if user enters 'exit', exit the do-while loop
@@ -463,7 +452,7 @@ public class Main {
     
     // based on user survey results we equate one of the recipes to equal each: breakfast, lunch, dinner
 
-    public static void pickBreakfast() {
+    public static void setBreakfast() {
         if (myAccount.isVegetarian()) {
             if (myAccount.isPreferCarbs()) {
                 breakfast = veggieBagelSandwich;
@@ -494,7 +483,7 @@ public class Main {
         }
     }
 
-    public static void pickLunch() {
+    public static void setLunch() {
         if (myAccount.isVegetarian()) {
             if (myAccount.isPreferCarbs()) {
                 lunch = veggieWrap;
@@ -525,7 +514,7 @@ public class Main {
         }
     }
 
-    public static void pickDinner() {
+    public static void setDinner() {
         if (myAccount.isVegetarian()) {
             if (myAccount.isPreferCarbs()) {
                 dinner = vegetarianPizza;
@@ -555,12 +544,6 @@ public class Main {
             }
         }
     }
-
-
-
-
-
-
 
     public static HashMap <String, Integer> createGroceryList(boolean printBreakfast, boolean printLunch, boolean printDinner, ArrayList <Ingredient> breakfastList, ArrayList <Ingredient> lunchList, ArrayList <Ingredient> dinnerList) {
 
