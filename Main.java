@@ -1,19 +1,24 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
 
-    static Scanner in = new Scanner(System.in);
-    static Account myAccount = Account.accountSetupAndPreferenceSurvey();
-
-    static Recipe breakfast, lunch, dinner;
     // breakfast recipes
     static Recipe veggieBagelSandwich, beanVeggieScramble, greenEggScramble, redOrangeVeggieSalad, pancakes, crustlessQuiche, steakAndEggs, smokedSalmonBagel, turkeyBaconAndEggs;
     // lunch recipes
     static Recipe veggieWrap, edamameSpinachSalad, spinachAvocadoSalad, redOrangeLunchSalad, BLTSandwich, eggSaladLettuceWrap, beefBurger, tunaMeltSandwich, chickenCaesarSalad;
     // dinner recipes
     static Recipe vegetarianPizza, riceAndBeans, gardenSalad, moroccanBeetSalad, spaghettiBolognese, eggCasserole, steak, smokedSalmon, bakedChickenBreast;
+
+    static Scanner in = new Scanner(System.in);
+    static Account myAccount = Account.accountSetupAndPreferenceSurvey();
+    static Recipe breakfast; 
+    static Recipe lunch; 
+    static Recipe dinner; 
+    static HashMap <String, Ingredient> groceryList = new HashMap <>();
+    static HashMap <String, String> unitsGuide =  new HashMap <>();
 
     public static void main(String[] args) {
 
@@ -88,8 +93,7 @@ public class Main {
             {"vegetable broth", "cup(s)"},
             {"white/brown rice", "cup(s)"}
         };
-        
-        HashMap <String, String> unitsGuide =  new HashMap <>();
+    
         for (int i = 0; i < ingredientUnits.length; i++) {
             String name = ingredientUnits[i][0];
             String units = ingredientUnits[i][1];
@@ -383,12 +387,27 @@ public class Main {
             System.out.println("  b) Lunch");
             System.out.println("  c) Dinner");
             System.out.println("  d) All three");
+        System.out.print("Which meal would you like to plan? \n\ta) Breakfast \n\tb) Lunch \n\tc) Dinner \n\td) All three \nEnter: (a/b/c/d/exit): ");
+        String choice = ""; 
+        do { // do-while loop to produce recipes until user wishes to exit
+
+            
             choice = in.nextLine().trim().toLowerCase();
 
-            // if user enters invalid inputs, loop until the input is accepted
-            while (!choice.equals("a") && !choice.equals("b") && !choice.equals("c") && !choice.equals("d")) {
-                System.out.println("Invalid choice. Please enter a, b, c, or d: ");
-                choice = in.nextLine().trim().toLowerCase();
+            if (choice.equals("a")) {
+                pickBreakfast(); // if user chooses to plan breakfast, call method to plan their breakfast
+            } else if (choice.equals("b")) {
+                pickLunch(); //same for lunch 
+            } else if (choice.equals("c")) {
+                pickDinner();
+            } else if (choice.equals("d")) {
+                pickBreakfast();
+                pickLunch();
+                pickDinner();
+            } else if (choice.equals("exit")) {
+              //
+            } else { // if user enters invalid inputs, loop until the input is accepted
+                System.out.print("Invalid choice. Please enter a, b, c, d, or exit: ");
             }
 
             if (choice.equals("a") || choice.equals("d")) {
@@ -534,6 +553,64 @@ public class Main {
                     dinner = eggCasserole;
                 }
             }
+        }
+    }
+
+
+
+
+
+
+
+    public static HashMap <String, Integer> createGroceryList(boolean printBreakfast, boolean printLunch, boolean printDinner, ArrayList <Ingredient> breakfastList, ArrayList <Ingredient> lunchList, ArrayList <Ingredient> dinnerList) {
+
+      HashMap <String, Integer> groceryList = new HashMap <>();
+      if (printBreakfast == true) {
+          addToGroceryList(breakfastList);
+        } 
+        if (printLunch == true) {
+          addToGroceryList(lunchList);
+        }
+        if (printDinner == true) {
+          addToGroceryList(dinnerList);
+        }
+        return groceryList;
+    }
+
+    public static void addToGroceryList (ArrayList <Ingredient> breakfast) {
+        for (Ingredient i : breakfast) {
+
+            String name = i.getName();
+            String qty = i.getQty();
+
+            if (groceryList.containsKey(name)) {
+
+                Ingredient fromList = groceryList.get(name);
+                String qtyFromList = fromList.getQty();
+
+                String [] arrQtyFromList = qtyFromList.split(" ");
+                double numQtyFromList = Double.parseDouble(arrQtyFromList[0]);
+                double numQtyToAdd = Double.parseDouble(qty.split(" ")[0]);
+
+                String temp = String.valueOf(numQtyFromList + numQtyToAdd);
+                if (arrQtyFromList.length > 1) {
+                    for (int j = 1; j < arrQtyFromList.length-1; j++) {
+                        temp += " " + arrQtyFromList[j];
+                    }
+                }
+                fromList.setQty(temp);
+                groceryList.replace(name, fromList);
+            } else {
+                groceryList.put(name, i); 
+            }
+        }
+    }
+
+    public static void printGroceryList() {
+        System.out.println("GROCERY LIST:");
+        System.out.println("\nINGREDIENTS: \n");
+        for (String i : groceryList.keySet()) { //for each Ingredient object in the recipe's ingredient list 
+            System.out.println("\t- " + i + ", " + groceryList.get(i) + " " + unitsGuide);
         }
     }
 }
