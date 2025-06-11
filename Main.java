@@ -282,15 +282,15 @@ public class Main {
         arrChickenCaesarSalad.add(new Ingredient("Black pepper", "0.25 tsp"));
 
         // create lunch recipes
-        veggieWrap = new Recipe("veggie wrap", arrVeggieWrap);
-        edamameSpinachSalad = new Recipe("edamame spinach salad", arrEdamameSpinachSalad);
-        spinachAvocadoSalad = new Recipe("spinach avocado salad", arrSpinachAvocadoSalad);
-        redOrangeLunchSalad = new Recipe("red orange lunch salad", arrRedOrangeLunchSalad);
-        BLTSandwich = new Recipe("blt sandwich", arrBLTSandwich);
-        eggSaladLettuceWrap = new Recipe("egg salad lettuce wrap", arrEggSaladLettuceWrap);
-        beefBurger = new Recipe("beef burger", arrBeefBurger);
-        tunaMeltSandwich = new Recipe("tuna melt sandwich", arrTunaMeltSandwich);
-        chickenCaesarSalad = new Recipe("chicken caesar salad", arrChickenCaesarSalad);
+        recipes.put("veggie wrap", new Recipe("veggie wrap", arrVeggieWrap));
+        recipes.put("edamame spinach salad", new Recipe("edamame spinach salad", arrEdamameSpinachSalad));
+        recipes.put("spinach avocado salad", new Recipe("spinach avocado salad", arrSpinachAvocadoSalad));
+        recipes.put("red orange lunch salad", new Recipe("red orange lunch salad", arrRedOrangeLunchSalad));
+        recipes.put("blt sandwich", new Recipe("blt sandwich", arrBLTSandwich));
+        recipes.put("egg salad lettuce wrap", new Recipe("egg salad lettuce wrap", arrEggSaladLettuceWrap));
+        recipes.put("beef burger", new Recipe("beef burger", arrBeefBurger));
+        recipes.put("tuna melt sandwich", new Recipe("tuna melt sandwich", arrTunaMeltSandwich));
+        recipes.put("chicken caesar salad", new Recipe("chicken caesar salad", arrChickenCaesarSalad));
 
 
         // dinner
