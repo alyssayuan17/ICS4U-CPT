@@ -526,9 +526,23 @@ public class Main {
 
             if (foundRecipe != null) { // if recipe is found...
                 System.out.println("Recipe found: " + foundRecipe.getName()); // return the name of the found recipe 
-
+                System.out.print("Would you like to add this to your meal plan for the day? (y/n): ");
+                String addToPlan = in.nextLine();
+                if (addToPlan.equalsIgnoreCase("y")) {
+                    System.out.println("What meal would you like to switch out? (breakfast/lunch/dinner) ");
+                    String mealSwitch = in.nextLine();
+                    if (mealSwitch.equalsIgnoreCase("breakfast")) {
+                        breakfast = foundRecipe;
+                    } else if (mealSwitch.equalsIgnoreCase("lunch")) {
+                        lunch = foundRecipe;
+                    } else if (mealSwitch.equalsIgnoreCase("dinner")) {
+                        dinner = foundRecipe;
+                    } else {
+                        System.out.println("Please enter a valid input! (breakfast/lunch/dinner) ");
+                    }
+                }
             } else { // if no recipe is found...
-                System.out.println("Recipe not found. Would you like to add a custom recipe? (y/n)"); // ask user if they want to add their own custome recipe
+                System.out.print("Recipe not found. Would you like to add a custom recipe? (y/n): "); // ask user if they want to add their own custome recipe
                 String addRecipe = in.nextLine();
 
                 if (addRecipe.equalsIgnoreCase("y")) {
