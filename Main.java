@@ -99,6 +99,8 @@ public class Main {
             unitsGuide.put(name, units);
         }
 
+        HashMap <String, Recipe> recipes = new HashMap<>();
+
         // create ArrayList for recipe ingredients
 
         // breakfast
@@ -366,7 +368,7 @@ public class Main {
         arrBakedChickenBreast.add(new Ingredient("Black pepper", "0.25 tsp"));
 
         // create dinner recipes
-        vegetarianPizza = new Recipe("vegetarian pizza", arrVegetarianPizza);
+        recipes.put("vegetarian pizza" , new Recipe("vegetarian pizza", arrVegetarianPizza));
         riceAndBeans = new Recipe("rice and beans", arrRiceAndBeans);
         gardenSalad = new Recipe("garden salad", arrGardenSalad);
         moroccanBeetSalad = new Recipe("moroccan beet salad", arrMoroccanBeetSalad);
@@ -375,6 +377,9 @@ public class Main {
         steak = new Recipe("steak", arrSteak);
         smokedSalmon = new Recipe("smoked salmon", arrSmokedSalmon);        
         bakedChickenBreast = new Recipe("baked chicken breast", arrBakedChickenBreast);
+
+
+        myAccount.setRecipes(recipes);
 
 
         // initiate program
