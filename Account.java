@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner; 
 
 public class Account {
@@ -161,7 +160,7 @@ public class Account {
         // linear search through recipes map
         for (String i : recipes.keySet()) {
             if (i.equals(searchKey)) {
-                return searchRecipe.getValue(); // return the recipe if found
+                return recipes.get(i); // return the recipe if found
             }
         }
         return null; // return null if recipe not found
