@@ -181,17 +181,6 @@ public class Main {
         arrTurkeyBaconAndEggs.add(new Ingredient("Salt", "0.25 tsp"));
         arrTurkeyBaconAndEggs.add(new Ingredient("Black pepper", "0.25 tsp"));
 
-        // // create breakfast recipes
-        // veggieBagelSandwich = new Recipe("veggie bagel sandwich", arrVeggieBagelSandwich);
-        // beanVeggieScramble = new Recipe("bean veggie scramble", arrBeanVeggieScramble);
-        // greenEggScramble = new Recipe("green egg scramble", arrGreenEggScramble);
-        // redOrangeVeggieSalad = new Recipe("red orange veggie salad", arrRedOrangeVeggieSalad);
-        // pancakes = new Recipe("pancakes", arrPancakes);
-        // crustlessQuiche = new Recipe("crustless quiche", arrCrustlessQuiche);
-        // steakAndEggs = new Recipe("steak and eggs", arrSteakAndEggs);
-        // smokedSalmonBagel = new Recipe("smoked salmon bagel", arrSmokedSalmonBagel);
-        // turkeyBaconAndEggs = new Recipe("turkey bacon and eggs", arrTurkeyBaconAndEggs);
-
         recipes.put("veggie bagel sandwich", new Recipe("veggie bagel sandwich", arrVeggieBagelSandwich));
         recipes.put("bean veggie scramble", new Recipe("bean veggie scramble", arrBeanVeggieScramble));
         recipes.put("green egg scramble", new Recipe("green egg scramble", arrGreenEggScramble));
@@ -299,17 +288,6 @@ public class Main {
         arrChickenCaesarSalad.add(new Ingredient("Salt", "0.25 tsp"));
         arrChickenCaesarSalad.add(new Ingredient("Black pepper", "0.25 tsp"));
 
-        // // create lunch recipes
-        // veggieWrap = new Recipe("veggie wrap", arrVeggieWrap);
-        // edamameSpinachSalad = new Recipe("edamame spinach salad", arrEdamameSpinachSalad);
-        // spinachAvocadoSalad = new Recipe("spinach avocado salad", arrSpinachAvocadoSalad);
-        // redOrangeLunchSalad = new Recipe("red orange lunch salad", arrRedOrangeLunchSalad);
-        // BLTSandwich = new Recipe("blt sandwich", arrBLTSandwich);
-        // eggSaladLettuceWrap = new Recipe("egg salad lettuce wrap", arrEggSaladLettuceWrap);
-        // beefBurger = new Recipe("beef burger", arrBeefBurger);
-        // tunaMeltSandwich = new Recipe("tuna melt sandwich", arrTunaMeltSandwich);
-        // chickenCaesarSalad = new Recipe("chicken caesar salad", arrChickenCaesarSalad);
-
         recipes.put("veggie wrap", new Recipe("veggie wrap", arrVeggieWrap));
         recipes.put("edamame spinach salad", new Recipe("edamame spinach salad", arrEdamameSpinachSalad));
         recipes.put("spinach avocado salad", new Recipe("spinach avocado salad", arrSpinachAvocadoSalad));
@@ -404,17 +382,6 @@ public class Main {
         arrBakedChickenBreast.add(new Ingredient("Paprika", "0.5 tsp"));
         arrBakedChickenBreast.add(new Ingredient("Salt", "0.5 tsp"));
         arrBakedChickenBreast.add(new Ingredient("Black pepper", "0.25 tsp"));
-
-        // // create dinner recipes
-        // vegetarianPizza = new Recipe("vegetarian pizza", arrVegetarianPizza);
-        // riceAndBeans = new Recipe("rice and beans", arrRiceAndBeans);
-        // gardenSalad = new Recipe("garden salad", arrGardenSalad);
-        // moroccanBeetSalad = new Recipe("moroccan beet salad", arrMoroccanBeetSalad);
-        // spaghettiBolognese = new Recipe("spaghetti bolognese", arrSpaghettiBolognese);
-        // eggCasserole = new Recipe("egg casserole", arrEggCasserole);
-        // steak = new Recipe("steak", arrSteak);
-        // smokedSalmon = new Recipe("smoked salmon", arrSmokedSalmon);        
-        // bakedChickenBreast = new Recipe("baked chicken breast", arrBakedChickenBreast);
 
         recipes.put("vegetarian pizza" , new Recipe("vegetarian pizza", arrVegetarianPizza));
         recipes.put("rice and beans", new Recipe("rice and beans", arrRiceAndBeans));
