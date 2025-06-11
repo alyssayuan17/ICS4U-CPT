@@ -390,7 +390,7 @@ public class Main {
         do { // do-while loop to produce recipes until user wishes to exi
             
             // ask user to pick which meal to plan before calling survey method
-            if (breakfastPrint = false && lunchPrint == false && dinnerPrint == false) {
+            if (breakfastPrint == false && lunchPrint == false && dinnerPrint == false) {
                 System.out.print("\nWhich meal would you like to plan? \n\ta) Breakfast \n\tb) Lunch \n\tc) Dinner \n\td) All three \nEnter: (a/b/c/d): ");
             } else {
                 System.out.print("\nWhich meal would you like to plan? \n\ta) Breakfast \n\tb) Lunch \n\tc) Dinner \nEnter: (a/b/c): ");
@@ -411,7 +411,7 @@ public class Main {
             } else if (choice.equals("c")) {
                 setDinner();
                 dinnerPrint = true; 
-            } else if (choice.equals("d") && breakfastPrint = false && lunchPrint == false && dinnerPrint == false) {
+            } else if (choice.equals("d") && breakfastPrint == false && lunchPrint == false && dinnerPrint == false) {
                 setBreakfast();
                 setLunch();
                 setDinner();
