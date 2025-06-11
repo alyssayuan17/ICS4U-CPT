@@ -390,9 +390,11 @@ public class Main {
         do { // do-while loop to produce recipes until user wishes to exi
             
             // ask user to pick which meal to plan before calling survey method
-            System.out.print("Which meal would you like to plan? \n\ta) Breakfast \n\tb) Lunch \n\tc) Dinner \n\td) All three \nEnter: (a/b/c/d/exit): ");
+            System.out.print("\nWhich meal would you like to plan? \n\ta) Breakfast \n\tb) Lunch \n\tc) Dinner \n\td) All three \nEnter: (a/b/c/d/exit): ");
             String choice = ""; 
             choice = in.nextLine().trim().toLowerCase();
+
+            System.out.println();
 
             myAccount = myAccount.askForPrefs(in); // now, call second account method to ask for user's preferences via survey
 
@@ -430,8 +432,6 @@ public class Main {
                 setDinner(); // same for dinner
             }
 
-            System.out.println("Your recommended meal(s) for today: \n"); // finally, print user's planned meals for the day
-
             // print only what user asked for
             if (choice.equals("a") || choice.equals("d")) {
                 System.out.println("Breakfast: " + breakfast.getName());
@@ -445,15 +445,15 @@ public class Main {
                 System.out.println("Dinner: " + dinner.getName());
             }
 
-            System.out.println("Plan another meal? (y/n)\n");
+            System.out.println("\nPlan another meal? (y/n)");
             again = in.nextLine().trim().toLowerCase();
 
         } while (again.equals("y")); // if user enters 'exit', exit the do-while loop
 
-        System.out.println("Here are your meals for the day:");
+        System.out.println("\nHere are your meals for the day:");
         printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
 
-        System.out.println("Would you like to find another recipe by name? (y/n)\n");
+        System.out.println("\nWould you like to find another recipe by name? (y/n)");
         String searchRecipe = in.nextLine();
 
         if (searchRecipe.equalsIgnoreCase("y")) { // if user wants to search for recipe...
