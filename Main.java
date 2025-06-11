@@ -440,14 +440,13 @@ public class Main {
 
         myAccount = Account.askForName(in); // call method to ask for name, store into static field
 
+        myAccount.setRecipes(recipes);
+
         String again;
 
         boolean breakfastPrint = false; 
         boolean lunchPrint = false; 
         boolean dinnerPrint = false; 
-
-        System.out.println("DEBUG – searching for: [" + "garden salad" + "]");
-        System.out.println("DEBUG – available keys: " + recipes.keySet());
     
         do { // do-while loop to produce recipes until user wishes to exit/stop adding recipes
             

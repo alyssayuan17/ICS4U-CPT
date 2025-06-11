@@ -153,9 +153,12 @@ public class Account {
         this.meal = meal;
     }
 
-    public Recipe findRecipeByName() { // search method for user recipe search
+    public Recipe findRecipeByName() { // linear search method for user recipe search
         System.out.println("What is the name of the recipe you wish to search for? ");
         String searchKey = in.nextLine().trim().toLowerCase();
+
+        System.out.println("DEBUG – searching for: [" + "garden salad" + "]");
+        System.out.println("DEBUG – available keys: " + recipes.keySet());
 
         // loop keys only
         for (String key : recipes.keySet()) {
@@ -239,6 +242,12 @@ public class Account {
         this.recipes = recipes; 
     }
 
+    // getters
+
+    public static Scanner getIn() {
+        return in;
+    }
+
     public HashMap<String, Day> getDays() {
         return days;
     }
@@ -247,56 +256,8 @@ public class Account {
         return recipes;
     }
 
-    public boolean isVegetarian() {
-        return vegetarian;
-    }
-
-    public String getPreferMeat() {
-        return preferMeat;
-    }
-
-    public boolean isPreferAltProtein() {
-        return preferAltProtein;
-    }
-
-    public boolean isPreferCarbs() {
-        return preferCarbs;
-    }
-
-    public String getPreferVeg() {
-        return preferVeg;
-    }
-
-    public void setDays(HashMap<String, Day> days) {
-        this.days = days;
-    }
-
-    public void setRecipes(HashMap<String, Recipe> recipes) {
-        this.recipes = recipes;
-    }
-
-    public void setVegetarian(boolean vegetarian) {
-        this.vegetarian = vegetarian;
-    }
-
-    public void setPreferMeat(String preferMeat) {
-        this.preferMeat = preferMeat;
-    }
-
-    public void setPreferAltProtein(boolean preferAltProtein) {
-        this.preferAltProtein = preferAltProtein;
-    }
-
-    public void setPreferCarbs(boolean preferCarbs) {
-        this.preferCarbs = preferCarbs;
-    }
-
-    public void setPreferVeg(String preferVeg) {
-        this.preferVeg = preferVeg;
-    }
-
-    public static Scanner getIn() {
-        return in;
+    public HashMap<String, String> getIngredientUnits() {
+        return ingredientUnits;
     }
 
     public String getFirstName() {
@@ -307,8 +268,80 @@ public class Account {
         return lastName;
     }
 
+    public boolean isVegetarian() {
+        return vegetarian;
+    }
+
+    public String getPreferMeat() {
+        return preferMeat;
+    }
+
+    public boolean isPreferCarbs() {
+        return preferCarbs;
+    }
+
+    public boolean isPreferAltProtein() {
+        return preferAltProtein;
+    }
+
+    public String getPreferVeg() {
+        return preferVeg;
+    }
+
     public String getMeal() {
         return meal;
     }
+
+    // setters
+
+    public static void setIn(Scanner in) {
+        Account.in = in;
+    }
+
+    public void setDays(HashMap<String, Day> days) {
+        this.days = days;
+    }
+
+    public void setRecipes(HashMap<String, Recipe> recipes) {
+        this.recipes = recipes;
+    }
+
+    public void setIngredientUnits(HashMap<String, String> ingredientUnits) {
+        this.ingredientUnits = ingredientUnits;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setVegetarian(boolean vegetarian) {
+        this.vegetarian = vegetarian;
+    }
+
+    public void setPreferMeat(String preferMeat) {
+        this.preferMeat = preferMeat;
+    }
+
+    public void setPreferCarbs(boolean preferCarbs) {
+        this.preferCarbs = preferCarbs;
+    }
+
+    public void setPreferAltProtein(boolean preferAltProtein) {
+        this.preferAltProtein = preferAltProtein;
+    }
+
+    public void setPreferVeg(String preferVeg) {
+        this.preferVeg = preferVeg;
+    }
+
+    public void setMeal(String meal) {
+        this.meal = meal;
+    }
+
+    
 
 }
