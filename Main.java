@@ -581,6 +581,7 @@ public class Main {
                 } 
             }
         }
+        System.out.println("\nThank you for using our Meal Planner :) - minnalyssa"); // cute finishing note!!
     }
     
     // based on user survey results we equate one of the recipes to equal each: breakfast, lunch, dinner
