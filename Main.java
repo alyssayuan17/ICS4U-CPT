@@ -183,15 +183,15 @@ public class Main {
         arrTurkeyBaconAndEggs.add(new Ingredient("Black pepper", "0.25 tsp"));
 
         // create breakfast recipes
-        veggieBagelSandwich = new Recipe("veggie bagel sandwich", arrVeggieBagelSandwich);
-        beanVeggieScramble = new Recipe("bean veggie scramble", arrBeanVeggieScramble);
-        greenEggScramble = new Recipe("green egg scramble", arrGreenEggScramble);
-        redOrangeVeggieSalad = new Recipe("red orange veggie salad", arrRedOrangeVeggieSalad);
-        pancakes = new Recipe("pancakes", arrPancakes);
-        crustlessQuiche = new Recipe("crustless quiche", arrCrustlessQuiche);
-        steakAndEggs = new Recipe("steak and eggs", arrSteakAndEggs);
-        smokedSalmonBagel = new Recipe("smoked salmon bagel", arrSmokedSalmonBagel);
-        turkeyBaconAndEggs = new Recipe("turkey bacon and eggs", arrTurkeyBaconAndEggs);
+        recipes.put("veggie bagel sandwich", veggieBagelSandwich = new Recipe("veggie bagel sandwich", arrVeggieBagelSandwich));
+        recipes.put("bean veggie scramble", beanVeggieScramble = new Recipe("bean veggie scramble", arrBeanVeggieScramble));
+        recipes.put("green egg scramble", greenEggScramble = new Recipe("green egg scramble", arrGreenEggScramble));
+        recipes.put("red orange veggie salad", redOrangeVeggieSalad = new Recipe("red orange veggie salad", arrRedOrangeVeggieSalad));
+        recipes.put("pancakes", pancakes = new Recipe("pancakes", arrPancakes));
+        recipes.put("crustless quiche", crustlessQuiche = new Recipe("crustless quiche", arrCrustlessQuiche));
+        recipes.put("steak and eggs", steakAndEggs = new Recipe("steak and eggs", arrSteakAndEggs));
+        recipes.put("smoked salmon bagel", smokedSalmonBagel = new Recipe("smoked salmon bagel", arrSmokedSalmonBagel));
+        recipes.put("turkey bacon and eggs", turkeyBaconAndEggs = new Recipe("turkey bacon and eggs", arrTurkeyBaconAndEggs));
 
 
         // lunch
