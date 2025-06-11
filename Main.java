@@ -476,12 +476,17 @@ public class Main {
                     System.out.println("Dinner: " + dinner.getName());
                 }
 
-                System.out.print("\nPlan another meal? (y/n): ");
-                again = in.nextLine().trim().toLowerCase();
-            }
+                if (breakfastPrint == true && lunchPrint == true && dinnerPrint == true) {
+                    break;
+                }
 
-            if (breakfastPrint == true && lunchPrint == true && dinnerPrint == true) {
-                break;
+                System.out.print("\nPlan another meal? (y/n): ");
+                do {
+                    again = in.nextLine().trim().toLowerCase();
+                    if (!again.equals("n") && !again.equals("y")) {
+                        System.out.print("Invalid input. Please try again (y/n) : ");
+                    }
+                } while (!again.equals("y") && !again.equals("n"));
             }
 
         } while (!again.equals("n")); // if user enters 'exit', exit the do-while loop
