@@ -427,15 +427,15 @@ public class Main {
             System.out.println();
 
             // print only what user asked for
-            if (choice.equals("a") || choice.equals("d")) {
+            if (breakfastPrint == true) {
                 System.out.println("Breakfast: " + breakfast.getName());
             }
 
-            if (choice.equals("b") || choice.equals("d")) {
+            if (lunchPrint == true) {
                 System.out.println("Lunch: " + lunch.getName());
             }
 
-            if (choice.equals("c") || choice.equals("d")) {
+            if (dinnerPrint == true) {
                 System.out.println("Dinner: " + dinner.getName());
             }
 
