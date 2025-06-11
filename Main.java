@@ -183,15 +183,15 @@ public class Main {
         arrTurkeyBaconAndEggs.add(new Ingredient("Black pepper", "0.25 tsp"));
 
         // create breakfast recipes
-        recipes.put("veggie bagel sandwich", veggieBagelSandwich = new Recipe("veggie bagel sandwich", arrVeggieBagelSandwich));
-        recipes.put("bean veggie scramble", beanVeggieScramble = new Recipe("bean veggie scramble", arrBeanVeggieScramble));
-        recipes.put("green egg scramble", greenEggScramble = new Recipe("green egg scramble", arrGreenEggScramble));
-        recipes.put("red orange veggie salad", redOrangeVeggieSalad = new Recipe("red orange veggie salad", arrRedOrangeVeggieSalad));
-        recipes.put("pancakes", pancakes = new Recipe("pancakes", arrPancakes));
-        recipes.put("crustless quiche", crustlessQuiche = new Recipe("crustless quiche", arrCrustlessQuiche));
-        recipes.put("steak and eggs", steakAndEggs = new Recipe("steak and eggs", arrSteakAndEggs));
-        recipes.put("smoked salmon bagel", smokedSalmonBagel = new Recipe("smoked salmon bagel", arrSmokedSalmonBagel));
-        recipes.put("turkey bacon and eggs", turkeyBaconAndEggs = new Recipe("turkey bacon and eggs", arrTurkeyBaconAndEggs));
+        recipes.put("veggie bagel sandwich", veggieBagelSandwich = new Recipe("Veggie bagel sandwich", arrVeggieBagelSandwich));
+        recipes.put("bean veggie scramble", beanVeggieScramble = new Recipe("Bean veggie scramble", arrBeanVeggieScramble));
+        recipes.put("green egg scramble", greenEggScramble = new Recipe("Green egg scramble", arrGreenEggScramble));
+        recipes.put("red orange veggie salad", redOrangeVeggieSalad = new Recipe("Red orange veggie salad", arrRedOrangeVeggieSalad));
+        recipes.put("pancakes", pancakes = new Recipe("Pancakes", arrPancakes));
+        recipes.put("crustless quiche", crustlessQuiche = new Recipe("Crustless quiche", arrCrustlessQuiche));
+        recipes.put("steak and eggs", steakAndEggs = new Recipe("Steak and eggs", arrSteakAndEggs));
+        recipes.put("smoked salmon bagel", smokedSalmonBagel = new Recipe("Smoked salmon bagel", arrSmokedSalmonBagel));
+        recipes.put("turkey bacon and eggs", turkeyBaconAndEggs = new Recipe("Turkey bacon and eggs", arrTurkeyBaconAndEggs));
 
 
         // lunch
@@ -282,15 +282,15 @@ public class Main {
         arrChickenCaesarSalad.add(new Ingredient("Black pepper", "0.25 tsp"));
 
         // create lunch recipes
-        recipes.put("veggie wrap", new Recipe("veggie wrap", arrVeggieWrap));
-        recipes.put("edamame spinach salad", new Recipe("edamame spinach salad", arrEdamameSpinachSalad));
+        recipes.put("veggie wrap", new Recipe("Veggie wrap", arrVeggieWrap));
+        recipes.put("edamame spinach salad", new Recipe("Edamame spinach salad", arrEdamameSpinachSalad));
         recipes.put("spinach avocado salad", new Recipe("spinach avocado salad", arrSpinachAvocadoSalad));
-        recipes.put("red orange lunch salad", new Recipe("red orange lunch salad", arrRedOrangeLunchSalad));
-        recipes.put("blt sandwich", new Recipe("blt sandwich", arrBLTSandwich));
-        recipes.put("egg salad lettuce wrap", new Recipe("egg salad lettuce wrap", arrEggSaladLettuceWrap));
-        recipes.put("beef burger", new Recipe("beef burger", arrBeefBurger));
-        recipes.put("tuna melt sandwich", new Recipe("tuna melt sandwich", arrTunaMeltSandwich));
-        recipes.put("chicken caesar salad", new Recipe("chicken caesar salad", arrChickenCaesarSalad));
+        recipes.put("red orange lunch salad", new Recipe("Red orange lunch salad", arrRedOrangeLunchSalad));
+        recipes.put("blt sandwich", new Recipe("BLT sandwich", arrBLTSandwich));
+        recipes.put("egg salad lettuce wrap", new Recipe("Egg salad lettuce wrap", arrEggSaladLettuceWrap));
+        recipes.put("beef burger", new Recipe("Beef burger", arrBeefBurger));
+        recipes.put("tuna melt sandwich", new Recipe("Tuna melt sandwich", arrTunaMeltSandwich));
+        recipes.put("chicken caesar salad", new Recipe("Chicken caesar salad", arrChickenCaesarSalad));
 
 
         // dinner
@@ -368,15 +368,15 @@ public class Main {
         arrBakedChickenBreast.add(new Ingredient("Black pepper", "0.25 tsp"));
 
         // create dinner recipes
-        recipes.put("vegetarian pizza" , new Recipe("vegetarian pizza", arrVegetarianPizza));
-        recipes.put("rice and beans", new Recipe("rice and beans", arrRiceAndBeans));
-        recipes.put("garden salad", new Recipe("garden salad", arrGardenSalad));
-        recipes.put("moroccan beet salad", new Recipe("moroccan beet salad", arrMoroccanBeetSalad));
-        recipes.put("spaghetti bolognese", new Recipe("spaghetti bolognese", arrSpaghettiBolognese));
-        recipes.put("egg casserole", new Recipe("egg casserole", arrEggCasserole));
-        recipes.put("steak", new Recipe("steak", arrSteak));
-        recipes.put("smoked salmon", new Recipe("smoked salmon", arrSmokedSalmon));        
-        recipes.put("baked chicken breast", new Recipe("baked chicken breast", arrBakedChickenBreast));
+        recipes.put("vegetarian pizza" , new Recipe("Vegetarian pizza", arrVegetarianPizza));
+        recipes.put("rice and beans", new Recipe("Rice and beans", arrRiceAndBeans));
+        recipes.put("garden salad", new Recipe("Garden salad", arrGardenSalad));
+        recipes.put("moroccan beet salad", new Recipe("Moroccan beet salad", arrMoroccanBeetSalad));
+        recipes.put("spaghetti bolognese", new Recipe("Spaghetti bolognese", arrSpaghettiBolognese));
+        recipes.put("egg casserole", new Recipe("Egg casserole", arrEggCasserole));
+        recipes.put("steak", new Recipe("Steak", arrSteak));
+        recipes.put("smoked salmon", new Recipe("Smoked salmon", arrSmokedSalmon));        
+        recipes.put("baked chicken breast", new Recipe("Baked chicken breast", arrBakedChickenBreast));
 
 
         myAccount.setRecipes(recipes);

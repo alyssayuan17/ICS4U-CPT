@@ -186,7 +186,7 @@ public class Account {
         System.out.println("Recipe completed!");
         
         customRecipe.setIngredients(ingredients); //once ingredient list is completed, add ingredient list under the user's custom recipe 
-        recipes.put(recipeName, customRecipe); //put new recipe in hashmap list of recipes in account 
+        recipes.put(recipeName.toLowerCase(), customRecipe); //put new recipe in hashmap list of recipes in account 
 
         Recipe.printRecipe(customRecipe);
     }
