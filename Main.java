@@ -12,7 +12,7 @@ public class Main {
     static Recipe vegetarianPizza, riceAndBeans, gardenSalad, moroccanBeetSalad, spaghettiBolognese, eggCasserole, steak, smokedSalmon, bakedChickenBreast;
 
     static Scanner in = new Scanner(System.in);
-    static Account myAccount;
+    static Account myAccount = new Account("");
     static Recipe breakfast; 
     static Recipe lunch; 
     static Recipe dinner; 
@@ -385,8 +385,10 @@ public class Main {
         // initiate program
 
         myAccount = Account.askForName(in); // call method to ask for name, store into static field
+        String firstName = myAccount.getFirstName();
+        String lastName = myAccount.getLastName();
 
-        String again;
+        String again = "";
 
         boolean breakfastPrint = false; 
         boolean lunchPrint = false; 
@@ -408,7 +410,7 @@ public class Main {
             if (!choice.equals("a") && !choice.equals("b") && !choice.equals("c") || choice.equals("d") && breakfastPrint == true || choice.equals("d") && lunchPrint == true || choice.equals("d") && dinnerPrint == true) {
                 //invalid choice, do not ask for prefs 
             } else {
-                myAccount = myAccount.askForPrefs(in); // now, call second account method to ask for user's preferences via survey
+                myAccount = myAccount.askForPrefs(in, firstName, lastName); // now, call second account method to ask for user's preferences via survey
             }
 
             if (choice.equals("a")) {
@@ -452,10 +454,10 @@ public class Main {
                 if (dinnerPrint == true) {
                     System.out.println("Dinner: " + dinner.getName());
                 }
-            }
 
-            System.out.print("\nPlan another meal? (y/n): ");
-            again = in.nextLine().trim().toLowerCase();
+                System.out.print("\nPlan another meal? (y/n): ");
+                again = in.nextLine().trim().toLowerCase();
+            }
 
         } while (again.equals("y") || breakfastPrint == true && lunchPrint == true && dinnerPrint == true); // if user enters 'exit', exit the do-while loop
 

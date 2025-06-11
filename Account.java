@@ -39,8 +39,12 @@ public class Account {
         this.firstName = firstName;
         this.lastName = lastName;
     }
+
+    public Account(String firstName) {
+        this.firstName = firstName;
+    }
     
-    public Account askForPrefs(Scanner in){ // second account method to set up user preferences
+    public Account askForPrefs(Scanner in, String firstName, String lastName){ // second account method to set up user preferences
 
         System.out.print("Vegetarian? (y/n): ");
         String input = "";
@@ -131,12 +135,7 @@ public class Account {
             } while (!input.equalsIgnoreCase("a") && !input.equalsIgnoreCase("b"));
         }
 
-        this.vegetarian       = vegetarian;
-        this.preferMeat       = preferMeat;
-        this.preferCarbs      = preferCarbs;
-        this.preferAltProtein = preferAltProtein;
-        this.preferVeg        = preferVeg;
-        return this;
+        return new Account(firstName, lastName, vegetarian, preferMeat, preferCarbs, preferAltProtein, preferVeg);
     }
 
     // account preference survey constructor
@@ -227,17 +226,6 @@ public class Account {
         this.preferAltProtein = preferAltProtein;
         this.preferCarbs = preferCarbs;
         this.preferVeg = preferVeg;
-    }
-
-    //another constructor with all instance variables?
-    public Account(String firstName, String lastName, boolean vegetarian, String preferMeat, boolean preferAltProtein, boolean preferCarbs, String preferVeg, HashMap <String, Day> days, HashMap <String, Recipe> recipes) {
-        this.vegetarian = vegetarian;
-        this.preferMeat = preferMeat;
-        this.preferAltProtein = preferAltProtein;
-        this.preferCarbs = preferCarbs;
-        this.preferVeg = preferVeg;
-        this.days = days; 
-        this.recipes = recipes; 
     }
 
     public HashMap<String, Day> getDays() {
