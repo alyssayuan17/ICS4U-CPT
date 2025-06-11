@@ -183,15 +183,15 @@ public class Main {
         arrTurkeyBaconAndEggs.add(new Ingredient("Black pepper", "0.25 tsp"));
 
         // create breakfast recipes
-        recipes.put("veggie bagel sandwich", veggieBagelSandwich = new Recipe("Veggie bagel sandwich", arrVeggieBagelSandwich));
-        recipes.put("bean veggie scramble", beanVeggieScramble = new Recipe("Bean veggie scramble", arrBeanVeggieScramble));
-        recipes.put("green egg scramble", greenEggScramble = new Recipe("Green egg scramble", arrGreenEggScramble));
-        recipes.put("red orange veggie salad", redOrangeVeggieSalad = new Recipe("Red orange veggie salad", arrRedOrangeVeggieSalad));
-        recipes.put("pancakes", pancakes = new Recipe("Pancakes", arrPancakes));
-        recipes.put("crustless quiche", crustlessQuiche = new Recipe("Crustless quiche", arrCrustlessQuiche));
-        recipes.put("steak and eggs", steakAndEggs = new Recipe("Steak and eggs", arrSteakAndEggs));
-        recipes.put("smoked salmon bagel", smokedSalmonBagel = new Recipe("Smoked salmon bagel", arrSmokedSalmonBagel));
-        recipes.put("turkey bacon and eggs", turkeyBaconAndEggs = new Recipe("Turkey bacon and eggs", arrTurkeyBaconAndEggs));
+        recipes.put("veggie bagel sandwich", new Recipe("Veggie bagel sandwich", arrVeggieBagelSandwich));
+        recipes.put("bean veggie scramble", new Recipe("Bean veggie scramble", arrBeanVeggieScramble));
+        recipes.put("green egg scramble", new Recipe("Green egg scramble", arrGreenEggScramble));
+        recipes.put("red orange veggie salad", new Recipe("Red orange veggie salad", arrRedOrangeVeggieSalad));
+        recipes.put("pancakes", new Recipe("Pancakes", arrPancakes));
+        recipes.put("crustless quiche", new Recipe("Crustless quiche", arrCrustlessQuiche));
+        recipes.put("steak and eggs", new Recipe("Steak and eggs", arrSteakAndEggs));
+        recipes.put("smoked salmon bagel", new Recipe("Smoked salmon bagel", arrSmokedSalmonBagel));
+        recipes.put("turkey bacon and eggs", new Recipe("Turkey bacon and eggs", arrTurkeyBaconAndEggs));
 
 
         // lunch
