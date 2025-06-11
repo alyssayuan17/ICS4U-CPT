@@ -431,16 +431,21 @@ public class Main {
             System.out.println();
 
             // print only what user asked for
-            if (breakfastPrint == true) {
-                System.out.println("Breakfast: " + breakfast.getName());
-            }
+            if (!choice.equals("a") && !choice.equals("b") && !choice.equals("c") || choice.equals("d") && breakfastPrint == true || choice.equals("d") && lunchPrint == true || choice.equals("d") && dinnerPrint == true) {
+                //if invalid, don't print. go straight to taking in input 
+            } else {
+                //valid, proceed
+                if (breakfastPrint == true) {
+                    System.out.println("Breakfast: " + breakfast.getName());
+                }
 
-            if (lunchPrint == true) {
-                System.out.println("Lunch: " + lunch.getName());
-            }
+                if (lunchPrint == true) {
+                    System.out.println("Lunch: " + lunch.getName());
+                }
 
-            if (dinnerPrint == true) {
-                System.out.println("Dinner: " + dinner.getName());
+                if (dinnerPrint == true) {
+                    System.out.println("Dinner: " + dinner.getName());
+                }
             }
 
             System.out.print("\nPlan another meal? (y/n): ");
