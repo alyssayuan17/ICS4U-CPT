@@ -131,11 +131,11 @@ public class Account {
             } while (!input.equalsIgnoreCase("a") && !input.equalsIgnoreCase("b"));
         }
 
-        this.vegetarian       = vegetarian;
-        this.preferMeat       = preferMeat;
-        this.preferCarbs      = preferCarbs;
+        this.vegetarian = vegetarian;
+        this.preferMeat = preferMeat;
+        this.preferCarbs = preferCarbs;
         this.preferAltProtein = preferAltProtein;
-        this.preferVeg        = preferVeg;
+        this.preferVeg = preferVeg;
         return this;
     }
 
