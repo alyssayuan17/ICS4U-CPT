@@ -59,7 +59,7 @@ public class Account {
         String preferMeat = "no preference";
         input = "";
         if (vegetarian == false) { //ask for meat preferences ... if vegetarian == true, preferMeat is set to none initially 
-            System.out.print("Meat preferences? \na) red \nb) poultry \nc) seafood and fish \nd) no preference \n(a/b/c/d): ");
+            System.out.print("Meat preferences? \n\ta) red \n\tb) poultry \n\tc) seafood and fish \n\td) no preference \n(a/b/c/d): ");
             do {
                 input = in.nextLine();
                 if (input.equalsIgnoreCase("a")) {
@@ -118,7 +118,7 @@ public class Account {
         String preferVeg = "green"; //default unless indicated otherwise 
         input = "";
         if (vegetarian == true && preferCarbs == false && preferAltProtein == false) {
-            System.out.print("Do you prefer: \na) green vegetables \nb) red + orange vegetables \n(a/b): ");
+            System.out.print("Do you prefer: \n\ta) green vegetables \n\tb) red + orange vegetables \n(a/b): ");
             do {
                 input = in.nextLine();
                 if (input.equalsIgnoreCase("a")) { //if they like altProtein, set to true 
