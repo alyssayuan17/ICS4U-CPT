@@ -369,14 +369,14 @@ public class Main {
 
         // create dinner recipes
         recipes.put("vegetarian pizza" , new Recipe("vegetarian pizza", arrVegetarianPizza));
-        riceAndBeans = new Recipe("rice and beans", arrRiceAndBeans);
-        gardenSalad = new Recipe("garden salad", arrGardenSalad);
-        moroccanBeetSalad = new Recipe("moroccan beet salad", arrMoroccanBeetSalad);
-        spaghettiBolognese = new Recipe("spaghetti bolognese", arrSpaghettiBolognese);
-        eggCasserole = new Recipe("egg casserole", arrEggCasserole);
-        steak = new Recipe("steak", arrSteak);
-        smokedSalmon = new Recipe("smoked salmon", arrSmokedSalmon);        
-        bakedChickenBreast = new Recipe("baked chicken breast", arrBakedChickenBreast);
+        recipes.put("rice and beans", new Recipe("rice and beans", arrRiceAndBeans));
+        recipes.put("garden salad", new Recipe("garden salad", arrGardenSalad));
+        recipes.put("moroccan beet salad", new Recipe("moroccan beet salad", arrMoroccanBeetSalad));
+        recipes.put("spaghetti bolognese", new Recipe("spaghetti bolognese", arrSpaghettiBolognese));
+        recipes.put("egg casserole", new Recipe("egg casserole", arrEggCasserole));
+        recipes.put("steak", new Recipe("steak", arrSteak));
+        recipes.put("smoked salmon", new Recipe("smoked salmon", arrSmokedSalmon));        
+        recipes.put("baked chicken breast", new Recipe("baked chicken breast", arrBakedChickenBreast));
 
 
         myAccount.setRecipes(recipes);
