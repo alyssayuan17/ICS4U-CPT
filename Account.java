@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner; 
 
 public class Account {
@@ -38,12 +39,8 @@ public class Account {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-
-    public Account(String firstName) {
-        this.firstName = firstName;
-    }
     
-    public Account askForPrefs(Scanner in, String firstName, String lastName){ // second account method to set up user preferences
+    public Account askForPrefs(Scanner in){ // second account method to set up user preferences
 
         System.out.print("Vegetarian? (y/n): ");
         String input = "";
@@ -134,7 +131,12 @@ public class Account {
             } while (!input.equalsIgnoreCase("a") && !input.equalsIgnoreCase("b"));
         }
 
-        return new Account(firstName, lastName, vegetarian, preferMeat, preferCarbs, preferAltProtein, preferVeg);
+        this.vegetarian = vegetarian;
+        this.preferMeat = preferMeat;
+        this.preferCarbs = preferCarbs;
+        this.preferAltProtein = preferAltProtein;
+        this.preferVeg = preferVeg;
+        return this;
     }
 
     // account preference survey constructor
@@ -153,15 +155,16 @@ public class Account {
     }
 
     public Recipe findRecipeByName() { // search method for user recipe search
-        System.out.print("What is the name of the recipe you wish to search for? ");
-        String searchKey = in.nextLine().trim().toLowerCase();
+        System.out.println("What is the name of the recipe you wish to search for? ");
+        Recipe searchKey = new Recipe(in.nextLine());
 
-        // directly look up the name
-        if (recipes.containsKey(searchKey)) {
-            return recipes.get(searchKey);
-        } else {
-            return null; // not found
+        // linear search through recipes map
+        for (Map.Entry <String, Recipe> searchRecipe : recipes.entrySet()) {
+            if (searchRecipe.getKey().equals(searchKey)) {
+                return searchRecipe.getValue(); // return the recipe if found
+            }
         }
+        return null; // return null if recipe not found
     }
 
     public void createCustomRecipe(HashMap <String, String> unitsGuide) {
@@ -184,7 +187,7 @@ public class Account {
         System.out.println("Recipe completed!");
         
         customRecipe.setIngredients(ingredients); //once ingredient list is completed, add ingredient list under the user's custom recipe 
-        recipes.put(recipeName.toLowerCase(), customRecipe); //put new recipe in hashmap list of recipes in account 
+        recipes.put(recipeName, customRecipe); //put new recipe in hashmap list of recipes in account 
 
         Recipe.printRecipe(customRecipe);
     }
@@ -224,6 +227,17 @@ public class Account {
         this.preferAltProtein = preferAltProtein;
         this.preferCarbs = preferCarbs;
         this.preferVeg = preferVeg;
+    }
+
+    //another constructor with all instance variables?
+    public Account(String firstName, String lastName, boolean vegetarian, String preferMeat, boolean preferAltProtein, boolean preferCarbs, String preferVeg, HashMap <String, Day> days, HashMap <String, Recipe> recipes) {
+        this.vegetarian = vegetarian;
+        this.preferMeat = preferMeat;
+        this.preferAltProtein = preferAltProtein;
+        this.preferCarbs = preferCarbs;
+        this.preferVeg = preferVeg;
+        this.days = days; 
+        this.recipes = recipes; 
     }
 
     public HashMap<String, Day> getDays() {

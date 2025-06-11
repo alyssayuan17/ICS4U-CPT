@@ -12,13 +12,12 @@ public class Main {
     static Recipe vegetarianPizza, riceAndBeans, gardenSalad, moroccanBeetSalad, spaghettiBolognese, eggCasserole, steak, smokedSalmon, bakedChickenBreast;
 
     static Scanner in = new Scanner(System.in);
-    static Account myAccount = new Account("");
+    static Account myAccount;
     static Recipe breakfast; 
     static Recipe lunch; 
     static Recipe dinner; 
     static HashMap <String, Ingredient> groceryList = new HashMap <>();
     static HashMap <String, String> unitsGuide =  new HashMap <>();
-    static HashMap<String, Recipe> recipes = new HashMap<>();
 
     public static void main(String[] args) {
 
@@ -182,25 +181,16 @@ public class Main {
         arrTurkeyBaconAndEggs.add(new Ingredient("Black pepper", "0.25 tsp"));
 
         // create breakfast recipes
-        recipes.put("veggie bagel sandwich", new Recipe("Veggie bagel sandwich", arrVeggieBagelSandwich));
-        recipes.put("bean veggie scramble", new Recipe("Bean veggie scramble", arrBeanVeggieScramble));
-        recipes.put("green egg scramble", new Recipe("Green egg scramble", arrGreenEggScramble));
-        recipes.put("red orange veggie salad", new Recipe("Red orange veggie salad", arrRedOrangeVeggieSalad));
-        recipes.put("pancakes", new Recipe("Pancakes", arrPancakes));
-        recipes.put("crustless quiche", new Recipe("Crustless quiche", arrCrustlessQuiche));
-        recipes.put("steak and eggs", new Recipe("Steak and eggs", arrSteakAndEggs));
-        recipes.put("smoked salmon bagel", new Recipe("Smoked salmon bagel", arrSmokedSalmonBagel));
-        recipes.put("turkey bacon and eggs", new Recipe("Turkey bacon and eggs", arrTurkeyBaconAndEggs));
+        veggieBagelSandwich = new Recipe("veggie bagel sandwich", arrVeggieBagelSandwich);
+        beanVeggieScramble = new Recipe("bean veggie scramble", arrBeanVeggieScramble);
+        greenEggScramble = new Recipe("green egg scramble", arrGreenEggScramble);
+        redOrangeVeggieSalad = new Recipe("red orange veggie salad", arrRedOrangeVeggieSalad);
+        pancakes = new Recipe("pancakes", arrPancakes);
+        crustlessQuiche = new Recipe("crustless quiche", arrCrustlessQuiche);
+        steakAndEggs = new Recipe("steak and eggs", arrSteakAndEggs);
+        smokedSalmonBagel = new Recipe("smoked salmon bagel", arrSmokedSalmonBagel);
+        turkeyBaconAndEggs = new Recipe("turkey bacon and eggs", arrTurkeyBaconAndEggs);
 
-        veggieBagelSandwich = recipes.get("veggie bagel sandwich");
-        beanVeggieScramble = recipes.get("bean veggie scramble");
-        greenEggScramble = recipes.get("green egg scramble");
-        redOrangeVeggieSalad = recipes.get("red orange veggie salad");
-        pancakes = recipes.get("pancakes");
-        crustlessQuiche = recipes.get("crustless quiche");
-        steakAndEggs = recipes.get("steak and eggs");
-        smokedSalmonBagel = recipes.get("smoked salmon bagel");
-        turkeyBaconAndEggs = recipes.get("turkey bacon and eggs");
 
         // lunch
         ArrayList<Ingredient> arrVeggieWrap = new ArrayList<>(); // veg, carbs
@@ -290,25 +280,16 @@ public class Main {
         arrChickenCaesarSalad.add(new Ingredient("Black pepper", "0.25 tsp"));
 
         // create lunch recipes
-        recipes.put("veggie wrap", new Recipe("Veggie wrap", arrVeggieWrap));
-        recipes.put("edamame spinach salad", new Recipe("Edamame spinach salad", arrEdamameSpinachSalad));
-        recipes.put("spinach avocado salad", new Recipe("spinach avocado salad", arrSpinachAvocadoSalad));
-        recipes.put("red orange lunch salad", new Recipe("Red orange lunch salad", arrRedOrangeLunchSalad));
-        recipes.put("blt sandwich", new Recipe("BLT sandwich", arrBLTSandwich));
-        recipes.put("egg salad lettuce wrap", new Recipe("Egg salad lettuce wrap", arrEggSaladLettuceWrap));
-        recipes.put("beef burger", new Recipe("Beef burger", arrBeefBurger));
-        recipes.put("tuna melt sandwich", new Recipe("Tuna melt sandwich", arrTunaMeltSandwich));
-        recipes.put("chicken caesar salad", new Recipe("Chicken caesar salad", arrChickenCaesarSalad));
+        veggieWrap = new Recipe("veggie wrap", arrVeggieWrap);
+        edamameSpinachSalad = new Recipe("edamame spinach salad", arrEdamameSpinachSalad);
+        spinachAvocadoSalad = new Recipe("spinach avocado salad", arrSpinachAvocadoSalad);
+        redOrangeLunchSalad = new Recipe("red orange lunch salad", arrRedOrangeLunchSalad);
+        BLTSandwich = new Recipe("blt sandwich", arrBLTSandwich);
+        eggSaladLettuceWrap = new Recipe("egg salad lettuce wrap", arrEggSaladLettuceWrap);
+        beefBurger = new Recipe("beef burger", arrBeefBurger);
+        tunaMeltSandwich = new Recipe("tuna melt sandwich", arrTunaMeltSandwich);
+        chickenCaesarSalad = new Recipe("chicken caesar salad", arrChickenCaesarSalad);
 
-        veggieWrap = recipes.get("veggie wrap");
-        edamameSpinachSalad = recipes.get("edamame spinach salad");
-        spinachAvocadoSalad = recipes.get("spinach avocado salad");
-        redOrangeLunchSalad = recipes.get("red orange lunch salad");
-        BLTSandwich = recipes.get("blt sandwich");
-        eggSaladLettuceWrap = recipes.get("egg salad lettuce wrap");
-        beefBurger = recipes.get("beef burger");
-        tunaMeltSandwich = recipes.get("tuna melt sandwich");
-        chickenCaesarSalad = recipes.get("chicken caesar salad");
 
         // dinner
         ArrayList <Ingredient> arrVegetarianPizza = new ArrayList<>(); // veg, carbs
@@ -385,34 +366,22 @@ public class Main {
         arrBakedChickenBreast.add(new Ingredient("Black pepper", "0.25 tsp"));
 
         // create dinner recipes
-        recipes.put("vegetarian pizza" , new Recipe("Vegetarian pizza", arrVegetarianPizza));
-        recipes.put("rice and beans", new Recipe("Rice and beans", arrRiceAndBeans));
-        recipes.put("garden salad", new Recipe("Garden salad", arrGardenSalad));
-        recipes.put("moroccan beet salad", new Recipe("Moroccan beet salad", arrMoroccanBeetSalad));
-        recipes.put("spaghetti bolognese", new Recipe("Spaghetti bolognese", arrSpaghettiBolognese));
-        recipes.put("egg casserole", new Recipe("Egg casserole", arrEggCasserole));
-        recipes.put("steak", new Recipe("Steak", arrSteak));
-        recipes.put("smoked salmon", new Recipe("Smoked salmon", arrSmokedSalmon));        
-        recipes.put("baked chicken breast", new Recipe("Baked chicken breast", arrBakedChickenBreast));
+        vegetarianPizza = new Recipe("vegetarian pizza", arrVegetarianPizza);
+        riceAndBeans = new Recipe("rice and beans", arrRiceAndBeans);
+        gardenSalad = new Recipe("garden salad", arrGardenSalad);
+        moroccanBeetSalad = new Recipe("moroccan beet salad", arrMoroccanBeetSalad);
+        spaghettiBolognese = new Recipe("spaghetti bolognese", arrSpaghettiBolognese);
+        eggCasserole = new Recipe("egg casserole", arrEggCasserole);
+        steak = new Recipe("steak", arrSteak);
+        smokedSalmon = new Recipe("smoked salmon", arrSmokedSalmon);        
+        bakedChickenBreast = new Recipe("baked chicken breast", arrBakedChickenBreast);
 
-        vegetarianPizza = recipes.get("vegetarian pizza");
-        riceAndBeans = recipes.get("rice and beans");
-        gardenSalad = recipes.get("garden salad");
-        moroccanBeetSalad = recipes.get("moroccan beet salad");
-        spaghettiBolognese = recipes.get("spaghetti bolognese");
-        eggCasserole = recipes.get("egg casserole");
-        steak = recipes.get("steak");
-        smokedSalmon = recipes.get("smoked salmon");
-        bakedChickenBreast = recipes.get("baked chicken breast");
 
         // initiate program
 
         myAccount = Account.askForName(in); // call method to ask for name, store into static field
-        String firstName = myAccount.getFirstName();
-        String lastName = myAccount.getLastName();
 
-        String again = "";
-        myAccount.setRecipes(recipes);
+        String again;
 
         boolean breakfastPrint = false; 
         boolean lunchPrint = false; 
@@ -434,7 +403,7 @@ public class Main {
             if (!choice.equals("a") && !choice.equals("b") && !choice.equals("c") || choice.equals("d") && breakfastPrint == true || choice.equals("d") && lunchPrint == true || choice.equals("d") && dinnerPrint == true) {
                 //invalid choice, do not ask for prefs 
             } else {
-                myAccount = myAccount.askForPrefs(in, firstName, lastName); // now, call second account method to ask for user's preferences via survey
+                myAccount = myAccount.askForPrefs(in); // now, call second account method to ask for user's preferences via survey
             }
 
             if (choice.equals("a")) {
@@ -478,16 +447,12 @@ public class Main {
                 if (dinnerPrint == true) {
                     System.out.println("Dinner: " + dinner.getName());
                 }
-
-                if (breakfastPrint = true && lunchPrint == true && dinnerPrint == true) {
-                    break;
-                }
-
-                System.out.print("\nPlan another meal? (y/n): ");
-                again = in.nextLine().trim().toLowerCase();
             }
 
-        } while (!again.equals("n")); // will only end if user wants to stop adding meals 
+            System.out.print("\nPlan another meal? (y/n): ");
+            again = in.nextLine().trim().toLowerCase();
+
+        } while (again.equals("y") || breakfastPrint == true && lunchPrint == true && dinnerPrint == true); // if user enters 'exit', exit the do-while loop
 
         System.out.println("\nHere are your meals for the day:");
         printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
@@ -518,29 +483,29 @@ public class Main {
     public static void setBreakfast() {
         if (myAccount.isVegetarian()) {
             if (myAccount.isPreferCarbs()) {
-                breakfast = recipes.get("veggie bagel sandwich");
+                breakfast = veggieBagelSandwich;
             } else if (myAccount.isPreferAltProtein()) {
-                breakfast = recipes.get("bean veggie scramble");
+                breakfast = beanVeggieScramble;
             } else { // low carb, no alt protein --> pick veg by colour
                 if (myAccount.getPreferVeg().equalsIgnoreCase("green")) {
-                    breakfast = recipes.get("green egg scramble");
+                    breakfast = greenEggScramble;
                 } else {
-                    breakfast = recipes.get("red orange veggie salad");
+                    breakfast = redOrangeVeggieSalad;
                 }
             }
         } else {
             String meat = myAccount.getPreferMeat().toLowerCase();
             if (meat.equalsIgnoreCase("red")) {
-                breakfast = recipes.get("steak and eggs");
+                breakfast = steakAndEggs;
             } else if (meat.equalsIgnoreCase("seafood")) {
-                breakfast = recipes.get("smoked salmon bagel");
+                breakfast = smokedSalmonBagel;
             } else if (meat.equalsIgnoreCase("poultry")) {
-                breakfast = recipes.get("turkey bacon and eggs");
+                breakfast = turkeyBaconAndEggs;
             } else {
                 if (meat.equalsIgnoreCase("carbs")) {
-                    breakfast = recipes.get("pancakes");
+                    breakfast = pancakes;
                 } else {
-                    breakfast = recipes.get("crustless quiche");
+                    breakfast = crustlessQuiche;
                 }
             }
         }
@@ -549,29 +514,29 @@ public class Main {
     public static void setLunch() {
         if (myAccount.isVegetarian()) {
             if (myAccount.isPreferCarbs()) {
-                lunch = recipes.get("veggie wrap");
+                lunch = veggieWrap;
             } else if (myAccount.isPreferAltProtein()) {
-                lunch = recipes.get("edamame spinach salad");
+                lunch = edamameSpinachSalad;
             } else { // low carb, no alt protein --> pick veg by colour
                 if (myAccount.getPreferVeg().equalsIgnoreCase("green")) {
-                    lunch = recipes.get("spinach avocado salad");
+                    lunch = spinachAvocadoSalad;
                 } else {
-                    lunch = recipes.get("red orange lunch salad");
+                    lunch = redOrangeLunchSalad;
                 }
             }
         } else {
             String meat = myAccount.getPreferMeat().toLowerCase();
             if (meat.equalsIgnoreCase("red")) {
-                lunch = recipes.get("beef burger");
+                lunch = beefBurger;
             } else if (meat.equalsIgnoreCase("seafood")) {
-                lunch = recipes.get("tuna melt sandwich");
+                lunch = tunaMeltSandwich;
             } else if (meat.equalsIgnoreCase("poultry")) {
-                lunch = recipes.get("chicken caesar salad");
+                lunch = chickenCaesarSalad;
             } else {
                 if (meat.equalsIgnoreCase("carbs")) {
-                    lunch = recipes.get("blt sandwich");
+                    lunch = BLTSandwich;
                 } else {
-                    lunch = recipes.get("egg salad lettuce wrap");
+                    lunch = eggSaladLettuceWrap;
                 }
             }
         }
@@ -580,29 +545,29 @@ public class Main {
     public static void setDinner() {
         if (myAccount.isVegetarian()) {
             if (myAccount.isPreferCarbs()) {
-                dinner = recipes.get("vegetarian pizza");
+                dinner = vegetarianPizza;
             } else if (myAccount.isPreferAltProtein()) {
-                dinner = recipes.get("rice and beans");
+                dinner = riceAndBeans;
             } else { // low carb, no alt protein --> pick veg by colour
                 if (myAccount.getPreferVeg().equalsIgnoreCase("green")) {
-                    dinner = recipes.get("garden salad");
+                    dinner = gardenSalad;
                 } else {
-                    dinner = recipes.get("moroccan beet salad");
+                    dinner = moroccanBeetSalad;
                 }
             }
         } else {
             String meat = myAccount.getPreferMeat().toLowerCase();
             if (meat.equalsIgnoreCase("red")) {
-                dinner = recipes.get("steak");
+                dinner = steak;
             } else if (meat.equalsIgnoreCase("seafood")) {
-                dinner = recipes.get("smoked salmon");
+                dinner = smokedSalmon;
             } else if (meat.equalsIgnoreCase("poultry")) {
-                dinner = recipes.get("baked chicken breast");
+                dinner = bakedChickenBreast;
             } else {
                 if (meat.equalsIgnoreCase("carbs")) {
-                    dinner = recipes.get("spaghetti bolognese");
+                    dinner = spaghettiBolognese;
                 } else {
-                    dinner = recipes.get("egg casserole");
+                    dinner = eggCasserole;
                 }
             }
         }
@@ -659,8 +624,6 @@ public class Main {
             System.out.println("\t- " + i + ", " + groceryList.get(i) + " " + unitsGuide.get(i));
         }
     }
-
-
 
     public static void printMealsForTheDay(boolean breakfastPrint, boolean lunchPrint, boolean dinnerPrint) {
         if (breakfastPrint == true) {
