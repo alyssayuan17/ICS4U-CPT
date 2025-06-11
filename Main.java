@@ -400,7 +400,11 @@ public class Main {
 
             System.out.println();
 
-            myAccount = myAccount.askForPrefs(in); // now, call second account method to ask for user's preferences via survey
+            if (!choice.equals("a") && !choice.equals("b") && !choice.equals("c") || choice.equals("d") && breakfastPrint == true || choice.equals("d") && lunchPrint == true || choice.equals("d") && dinnerPrint == true) {
+                //invalid choice, do not ask for prefs 
+            } else {
+                myAccount = myAccount.askForPrefs(in); // now, call second account method to ask for user's preferences via survey
+            }
 
             if (choice.equals("a")) {
                 setBreakfast(); // if user chooses to plan breakfast, call method to plan their breakfast
@@ -418,7 +422,7 @@ public class Main {
                 breakfastPrint = true; 
                 lunchPrint = true;
                 dinnerPrint = true;
-            } else if (choice.equals("d") && (breakfastPrint == true || choice.equals("d") && lunchPrint == true || choice.equals("d") && dinnerPrint == true)) {
+            } else if (choice.equals("d") && breakfastPrint == true || choice.equals("d") && lunchPrint == true || choice.equals("d") && dinnerPrint == true) {
                 System.out.print("Invalid choice. Please enter one of the valid options listed: ");
             } else { // if user enters invalid inputs, loop until the input is accepted
                 System.out.print("Invalid choice. Please enter one of the valid options listed: ");
