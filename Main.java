@@ -389,20 +389,30 @@ public class Main {
 
         String again;
 
+        boolean breakfastPrint = false; 
+        boolean lunchPrint = false; 
+        boolean dinnerPrint = false; 
+        
         do { // do-while loop to produce recipes until user wishes to exit
 
             choice = in.nextLine().trim().toLowerCase();
 
             if (choice.equals("a")) {
                 setBreakfast(); // if user chooses to plan breakfast, call method to plan their breakfast
+                breakfastPrint = true; 
             } else if (choice.equals("b")) {
                 setLunch(); //same for lunch 
+                lunchPrint = true;
             } else if (choice.equals("c")) {
                 setDinner();
+                dinnerPrint = true; 
             } else if (choice.equals("d")) {
                 setBreakfast();
                 setLunch();
                 setDinner();
+                breakfastPrint = true; 
+                lunchPrint = true;
+                dinnerPrint = true;
             } else if (choice.equals("exit")) {
               //
             } else { // if user enters invalid inputs, loop until the input is accepted
@@ -441,7 +451,9 @@ public class Main {
 
         } while (again.equals("y")); // if user enters 'exit', exit the do-while loop
 
-        
+        System.out.println("Here are your meals for the day:");
+        printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
+
         System.out.println("Would you like to find another recipe by name? (y/n)\n");
         String searchRecipe = in.nextLine();
 
