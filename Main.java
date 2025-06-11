@@ -181,15 +181,15 @@ public class Main {
         arrTurkeyBaconAndEggs.add(new Ingredient("Black pepper", "0.25 tsp"));
 
         // create breakfast recipes
-        veggieBagelSandwich = new Recipe("Veggie bagel sandwich", arrVeggieBagelSandwich);
-        beanVeggieScramble = new Recipe("Bean veggie scramble", arrBeanVeggieScramble);
-        greenEggScramble = new Recipe("Green egg scramble", arrGreenEggScramble);
-        redOrangeVeggieSalad = new Recipe("Red orange veggie salad", arrRedOrangeVeggieSalad);
-        pancakes = new Recipe("Pancakes", arrPancakes);
-        crustlessQuiche = new Recipe("Crustless quiche", arrCrustlessQuiche);
-        steakAndEggs = new Recipe("Steak and eggs", arrSteakAndEggs);
-        smokedSalmonBagel = new Recipe("Smoked salmon bagel", arrSmokedSalmonBagel);
-        turkeyBaconAndEggs = new Recipe("Turkey bacon and eggs", arrTurkeyBaconAndEggs);
+        veggieBagelSandwich = new Recipe("veggie bagel sandwich", arrVeggieBagelSandwich);
+        beanVeggieScramble = new Recipe("bean veggie scramble", arrBeanVeggieScramble);
+        greenEggScramble = new Recipe("green egg scramble", arrGreenEggScramble);
+        redOrangeVeggieSalad = new Recipe("red orange veggie salad", arrRedOrangeVeggieSalad);
+        pancakes = new Recipe("pancakes", arrPancakes);
+        crustlessQuiche = new Recipe("crustless quiche", arrCrustlessQuiche);
+        steakAndEggs = new Recipe("steak and eggs", arrSteakAndEggs);
+        smokedSalmonBagel = new Recipe("smoked salmon bagel", arrSmokedSalmonBagel);
+        turkeyBaconAndEggs = new Recipe("turkey bacon and eggs", arrTurkeyBaconAndEggs);
 
 
         // lunch
@@ -280,15 +280,15 @@ public class Main {
         arrChickenCaesarSalad.add(new Ingredient("Black pepper", "0.25 tsp"));
 
         // create lunch recipes
-        veggieWrap = new Recipe("Veggie wrap", arrVeggieWrap);
-        edamameSpinachSalad = new Recipe("Edamame spinach salad", arrEdamameSpinachSalad);
-        spinachAvocadoSalad = new Recipe("Spinach avocado salad", arrSpinachAvocadoSalad);
-        redOrangeLunchSalad = new Recipe("Red orange lunch salad", arrRedOrangeLunchSalad);
-        BLTSandwich = new Recipe("BLT sandwich", arrBLTSandwich);
-        eggSaladLettuceWrap = new Recipe("Egg salad lettuce wrap", arrEggSaladLettuceWrap);
-        beefBurger = new Recipe("Beef burger", arrBeefBurger);
-        tunaMeltSandwich = new Recipe("Tuna melt sandwich", arrTunaMeltSandwich);
-        chickenCaesarSalad = new Recipe("Chicken caesar salad", arrChickenCaesarSalad);
+        veggieWrap = new Recipe("veggie wrap", arrVeggieWrap);
+        edamameSpinachSalad = new Recipe("edamame spinach salad", arrEdamameSpinachSalad);
+        spinachAvocadoSalad = new Recipe("spinach avocado salad", arrSpinachAvocadoSalad);
+        redOrangeLunchSalad = new Recipe("red orange lunch salad", arrRedOrangeLunchSalad);
+        BLTSandwich = new Recipe("blt sandwich", arrBLTSandwich);
+        eggSaladLettuceWrap = new Recipe("egg salad lettuce wrap", arrEggSaladLettuceWrap);
+        beefBurger = new Recipe("beef burger", arrBeefBurger);
+        tunaMeltSandwich = new Recipe("tuna melt sandwich", arrTunaMeltSandwich);
+        chickenCaesarSalad = new Recipe("chicken caesar salad", arrChickenCaesarSalad);
 
 
         // dinner
@@ -366,15 +366,15 @@ public class Main {
         arrBakedChickenBreast.add(new Ingredient("Black pepper", "0.25 tsp"));
 
         // create dinner recipes
-        vegetarianPizza = new Recipe("Vegetarian pizza", arrVegetarianPizza);
-        riceAndBeans = new Recipe("Rice and beans", arrRiceAndBeans);
-        gardenSalad = new Recipe("Garden salad", arrGardenSalad);
-        moroccanBeetSalad = new Recipe("Moroccan beet salad", arrMoroccanBeetSalad);
-        spaghettiBolognese = new Recipe("Spaghetti bolognese", arrSpaghettiBolognese);
-        eggCasserole = new Recipe("Egg casserole", arrEggCasserole);
-        steak = new Recipe("Steak", arrSteak);
-        smokedSalmon = new Recipe("Smoked salmon", arrSmokedSalmon);        
-        bakedChickenBreast = new Recipe("Baked chicken breast", arrBakedChickenBreast);
+        vegetarianPizza = new Recipe("vegetarian pizza", arrVegetarianPizza);
+        riceAndBeans = new Recipe("rice and beans", arrRiceAndBeans);
+        gardenSalad = new Recipe("garden salad", arrGardenSalad);
+        moroccanBeetSalad = new Recipe("moroccan beet salad", arrMoroccanBeetSalad);
+        spaghettiBolognese = new Recipe("spaghetti bolognese", arrSpaghettiBolognese);
+        eggCasserole = new Recipe("egg casserole", arrEggCasserole);
+        steak = new Recipe("steak", arrSteak);
+        smokedSalmon = new Recipe("smoked salmon", arrSmokedSalmon);        
+        bakedChickenBreast = new Recipe("baked chicken breast", arrBakedChickenBreast);
 
 
         // initiate program
