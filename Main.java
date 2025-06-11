@@ -609,4 +609,18 @@ public class Main {
             System.out.println("\t- " + i + ", " + groceryList.get(i) + " " + unitsGuide.get(i));
         }
     }
+
+
+
+    public static void printMealsForTheDay(boolean breakfastPrint, boolean lunchPrint, boolean dinnerPrint) {
+        if (breakfastPrint == true) {
+        Recipe.printRecipe(breakfast);
+        }
+        if (lunchPrint == true) {
+        Recipe.printRecipe(lunch);
+        }
+        if (dinnerPrint == true) {
+        Recipe.printRecipe(dinner);
+        }
+    }
 }
