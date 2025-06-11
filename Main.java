@@ -379,9 +379,6 @@ public class Main {
         recipes.put("baked chicken breast", new Recipe("Baked chicken breast", arrBakedChickenBreast));
 
 
-        myAccount.setRecipes(recipes);
-
-
         // initiate program
 
         myAccount = Account.askForName(in); // call method to ask for name, store into static field
@@ -389,6 +386,7 @@ public class Main {
         String lastName = myAccount.getLastName();
 
         String again = "";
+        myAccount.setRecipes(recipes);
 
         boolean breakfastPrint = false; 
         boolean lunchPrint = false; 
