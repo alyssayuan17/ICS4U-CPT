@@ -18,6 +18,7 @@ public class Main {
     static Recipe dinner; 
     static HashMap <String, Ingredient> groceryList = new HashMap <>();
     static HashMap <String, String> unitsGuide =  new HashMap <>();
+    static HashMap<String, Recipe> recipes = new HashMap<>();
 
     public static void main(String[] args) {
 
@@ -180,17 +181,36 @@ public class Main {
         arrTurkeyBaconAndEggs.add(new Ingredient("Salt", "0.25 tsp"));
         arrTurkeyBaconAndEggs.add(new Ingredient("Black pepper", "0.25 tsp"));
 
-        // create breakfast recipes
-        veggieBagelSandwich = new Recipe("veggie bagel sandwich", arrVeggieBagelSandwich);
-        beanVeggieScramble = new Recipe("bean veggie scramble", arrBeanVeggieScramble);
-        greenEggScramble = new Recipe("green egg scramble", arrGreenEggScramble);
-        redOrangeVeggieSalad = new Recipe("red orange veggie salad", arrRedOrangeVeggieSalad);
-        pancakes = new Recipe("pancakes", arrPancakes);
-        crustlessQuiche = new Recipe("crustless quiche", arrCrustlessQuiche);
-        steakAndEggs = new Recipe("steak and eggs", arrSteakAndEggs);
-        smokedSalmonBagel = new Recipe("smoked salmon bagel", arrSmokedSalmonBagel);
-        turkeyBaconAndEggs = new Recipe("turkey bacon and eggs", arrTurkeyBaconAndEggs);
+        // // create breakfast recipes
+        // veggieBagelSandwich = new Recipe("veggie bagel sandwich", arrVeggieBagelSandwich);
+        // beanVeggieScramble = new Recipe("bean veggie scramble", arrBeanVeggieScramble);
+        // greenEggScramble = new Recipe("green egg scramble", arrGreenEggScramble);
+        // redOrangeVeggieSalad = new Recipe("red orange veggie salad", arrRedOrangeVeggieSalad);
+        // pancakes = new Recipe("pancakes", arrPancakes);
+        // crustlessQuiche = new Recipe("crustless quiche", arrCrustlessQuiche);
+        // steakAndEggs = new Recipe("steak and eggs", arrSteakAndEggs);
+        // smokedSalmonBagel = new Recipe("smoked salmon bagel", arrSmokedSalmonBagel);
+        // turkeyBaconAndEggs = new Recipe("turkey bacon and eggs", arrTurkeyBaconAndEggs);
 
+        recipes.put("veggie bagel sandwich", new Recipe("veggie bagel sandwich", arrVeggieBagelSandwich));
+        recipes.put("bean veggie scramble", new Recipe("bean veggie scramble", arrBeanVeggieScramble));
+        recipes.put("green egg scramble", new Recipe("green egg scramble", arrGreenEggScramble));
+        recipes.put("red orange veggie salad", new Recipe("red orange veggie salad", arrRedOrangeVeggieSalad));
+        recipes.put("pancakes", new Recipe("pancakes", arrPancakes));
+        recipes.put("crustless quiche", new Recipe("crustless quiche", arrCrustlessQuiche));
+        recipes.put("steak and eggs", new Recipe("steak and eggs", arrSteakAndEggs));
+        recipes.put("smoked salmon bagel", new Recipe("smoked salmon bagel", arrSmokedSalmonBagel));
+        recipes.put("turkey bacon and eggs", new Recipe("turkey bacon and eggs", arrTurkeyBaconAndEggs));
+
+        veggieBagelSandwich = recipes.get("veggie bagel sandwich");
+        beanVeggieScramble = recipes.get("bean veggie scramble");
+        greenEggScramble = recipes.get("green egg scramble");
+        redOrangeVeggieSalad = recipes.get("red orange veggie salad");
+        pancakes = recipes.get("pancakes");
+        crustlessQuiche = recipes.get("crustless quiche");
+        steakAndEggs = recipes.get("steak and eggs");
+        smokedSalmonBagel = recipes.get("smoked salmon bagel");
+        turkeyBaconAndEggs = recipes.get("turkey bacon and eggs");
 
         // lunch
         ArrayList<Ingredient> arrVeggieWrap = new ArrayList<>(); // veg, carbs
@@ -279,16 +299,36 @@ public class Main {
         arrChickenCaesarSalad.add(new Ingredient("Salt", "0.25 tsp"));
         arrChickenCaesarSalad.add(new Ingredient("Black pepper", "0.25 tsp"));
 
-        // create lunch recipes
-        veggieWrap = new Recipe("veggie wrap", arrVeggieWrap);
-        edamameSpinachSalad = new Recipe("edamame spinach salad", arrEdamameSpinachSalad);
-        spinachAvocadoSalad = new Recipe("spinach avocado salad", arrSpinachAvocadoSalad);
-        redOrangeLunchSalad = new Recipe("red orange lunch salad", arrRedOrangeLunchSalad);
-        BLTSandwich = new Recipe("blt sandwich", arrBLTSandwich);
-        eggSaladLettuceWrap = new Recipe("egg salad lettuce wrap", arrEggSaladLettuceWrap);
-        beefBurger = new Recipe("beef burger", arrBeefBurger);
-        tunaMeltSandwich = new Recipe("tuna melt sandwich", arrTunaMeltSandwich);
-        chickenCaesarSalad = new Recipe("chicken caesar salad", arrChickenCaesarSalad);
+        // // create lunch recipes
+        // veggieWrap = new Recipe("veggie wrap", arrVeggieWrap);
+        // edamameSpinachSalad = new Recipe("edamame spinach salad", arrEdamameSpinachSalad);
+        // spinachAvocadoSalad = new Recipe("spinach avocado salad", arrSpinachAvocadoSalad);
+        // redOrangeLunchSalad = new Recipe("red orange lunch salad", arrRedOrangeLunchSalad);
+        // BLTSandwich = new Recipe("blt sandwich", arrBLTSandwich);
+        // eggSaladLettuceWrap = new Recipe("egg salad lettuce wrap", arrEggSaladLettuceWrap);
+        // beefBurger = new Recipe("beef burger", arrBeefBurger);
+        // tunaMeltSandwich = new Recipe("tuna melt sandwich", arrTunaMeltSandwich);
+        // chickenCaesarSalad = new Recipe("chicken caesar salad", arrChickenCaesarSalad);
+
+        recipes.put("veggie wrap", new Recipe("veggie wrap", arrVeggieWrap));
+        recipes.put("edamame spinach salad", new Recipe("edamame spinach salad", arrEdamameSpinachSalad));
+        recipes.put("spinach avocado salad", new Recipe("spinach avocado salad", arrSpinachAvocadoSalad));
+        recipes.put("red orange lunch salad", new Recipe("red orange lunch salad", arrRedOrangeLunchSalad));
+        recipes.put("blt sandwich", new Recipe("blt sandwich", arrBLTSandwich));
+        recipes.put("egg salad lettuce wrap", new Recipe("egg salad lettuce wrap", arrEggSaladLettuceWrap));
+        recipes.put("beef burger", new Recipe("beef burger", arrBeefBurger));
+        recipes.put("tuna melt sandwich", new Recipe("tuna melt sandwich", arrTunaMeltSandwich));
+        recipes.put("chicken caesar salad", new Recipe("chicken caesar salad", arrChickenCaesarSalad));
+
+        veggieWrap = recipes.get("veggie wrap");
+        edamameSpinachSalad = recipes.get("edamame spinach salad");
+        spinachAvocadoSalad = recipes.get("spinach avocado salad");
+        redOrangeLunchSalad = recipes.get("red orange lunch salad");
+        BLTSandwich = recipes.get("blt sandwich");
+        eggSaladLettuceWrap = recipes.get("egg salad lettuce wrap");
+        beefBurger = recipes.get("beef burger");
+        tunaMeltSandwich = recipes.get("tuna melt sandwich");
+        chickenCaesarSalad = recipes.get("chicken caesar salad");
 
 
         // dinner
@@ -365,17 +405,36 @@ public class Main {
         arrBakedChickenBreast.add(new Ingredient("Salt", "0.5 tsp"));
         arrBakedChickenBreast.add(new Ingredient("Black pepper", "0.25 tsp"));
 
-        // create dinner recipes
-        vegetarianPizza = new Recipe("vegetarian pizza", arrVegetarianPizza);
-        riceAndBeans = new Recipe("rice and beans", arrRiceAndBeans);
-        gardenSalad = new Recipe("garden salad", arrGardenSalad);
-        moroccanBeetSalad = new Recipe("moroccan beet salad", arrMoroccanBeetSalad);
-        spaghettiBolognese = new Recipe("spaghetti bolognese", arrSpaghettiBolognese);
-        eggCasserole = new Recipe("egg casserole", arrEggCasserole);
-        steak = new Recipe("steak", arrSteak);
-        smokedSalmon = new Recipe("smoked salmon", arrSmokedSalmon);        
-        bakedChickenBreast = new Recipe("baked chicken breast", arrBakedChickenBreast);
+        // // create dinner recipes
+        // vegetarianPizza = new Recipe("vegetarian pizza", arrVegetarianPizza);
+        // riceAndBeans = new Recipe("rice and beans", arrRiceAndBeans);
+        // gardenSalad = new Recipe("garden salad", arrGardenSalad);
+        // moroccanBeetSalad = new Recipe("moroccan beet salad", arrMoroccanBeetSalad);
+        // spaghettiBolognese = new Recipe("spaghetti bolognese", arrSpaghettiBolognese);
+        // eggCasserole = new Recipe("egg casserole", arrEggCasserole);
+        // steak = new Recipe("steak", arrSteak);
+        // smokedSalmon = new Recipe("smoked salmon", arrSmokedSalmon);        
+        // bakedChickenBreast = new Recipe("baked chicken breast", arrBakedChickenBreast);
 
+        recipes.put("vegetarian pizza" , new Recipe("vegetarian pizza", arrVegetarianPizza));
+        recipes.put("rice and beans", new Recipe("rice and beans", arrRiceAndBeans));
+        recipes.put("garden salad", new Recipe("garden salad", arrGardenSalad));
+        recipes.put("moroccan beet salad", new Recipe("moroccan beet salad", arrMoroccanBeetSalad));
+        recipes.put("spaghetti bolognese", new Recipe("spaghetti bolognese", arrSpaghettiBolognese));
+        recipes.put("egg casserole", new Recipe("egg casserole", arrEggCasserole));
+        recipes.put("steak", new Recipe("steak", arrSteak));
+        recipes.put("smoked salmon", new Recipe("smoked salmon", arrSmokedSalmon));        
+        recipes.put("baked chicken breast", new Recipe("baked chicken breast", arrBakedChickenBreast));
+
+        vegetarianPizza = recipes.get("vegetarian pizza");
+        riceAndBeans = recipes.get("rice and beans");
+        gardenSalad = recipes.get("garden salad");
+        moroccanBeetSalad = recipes.get("moroccan beet salad");
+        spaghettiBolognese = recipes.get("spaghetti bolognese");
+        eggCasserole = recipes.get("egg casserole");
+        steak = recipes.get("steak");
+        smokedSalmon = recipes.get("smoked salmon");
+        bakedChickenBreast = recipes.get("baked chicken breast");
 
         // initiate program
 
@@ -386,6 +445,9 @@ public class Main {
         boolean breakfastPrint = false; 
         boolean lunchPrint = false; 
         boolean dinnerPrint = false; 
+
+        System.out.println("DEBUG – searching for: [" + "garden salad" + "]");
+        System.out.println("DEBUG – available keys: " + recipes.keySet());
     
         do { // do-while loop to produce recipes until user wishes to exit/stop adding recipes
             
