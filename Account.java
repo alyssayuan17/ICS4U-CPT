@@ -78,7 +78,7 @@ public class Account {
                         preferMeat = "low carbs";
                     }
                 } else {
-                    System.out.println("Invalid input. Please try again.");
+                    System.out.print("Invalid input. Please try again (a/b/c/d): ");
                 }
             } while (!input.equalsIgnoreCase("a") && !input.equalsIgnoreCase("b") && !input.equalsIgnoreCase("c") && !input.equalsIgnoreCase("d"));
         }
