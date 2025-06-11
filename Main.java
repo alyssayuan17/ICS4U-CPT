@@ -491,7 +491,7 @@ public class Main {
 
         } while (!again.equals("n")); // if user enters 'exit', exit the do-while loop
 
-        System.out.println("\nHere are your meals for the day:");
+        System.out.println("\n----------\n\nHere are your meals for the day:");
         printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
 
         System.out.println("\nWould you like to find another recipe by name? (y/n)");
@@ -712,13 +712,13 @@ public class Main {
 
     public static void printMealsForTheDay(boolean breakfastPrint, boolean lunchPrint, boolean dinnerPrint) {
         if (breakfastPrint == true) {
-            Recipe.printRecipe(breakfast);
+            Recipe.printRecipe(breakfast, "breakfast");
         }
         if (lunchPrint == true) {
-            Recipe.printRecipe(lunch);
+            Recipe.printRecipe(lunch, "lunch");
         }
         if (dinnerPrint == true) {
-            Recipe.printRecipe(dinner);
+            Recipe.printRecipe(dinner, "dinner");
         }
     }
 }

@@ -14,8 +14,8 @@ public class Recipe {
         this.name = name; 
     }
 
-    public static void printRecipe(Recipe recipe) {
-        System.out.println("\nNAME: " + recipe.getName());
+    public static void printRecipe(Recipe recipe, String meal) {
+        System.out.println("\n" + meal.toUpperCase() + ": " + recipe.getName());
         System.out.println("\nINGREDIENTS: \n");
         for (Ingredient i : recipe.getIngredients()) { //for each Ingredient object in the recipe's ingredient list 
             System.out.println("\t- " + i.getName() + ", " + i.getQty());

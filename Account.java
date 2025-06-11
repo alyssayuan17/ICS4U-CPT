@@ -189,7 +189,7 @@ public class Account {
 
         System.out.println("Recipe completed!");
     
-        Recipe.printRecipe(customRecipe);
+        Recipe.printRecipe(customRecipe, "custom recipe");
 
         return customRecipe;
     }
