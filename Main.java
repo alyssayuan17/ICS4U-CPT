@@ -418,7 +418,7 @@ public class Main {
                 breakfastPrint = true; 
                 lunchPrint = true;
                 dinnerPrint = true;
-            } else if (choice.equals("d") && (breakfastPrint == true || choice.equals("d") && lunchPrint == true || choice.equals("d") && dinnerPrint == true)) {
+            } else if (choice.equals("d") && breakfastPrint == true || choice.equals("d") && lunchPrint == true || choice.equals("d") && dinnerPrint == true) {
                 System.out.print("Invalid choice. Please enter one of the valid options listed: ");
             } else { // if user enters invalid inputs, loop until the input is accepted
                 System.out.print("Invalid choice. Please enter one of the valid options listed: ");
