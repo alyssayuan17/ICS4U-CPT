@@ -533,10 +533,16 @@ public class Main {
                     String mealSwitch = in.nextLine();
                     if (mealSwitch.equalsIgnoreCase("breakfast")) {
                         breakfast = foundRecipe;
+                        System.out.println("Here are your updated meals for the day:");
+                        printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
                     } else if (mealSwitch.equalsIgnoreCase("lunch")) {
                         lunch = foundRecipe;
+                        System.out.println("Here are your updated meals for the day:");
+                        printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
                     } else if (mealSwitch.equalsIgnoreCase("dinner")) {
                         dinner = foundRecipe;
+                        System.out.println("Here are your updated meals for the day:");
+                        printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
                     } else {
                         System.out.println("Please enter a valid input! (breakfast/lunch/dinner) ");
                     }
@@ -546,9 +552,33 @@ public class Main {
                 String addRecipe = in.nextLine();
 
                 if (addRecipe.equalsIgnoreCase("y")) {
-                    myAccount.createCustomRecipe(unitsGuide); // if yes, call method
-                } 
+                    Recipe custom = myAccount.createCustomRecipe(unitsGuide); // if yes, call method
 
+                    System.out.print("Would you like to add this to your meal plan for the day? (y/n): ");
+                    String addToPlan = in.nextLine();
+                    if (addToPlan.equalsIgnoreCase("y")) {
+                        System.out.println("What meal would you like to switch out? (breakfast/lunch/dinner) ");
+                        String mealSwitch = in.nextLine();
+                        if (mealSwitch.equalsIgnoreCase("breakfast")) {
+                            breakfast = custom;
+                            System.out.println("Added your custom recipe: " + custom.getName());
+                            System.out.println("Here are your updated meals for the day:");
+                            printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
+                        } else if (mealSwitch.equalsIgnoreCase("lunch")) {
+                            lunch = custom;
+                            System.out.println("Added your custom recipe: " + custom.getName());
+                            System.out.println("Here are your updated meals for the day:");
+                            printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
+                        } else if (mealSwitch.equalsIgnoreCase("dinner")) {
+                            dinner = custom;
+                            System.out.println("Added your custom recipe: " + custom.getName());
+                            System.out.println("Here are your updated meals for the day:");
+                            printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
+                        } else {
+                            System.out.println("Please enter a valid input! (breakfast/lunch/dinner) ");
+                        }
+                    }
+                } 
             }
         }
     }

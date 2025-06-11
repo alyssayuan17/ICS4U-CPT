@@ -170,7 +170,7 @@ public class Account {
         return null; // return null if recipe not found
     }
 
-    public void createCustomRecipe(HashMap <String, String> unitsGuide) {
+    public Recipe createCustomRecipe(HashMap <String, String> unitsGuide) {
         System.out.print("What is the name of your recipe? ");
         String recipeName = in.nextLine();
         Recipe customRecipe = new Recipe(recipeName); //create new recipe object by the name of recipeName
@@ -187,12 +187,15 @@ public class Account {
             }
             count++;
         } while (!input.trim().equalsIgnoreCase("done"));
-        System.out.println("Recipe completed!");
         
         customRecipe.setIngredients(ingredients); //once ingredient list is completed, add ingredient list under the user's custom recipe 
-        recipes.put(recipeName, customRecipe); //put new recipe in hashmap list of recipes in account 
+        recipes.put(recipeName.toLowerCase(), customRecipe); //put new recipe in hashmap list of recipes in account 
 
+        System.out.println("Recipe completed!");
+    
         Recipe.printRecipe(customRecipe);
+
+        return customRecipe;
     }
 
     public Ingredient addCustomIngredient (String name, HashMap <String, String> unitsGuide) {
