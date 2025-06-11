@@ -533,14 +533,17 @@ public class Main {
                     String mealSwitch = in.nextLine();
                     if (mealSwitch.equalsIgnoreCase("breakfast")) {
                         breakfast = foundRecipe;
+                        breakfastPrint = true; 
                         System.out.println("\nHere are your updated meals for the day:");
                         printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
                     } else if (mealSwitch.equalsIgnoreCase("lunch")) {
                         lunch = foundRecipe;
+                        lunchPrint = true;
                         System.out.println("\nHere are your updated meals for the day:");
                         printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
                     } else if (mealSwitch.equalsIgnoreCase("dinner")) {
                         dinner = foundRecipe;
+                        dinnerPrint = true; 
                         System.out.println("\nHere are your updated meals for the day:");
                         printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
                     } else {
