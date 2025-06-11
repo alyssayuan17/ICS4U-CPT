@@ -435,6 +435,7 @@ public class Main {
                 //if invalid, don't print. go straight to taking in input 
             } else {
                 //valid, proceed
+                System.out.println("\nCurrent Meal Plan:");
                 if (breakfastPrint == true) {
                     System.out.println("Breakfast: " + breakfast.getName());
                 }
