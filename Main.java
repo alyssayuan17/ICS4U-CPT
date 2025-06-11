@@ -381,21 +381,20 @@ public class Main {
 
         myAccount = Account.askForName(in); // call method to ask for name, store into static field
 
-        // ask user to pick which meal to plan before calling survey method
-        System.out.print("Which meal would you like to plan? \n\ta) Breakfast \n\tb) Lunch \n\tc) Dinner \n\td) All three \nEnter: (a/b/c/d/exit): ");
-        String choice = ""; 
-
-        myAccount = myAccount.askForPrefs(in); // now, call second account method to ask for user's preferences via survey
-
         String again;
 
         boolean breakfastPrint = false; 
         boolean lunchPrint = false; 
         boolean dinnerPrint = false; 
-        
-        do { // do-while loop to produce recipes until user wishes to exit
-
+    
+        do { // do-while loop to produce recipes until user wishes to exi
+            
+            // ask user to pick which meal to plan before calling survey method
+            System.out.print("Which meal would you like to plan? \n\ta) Breakfast \n\tb) Lunch \n\tc) Dinner \n\td) All three \nEnter: (a/b/c/d/exit): ");
+            String choice = ""; 
             choice = in.nextLine().trim().toLowerCase();
+
+            myAccount = myAccount.askForPrefs(in); // now, call second account method to ask for user's preferences via survey
 
             if (choice.equals("a")) {
                 setBreakfast(); // if user chooses to plan breakfast, call method to plan their breakfast
@@ -414,7 +413,7 @@ public class Main {
                 lunchPrint = true;
                 dinnerPrint = true;
             } else if (choice.equals("exit")) {
-              //
+                break;
             } else { // if user enters invalid inputs, loop until the input is accepted
                 System.out.print("Invalid choice. Please enter a, b, c, d, or exit: ");
             }
