@@ -409,7 +409,7 @@ public class Main {
 
         myAccount.setRecipes(recipes);
 
-        String again;
+        String again = "";
 
         boolean breakfastPrint = false; 
         boolean lunchPrint = false; 
@@ -475,12 +475,16 @@ public class Main {
                 if (dinnerPrint == true) {
                     System.out.println("Dinner: " + dinner.getName());
                 }
+
+                System.out.print("\nPlan another meal? (y/n): ");
+                again = in.nextLine().trim().toLowerCase();
             }
 
-            System.out.print("\nPlan another meal? (y/n): ");
-            again = in.nextLine().trim().toLowerCase();
+            if (breakfastPrint == true && lunchPrint == true && dinnerPrint == true) {
+                break;
+            }
 
-        } while (again.equals("y") || breakfastPrint == true && lunchPrint == true && dinnerPrint == true); // if user enters 'exit', exit the do-while loop
+        } while (!again.equals("n")); // if user enters 'exit', exit the do-while loop
 
         System.out.println("\nHere are your meals for the day:");
         printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
