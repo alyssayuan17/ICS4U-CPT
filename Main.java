@@ -424,18 +424,6 @@ public class Main {
                 System.out.print("Invalid choice. Please enter one of the valid options listed: ");
             }
 
-            if (choice.equals("a") || choice.equals("d")) {
-                setBreakfast(); // if user chooses to plan breakfast/plan all, call method to plan their breakfast
-            }
-
-            if (choice.equals("b") || choice.equals("d")) {
-                setLunch(); // same for lunch
-            }
-
-            if (choice.equals("c") || choice.equals("d")) {
-                setDinner(); // same for dinner
-            }
-
             System.out.println();
 
             // print only what user asked for
@@ -454,7 +442,7 @@ public class Main {
             System.out.print("\nPlan another meal? (y/n): ");
             again = in.nextLine().trim().toLowerCase();
 
-        } while (again.equals("y")); // if user enters 'exit', exit the do-while loop
+        } while (again.equals("y") || breakfastPrint == true && lunchPrint == true && dinnerPrint == true); // if user enters 'exit', exit the do-while loop
 
         System.out.println("\nHere are your meals for the day:");
         printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
