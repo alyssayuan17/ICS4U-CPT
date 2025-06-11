@@ -52,7 +52,7 @@ public class Account {
             } else if (input.equalsIgnoreCase("n")) {
                 vegetarian = false; 
             } else {
-                System.out.println("Invalid input. Please try again.");
+                System.out.print("Invalid input. Please try again (y/n): ");
             }
         } while (!input.equalsIgnoreCase("y") && !input.equalsIgnoreCase("n"));
 
@@ -94,7 +94,7 @@ public class Account {
                 } else if (input.equalsIgnoreCase("n")) { //if they don't want a low-carb diet, set preferCarbs to true 
                     preferCarbs = true; 
                 } else {
-                    System.out.println("Invalid input. Please try again.");
+                    System.out.print("Invalid input. Please try again (y/n): ");
                 }
             } while (!input.equalsIgnoreCase("y") && !input.equalsIgnoreCase("n"));
         }
@@ -110,7 +110,7 @@ public class Account {
                 } else if (input.equalsIgnoreCase("n")) { //if they don't like, set to false 
                     preferAltProtein = false; 
                 } else {
-                    System.out.println("Invalid input. Please try again.");
+                    System.out.print("Invalid input. Please try again (y/n):");
                 }
             } while (!input.equalsIgnoreCase("y") && !input.equalsIgnoreCase("n"));
         }
@@ -126,7 +126,7 @@ public class Account {
                 } else if (input.equalsIgnoreCase("b")) { //if they don't like, set to false 
                     preferVeg = "red + orange";
                 } else {
-                    System.out.println("Invalid input. Please try again.");
+                    System.out.print("Invalid input. Please try again (a/b): ");
                 }
             } while (!input.equalsIgnoreCase("a") && !input.equalsIgnoreCase("b"));
         }
