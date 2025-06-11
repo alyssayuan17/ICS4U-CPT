@@ -461,7 +461,7 @@ public class Main {
                 again = in.nextLine().trim().toLowerCase();
             }
 
-        } while (again.equals("y")); // if user enters 'exit', exit the do-while loop
+        } while (!again.equals("n")); // will only end if user wants to stop adding meals 
 
         System.out.println("\nHere are your meals for the day:");
         printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
