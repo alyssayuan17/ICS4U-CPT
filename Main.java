@@ -432,6 +432,8 @@ public class Main {
                 setDinner(); // same for dinner
             }
 
+            System.out.println();
+
             // print only what user asked for
             if (choice.equals("a") || choice.equals("d")) {
                 System.out.println("Breakfast: " + breakfast.getName());
