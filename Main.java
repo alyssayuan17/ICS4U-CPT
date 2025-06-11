@@ -387,7 +387,7 @@ public class Main {
         boolean lunchPrint = false; 
         boolean dinnerPrint = false; 
     
-        do { // do-while loop to produce recipes until user wishes to exi
+        do { // do-while loop to produce recipes until user wishes to exit/stop adding recipes
             
             // ask user to pick which meal to plan before calling survey method
             if (breakfastPrint == false && lunchPrint == false && dinnerPrint == false) {
