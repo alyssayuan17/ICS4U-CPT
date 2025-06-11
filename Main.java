@@ -453,11 +453,15 @@ public class Main {
                     System.out.println("Dinner: " + dinner.getName());
                 }
 
+                if (breakfastPrint = true && lunchPrint == true && dinnerPrint == true) {
+                    break;
+                }
+
                 System.out.print("\nPlan another meal? (y/n): ");
                 again = in.nextLine().trim().toLowerCase();
             }
 
-        } while (again.equals("y") || breakfastPrint == true && lunchPrint == true && dinnerPrint == true); // if user enters 'exit', exit the do-while loop
+        } while (again.equals("y")); // if user enters 'exit', exit the do-while loop
 
         System.out.println("\nHere are your meals for the day:");
         printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
