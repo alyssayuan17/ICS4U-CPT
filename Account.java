@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner; 
 
 public class Account {
@@ -155,15 +154,14 @@ public class Account {
 
     public Recipe findRecipeByName() { // search method for user recipe search
         System.out.print("What is the name of the recipe you wish to search for? ");
-        Recipe searchKey = new Recipe(in.nextLine().trim().toLowerCase());
+        String searchKey = in.nextLine().trim().toLowerCase();
 
-        // linear search through recipes map
-        for (Map.Entry <String, Recipe> searchRecipe : recipes.entrySet()) {
-            if (searchRecipe.getKey().equals(searchKey)) {
-                return searchRecipe.getValue(); // return the recipe if found
-            }
+        // directly look up the name
+        if (recipes.containsKey(searchKey)) {
+            return recipes.get(searchKey);
+        } else {
+            return null; // not found
         }
-        return null; // return null if recipe not found
     }
 
     public void createCustomRecipe(HashMap <String, String> unitsGuide) {
