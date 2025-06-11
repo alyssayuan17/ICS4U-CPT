@@ -449,7 +449,7 @@ public class Main {
                 System.out.println("Dinner: " + dinner.getName());
             }
 
-            System.out.println("\nPlan another meal? (y/n)");
+            System.out.print("\nPlan another meal? (y/n): ");
             again = in.nextLine().trim().toLowerCase();
 
         } while (again.equals("y")); // if user enters 'exit', exit the do-while loop
