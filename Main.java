@@ -411,7 +411,7 @@ public class Main {
             } else if (choice.equals("c")) {
                 setDinner();
                 dinnerPrint = true; 
-            } else if (choice.equals("d")) {
+            } else if (choice.equals("d") && breakfastPrint = false && lunchPrint == false && dinnerPrint == false) {
                 setBreakfast();
                 setLunch();
                 setDinner();
