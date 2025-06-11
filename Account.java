@@ -157,6 +157,7 @@ public class Account {
         System.out.println("What is the name of the recipe you wish to search for? ");
         String searchKey = in.nextLine().trim().toLowerCase();
 
+        // delete later; debug lines
         System.out.println("DEBUG – searching for: [" + "garden salad" + "]");
         System.out.println("DEBUG – available keys: " + recipes.keySet());
 

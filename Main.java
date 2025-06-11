@@ -688,13 +688,13 @@ public class Main {
 
     public static void printMealsForTheDay(boolean breakfastPrint, boolean lunchPrint, boolean dinnerPrint) {
         if (breakfastPrint == true) {
-        Recipe.printRecipe(breakfast);
+            Recipe.printRecipe(breakfast);
         }
         if (lunchPrint == true) {
-        Recipe.printRecipe(lunch);
+            Recipe.printRecipe(lunch);
         }
         if (dinnerPrint == true) {
-        Recipe.printRecipe(dinner);
+            Recipe.printRecipe(dinner);
         }
     }
 }
