@@ -69,13 +69,18 @@ public class Account {
                     preferMeat = "seafood";
                 } else if (input.equalsIgnoreCase("d")) {
                     // preferMeat = "no preference";
-                    System.out.println("Would you prefer a dish with carbs or low carbs? (a/b)");
-                    String prefCarbs = in.nextLine();
-                    if (prefCarbs.equalsIgnoreCase("a")) {
-                        preferMeat = "carbs";
-                    } else {
-                        preferMeat = "low carbs";
-                    }
+                    System.out.print("Would you prefer a dish with... \n\ta) carbs \n\tb) low carbs \n(a/b): ");
+                    String prefCarbs = "";
+                    do {
+                        prefCarbs = in.nextLine().trim().toLowerCase();
+                        if (prefCarbs.equals("a")) {
+                            preferMeat = "carbs";
+                        } else if (prefCarbs.equals("b")){
+                            preferMeat = "low carbs";
+                        } else {
+                            System.out.print("Invalid input. Please try again (a/b): ");
+                        }
+                    } while (!prefCarbs.equals("a") && !prefCarbs.equals("b"));
                 } else {
                     System.out.print("Invalid input. Please try again (a/b/c/d): ");
                 }
