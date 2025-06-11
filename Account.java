@@ -156,7 +156,7 @@ public class Account {
 
     public Recipe findRecipeByName() { // search method for user recipe search
         System.out.println("What is the name of the recipe you wish to search for? ");
-        Recipe searchKey = new Recipe(in.nextLine());
+        Recipe searchKey = new Recipe(in.nextLine().toLowerCase());
 
         // linear search through recipes map
         for (Map.Entry <String, Recipe> searchRecipe : recipes.entrySet()) {
