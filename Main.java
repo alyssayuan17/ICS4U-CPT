@@ -390,7 +390,11 @@ public class Main {
         do { // do-while loop to produce recipes until user wishes to exi
             
             // ask user to pick which meal to plan before calling survey method
-            System.out.print("\nWhich meal would you like to plan? \n\ta) Breakfast \n\tb) Lunch \n\tc) Dinner \n\td) All three \nEnter: (a/b/c/d/exit): ");
+            if (breakfastPrint = false && lunchPrint == false && dinnerPrint == false) {
+                System.out.print("\nWhich meal would you like to plan? \n\ta) Breakfast \n\tb) Lunch \n\tc) Dinner \n\td) All three \nEnter: (a/b/c/d): ");
+            } else {
+                System.out.print("\nWhich meal would you like to plan? \n\ta) Breakfast \n\tb) Lunch \n\tc) Dinner \nEnter: (a/b/c): ");
+            }
             String choice = ""; 
             choice = in.nextLine().trim().toLowerCase();
 
@@ -414,10 +418,8 @@ public class Main {
                 breakfastPrint = true; 
                 lunchPrint = true;
                 dinnerPrint = true;
-            } else if (choice.equals("exit")) {
-                break;
             } else { // if user enters invalid inputs, loop until the input is accepted
-                System.out.print("Invalid choice. Please enter a, b, c, d, or exit: ");
+                System.out.print("Invalid choice. Please enter one of the valid options listed: ");
             }
 
             if (choice.equals("a") || choice.equals("d")) {
