@@ -131,11 +131,11 @@ public class Account {
             } while (!input.equalsIgnoreCase("a") && !input.equalsIgnoreCase("b"));
         }
 
-        this.vegetarian = vegetarian;
-        this.preferMeat = preferMeat;
-        this.preferCarbs = preferCarbs;
+        this.vegetarian       = vegetarian;
+        this.preferMeat       = preferMeat;
+        this.preferCarbs      = preferCarbs;
         this.preferAltProtein = preferAltProtein;
-        this.preferVeg = preferVeg;
+        this.preferVeg        = preferVeg;
         return this;
     }
 
@@ -155,12 +155,12 @@ public class Account {
     }
 
     public Recipe findRecipeByName() { // search method for user recipe search
-        System.out.println("What is the name of the recipe you wish to search for? ");
+        System.out.print("What is the name of the recipe you wish to search for? ");
         Recipe searchKey = new Recipe(in.nextLine().trim().toLowerCase());
 
         // linear search through recipes map
-        for (String i : recipes.keySet()) {
-            if (i.equals(searchKey)) {
+        for (Map.Entry <String, Recipe> searchRecipe : recipes.entrySet()) {
+            if (searchRecipe.getKey().equals(searchKey)) {
                 return searchRecipe.getValue(); // return the recipe if found
             }
         }
