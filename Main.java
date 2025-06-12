@@ -436,12 +436,6 @@ public class Main {
                 myAccount = myAccount.askForPrefs(in);
             }
 
-            // if ((!choice.equals("a") && !choice.equals("b") && !choice.equals("c")) || (choice.equals("d") && (breakfastPrint || lunchPrint || dinnerPrint))) {
-            //     //invalid choice, do not ask for prefs 
-            // } else {
-            //     myAccount = myAccount.askForPrefs(in); // now, call second account method to ask for user's preferences via survey
-            // }
-
             if (choice.equals("a")) {
                 setBreakfast(); // if user chooses to plan breakfast, call method to plan their breakfast
                 breakfastPrint = true; 
