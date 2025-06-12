@@ -81,9 +81,6 @@ java -cp bin Main
   └─ Ingredient.java     # Ingredient model
   └─ Day.java            # Day model representing a day's meal plan
 
-/bin
-  └─ (compiled .class files)
-
 /README.md               # This file
 ```
 
