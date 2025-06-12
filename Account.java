@@ -194,7 +194,7 @@ public class Account {
         customRecipe.setIngredients(ingredients); //once ingredient list is completed, add ingredient list under the user's custom recipe 
         recipes.put(recipeName.toLowerCase(), customRecipe); //put new recipe in hashmap list of recipes in account 
 
-        System.out.println("Recipe completed!");
+        System.out.println("\nRecipe completed!");
     
         Recipe.printRecipe(customRecipe, "custom recipe");
 
@@ -221,7 +221,7 @@ public class Account {
                 num = Double.parseDouble(in.nextLine());
                 done = 1; // exit loop on valid input
             } catch (Exception e) {
-                System.out.println("Incorrect input. Please try again.");
+                System.out.print("Incorrect input. Please enter a number value: ");
             }
         } while (done == 0);
         return num; 

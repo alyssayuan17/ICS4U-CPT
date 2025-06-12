@@ -571,7 +571,12 @@ public class Main {
                             System.out.println("\nPlease enter a valid input! (a/b/c) ");
                         }
                     } while(!mealSwitch.equals("a") && !mealSwitch.equals("b") && !mealSwitch.equals("c"));
+                } else {
+                    System.out.println("\nYour searched recipe was discarded.");
+                    System.out.println("\n----------\n\nHere are your meals for the day:");
+                    printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
                 }
+
             } else { // if no recipe is found...
                 
                 System.out.print("\nRecipe not found. Would you like to add a custom recipe? (y/n): "); // ask user if they want to add their own custome recipe
@@ -586,8 +591,17 @@ public class Main {
                 if (addRecipe.equalsIgnoreCase("y")) {
                     Recipe custom = myAccount.createCustomRecipe(unitsGuide); // if yes, call method
 
+                    String addToPlan;
+
                     System.out.print("\nWould you like to add this to your meal plan for the day? (y/n): "); // prompt user to add their custom recipe
-                    String addToPlan = in.nextLine();
+                    
+                    do { 
+                        addToPlan = in.nextLine().trim().toLowerCase();
+                        if (!addToPlan.equals("y") && !addToPlan.equals("n")){
+                            System.out.println("Invalid input. Please try again (y/n) : ");
+                        }
+                    } while (!addToPlan.equals("y") && !addToPlan.equals("n"));
+
                     if (addToPlan.equalsIgnoreCase("y")) {
                         
                         System.out.print("\nWhat meal would you like to switch out? \n\ta) breakfast \n\tb) lunch \n\tc) dinner \nEnter (a/b/c): "); // ask user to switch with an existing planned meal
@@ -598,27 +612,32 @@ public class Main {
                             if (mealSwitch.equalsIgnoreCase("a")) { // if user picks breakfast
                                 breakfast = custom; // equate their custome recipe to be the breakfast recipe
                                 System.out.println("\nAdded your custom recipe: " + custom.getName());
-                                System.out.println("\nHere are your updated meals for the day:");
+                                System.out.println("\n----------\n\nHere are your updated meals for the day:");
                                 printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint); // print all meals again
                             } else if (mealSwitch.equalsIgnoreCase("b")) { // repeat
                                 lunch = custom;
                                 System.out.println("\nAdded your custom recipe: " + custom.getName());
-                                System.out.println("\nHere are your updated meals for the day:");
+                                System.out.println("\n----------\n\nHere are your updated meals for the day:");
                                 printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
                             } else if (mealSwitch.equalsIgnoreCase("c")) {
                                 dinner = custom;
                                 System.out.println("\nAdded your custom recipe: " + custom.getName());
-                                System.out.println("\nHere are your updated meals for the day:");
+                                System.out.println("\n----------\n\nHere are your updated meals for the day:");
                                 printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
                             } else {
                                 System.out.println("\nPlease enter a valid input! (a/b/c): "); // check for invalid input
                             }
                         } while (!mealSwitch.equals("a") && !mealSwitch.equals("b") && !mealSwitch.equals("c"));
+                    } else {
+                        System.out.println("\nYour custom recipe was discarded.");
+                        System.out.println("\n----------\n\nHere are your meals for the day:");
+                        printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
                     }
+                    
                 } 
             }
         }
-        System.out.println("\nThank you for using Plate Pal - Happy eating! :)"); // cute finishing note!!
+        System.out.println("\nThank you for using Plate Pal - Happy eating! :)\n"); // cute finishing note!!
     }
     
     // based on user survey results we equate one of the recipes to equal each: breakfast, lunch, dinner
