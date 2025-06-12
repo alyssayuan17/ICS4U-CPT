@@ -416,6 +416,7 @@ public class Main {
         boolean dinnerPrint = false; 
     
         do { // do-while loop to produce recipes until user wishes to exit/stop adding recipes
+
             
             // ask user to pick which meal to plan before calling survey method
             if (breakfastPrint == false && lunchPrint == false && dinnerPrint == false) {
@@ -428,11 +429,18 @@ public class Main {
 
             System.out.println();
 
-            if (!choice.equals("a") && !choice.equals("b") && !choice.equals("c") || choice.equals("d") && breakfastPrint == true || choice.equals("d") && lunchPrint == true || choice.equals("d") && dinnerPrint == true) {
-                //invalid choice, do not ask for prefs 
-            } else {
-                myAccount = myAccount.askForPrefs(in); // now, call second account method to ask for user's preferences via survey
+            boolean isSingleMeal = choice.matches("[abc]");
+            boolean isFirstAllThree = choice.equals("d") && !(breakfastPrint && lunchPrint && dinnerPrint); // only first time that all three is requested
+
+            if (isSingleMeal || isFirstAllThree) {
+                myAccount = myAccount.askForPrefs(in);
             }
+
+            // if ((!choice.equals("a") && !choice.equals("b") && !choice.equals("c")) || (choice.equals("d") && (breakfastPrint || lunchPrint || dinnerPrint))) {
+            //     //invalid choice, do not ask for prefs 
+            // } else {
+            //     myAccount = myAccount.askForPrefs(in); // now, call second account method to ask for user's preferences via survey
+            // }
 
             if (choice.equals("a")) {
                 setBreakfast(); // if user chooses to plan breakfast, call method to plan their breakfast
@@ -459,9 +467,7 @@ public class Main {
             System.out.println();
 
             // print only what user asked for
-            if (!choice.equals("a") && !choice.equals("b") && !choice.equals("c") || choice.equals("d") && breakfastPrint == true || choice.equals("d") && lunchPrint == true || choice.equals("d") && dinnerPrint == true) {
-                //if invalid, don't print. go straight to taking in input 
-            } else {
+            if (isSingleMeal || isFirstAllThree) {
                 //valid, proceed
                 System.out.println("Current Meal Plan:\n");
                 if (breakfastPrint == true) {
@@ -476,10 +482,6 @@ public class Main {
                     System.out.println("Dinner: " + dinner.getName());
                 }
 
-                if (breakfastPrint == true && lunchPrint == true && dinnerPrint == true) {
-                    break;
-                }
-
                 System.out.print("\nPlan another meal? (y/n): ");
                 do {
                     again = in.nextLine().trim().toLowerCase();
@@ -489,7 +491,7 @@ public class Main {
                 } while (!again.equals("y") && !again.equals("n"));
             }
 
-        } while (!again.equals("n")); // if user enters 'exit', exit the do-while loop
+        } while (!again.equals("n")); // keep looping if y or invalid, stop if n
 
         System.out.println("\n----------\n\nHere are your meals for the day:");
         printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
@@ -509,6 +511,15 @@ public class Main {
                     String mealSwitch = in.nextLine();
                     if (mealSwitch.equalsIgnoreCase("breakfast")) {
                         breakfast = foundRecipe;
+                        System.out.println("\nHere are your updated meals for the day:");
+                        printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
+                    } else if (mealSwitch.equalsIgnoreCase("lunch")) {
+                        lunch = foundRecipe;
+                        System.out.println("\nHere are your updated meals for the day:");
+                        printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
+                    } else if (mealSwitch.equalsIgnoreCase("dinner")) {
+                        dinner = foundRecipe;
+                        System.out.println("\nHere are your updated meals for the day:");
                         breakfastPrint = true; 
                         System.out.println("\n----------\n\nHere are your updated meals for the day:");
                         printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
