@@ -501,34 +501,34 @@ public class Main {
                 System.out.print("\nWould you like to add this to your meal plan for the day? (y/n): ");
                 String addToPlan = in.nextLine();
                 if (addToPlan.equalsIgnoreCase("y")) {
-                    System.out.println("\nWhat meal would you like to switch out? (breakfast/lunch/dinner) ");
+                    System.out.println("\nWhat meal would you like to switch out? \n\ta) breakfast \n\tb) lunch \n\tc) dinner \nEnter (a/b/c): ");
                     String mealSwitch = in.nextLine();
-                    if (mealSwitch.equalsIgnoreCase("breakfast")) {
+                    if (mealSwitch.equalsIgnoreCase("a")) {
                         breakfast = foundRecipe;
                         System.out.println("\nHere are your updated meals for the day:");
                         printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
-                    } else if (mealSwitch.equalsIgnoreCase("lunch")) {
+                    } else if (mealSwitch.equalsIgnoreCase("b")) {
                         lunch = foundRecipe;
                         System.out.println("\nHere are your updated meals for the day:");
                         printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
-                    } else if (mealSwitch.equalsIgnoreCase("dinner")) {
+                    } else if (mealSwitch.equalsIgnoreCase("c")) {
                         dinner = foundRecipe;
                         System.out.println("\nHere are your updated meals for the day:");
                         breakfastPrint = true; 
                         System.out.println("\n----------\n\nHere are your updated meals for the day:");
                         printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
-                    } else if (mealSwitch.equalsIgnoreCase("lunch")) {
+                    } else if (mealSwitch.equalsIgnoreCase("b")) {
                         lunch = foundRecipe;
                         lunchPrint = true;
                         System.out.println("\n----------\n\nHere are your updated meals for the day:");
                         printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
-                    } else if (mealSwitch.equalsIgnoreCase("dinner")) {
+                    } else if (mealSwitch.equalsIgnoreCase("c")) {
                         dinner = foundRecipe;
                         dinnerPrint = true; 
                         System.out.println("\n----------\n\nHere are your updated meals for the day:");
                         printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
                     } else {
-                        System.out.println("\nPlease enter a valid input! (breakfast/lunch/dinner) ");
+                        System.out.println("\nPlease enter a valid input! (a/b/c) ");
                     }
                 }
             } else { // if no recipe is found...
