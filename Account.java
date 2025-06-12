@@ -39,11 +39,12 @@ public class Account {
         this.lastName = lastName;
     }
     
-    public Account askForPrefs(Scanner in){ // second account method to set up user preferences
+    public Account askForPrefs(Scanner in){ // second account method to set up user preferences, preference survey
 
-        System.out.print("Vegetarian? (y/n): ");
+        System.out.print("Do you prefer vegetarian dishes? (y/n): "); // ask if user prefers vegetarian options
         String input = "";
         boolean vegetarian = false; 
+
         do {
             input = in.nextLine();
             if (input.equalsIgnoreCase("y")) {
@@ -58,7 +59,7 @@ public class Account {
         String preferMeat = "no preference";
         input = "";
         if (vegetarian == false) { //ask for meat preferences ... if vegetarian == true, preferMeat is set to none initially 
-            System.out.print("Meat preferences? \n\ta) red \n\tb) poultry \n\tc) seafood and fish \n\td) no preference \n(a/b/c/d): ");
+            System.out.print("Meat preferences? \n\ta) red \n\tb) poultry \n\tc) seafood and fish \n\td) no preference for meat \n(a/b/c/d): ");
             do {
                 input = in.nextLine();
                 if (input.equalsIgnoreCase("a")) {

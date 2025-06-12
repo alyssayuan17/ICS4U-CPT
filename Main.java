@@ -16,13 +16,15 @@ public class Main {
     static Recipe breakfast; 
     static Recipe lunch; 
     static Recipe dinner; 
-    static HashMap <String, Ingredient> groceryList = new HashMap <>();
+
+    // class-level hashmaps to be accessed throughout Main.java
+    static HashMap <String, Ingredient> groceryList = new HashMap <>(); 
     static HashMap <String, String> unitsGuide =  new HashMap <>();
-    static HashMap<String, Recipe> recipes = new HashMap<>();
+    static HashMap <String, Recipe> recipes = new HashMap<>(); // hashmap to store recipes
 
     public static void main(String[] args) {
 
-        String[][] ingredientUnits = {
+        String[][] ingredientUnits = { // 2D array to store ingredient units --> hashmap
             {"all-purpose flour", "cup(s)"},
             {"arugula", "cup(s)"},
             {"avocado", ""},
@@ -94,10 +96,10 @@ public class Main {
             {"white/brown rice", "cup(s)"}
         };
     
-        for (int i = 0; i < ingredientUnits.length; i++) {
+        for (int i = 0; i < ingredientUnits.length; i++) { // for loop to add into hashmap unitsGuide
             String name = ingredientUnits[i][0];
             String units = ingredientUnits[i][1];
-            unitsGuide.put(name, units);
+            unitsGuide.put(name, units); 
         }
 
         // create ArrayList for recipe ingredients
@@ -181,6 +183,7 @@ public class Main {
         arrTurkeyBaconAndEggs.add(new Ingredient("Salt", "0.25 tsp"));
         arrTurkeyBaconAndEggs.add(new Ingredient("Black pepper", "0.25 tsp"));
 
+        // put all recipes into HashMap recipes
         recipes.put("veggie bagel sandwich", new Recipe("veggie bagel sandwich", arrVeggieBagelSandwich));
         recipes.put("bean veggie scramble", new Recipe("bean veggie scramble", arrBeanVeggieScramble));
         recipes.put("green egg scramble", new Recipe("green egg scramble", arrGreenEggScramble));
@@ -191,6 +194,7 @@ public class Main {
         recipes.put("smoked salmon bagel", new Recipe("smoked salmon bagel", arrSmokedSalmonBagel));
         recipes.put("turkey bacon and eggs", new Recipe("turkey bacon and eggs", arrTurkeyBaconAndEggs));
 
+        // get all keys from recipes HashMap
         veggieBagelSandwich = recipes.get("veggie bagel sandwich");
         beanVeggieScramble = recipes.get("bean veggie scramble");
         greenEggScramble = recipes.get("green egg scramble");
@@ -200,6 +204,7 @@ public class Main {
         steakAndEggs = recipes.get("steak and eggs");
         smokedSalmonBagel = recipes.get("smoked salmon bagel");
         turkeyBaconAndEggs = recipes.get("turkey bacon and eggs");
+
 
         // lunch
         ArrayList<Ingredient> arrVeggieWrap = new ArrayList<>(); // veg, carbs
@@ -288,6 +293,7 @@ public class Main {
         arrChickenCaesarSalad.add(new Ingredient("Salt", "0.25 tsp"));
         arrChickenCaesarSalad.add(new Ingredient("Black pepper", "0.25 tsp"));
 
+        // repeat for lunch recipes
         recipes.put("veggie wrap", new Recipe("veggie wrap", arrVeggieWrap));
         recipes.put("edamame spinach salad", new Recipe("edamame spinach salad", arrEdamameSpinachSalad));
         recipes.put("spinach avocado salad", new Recipe("spinach avocado salad", arrSpinachAvocadoSalad));
@@ -383,6 +389,7 @@ public class Main {
         arrBakedChickenBreast.add(new Ingredient("Salt", "0.5 tsp"));
         arrBakedChickenBreast.add(new Ingredient("Black pepper", "0.25 tsp"));
 
+        // repeat for dinner recipes
         recipes.put("vegetarian pizza" , new Recipe("vegetarian pizza", arrVegetarianPizza));
         recipes.put("rice and beans", new Recipe("rice and beans", arrRiceAndBeans));
         recipes.put("garden salad", new Recipe("garden salad", arrGardenSalad));
@@ -407,31 +414,34 @@ public class Main {
 
         myAccount = Account.askForName(in); // call method to ask for name, store into static field
 
-        myAccount.setRecipes(recipes);
+        myAccount.setRecipes(recipes); // call setter from Account.java
 
-        String again = "";
+        String again = ""; // initialize variable
 
+        // boolean variables for printing breakfast/lunch/dinner recipes
         boolean breakfastPrint = false; 
         boolean lunchPrint = false; 
         boolean dinnerPrint = false; 
     
         do { // do-while loop to produce recipes until user wishes to exit/stop adding recipes
 
-            
             // ask user to pick which meal to plan before calling survey method
-            if (breakfastPrint == false && lunchPrint == false && dinnerPrint == false) {
+            if (breakfastPrint == false && lunchPrint == false && dinnerPrint == false) { // provide all four options given that no meal has been printed yet
                 System.out.print("\nWhich meal would you like to plan? \n\ta) Breakfast \n\tb) Lunch \n\tc) Dinner \n\td) All three \nEnter: (a/b/c/d): ");
-            } else {
+            } else { // otherwise, get rid of option d) All three
                 System.out.print("\nWhich meal would you like to plan? \n\ta) Breakfast \n\tb) Lunch \n\tc) Dinner \nEnter: (a/b/c): ");
             }
-            String choice = ""; 
-            choice = in.nextLine().trim().toLowerCase();
+
+            String choice = ""; // collect user's choice in variable
+            choice = in.nextLine().trim().toLowerCase(); // trim, make it lowercase
 
             System.out.println();
 
-            boolean isSingleMeal = choice.matches("[abc]");
+            // boolean variables to check if user picks a/b/c or all three (but it must be when no other meal has already been printed)
+            boolean isSingleMeal = choice.matches("[abc]"); 
             boolean isFirstAllThree = choice.equals("d") && !(breakfastPrint || lunchPrint || dinnerPrint); // only first time that all three is requested
 
+            // ONLY call method from Account.java for the preference survey if BOTH boolean conditions are met
             if (isSingleMeal || isFirstAllThree) {
                 myAccount = myAccount.askForPrefs(in);
             }
@@ -445,15 +455,15 @@ public class Main {
             } else if (choice.equals("c")) {
                 setDinner();
                 dinnerPrint = true; 
-            } else if (choice.equals("d") && breakfastPrint == false && lunchPrint == false && dinnerPrint == false) {
-                setBreakfast();
+            } else if (choice.equals("d") && !breakfastPrint && !lunchPrint && !dinnerPrint) { // run this is choice is d) AND no other meal ha printed yet
+                // call all three methods to set meals
+                setBreakfast(); 
                 setLunch();
                 setDinner();
+                // print all three planned meals
                 breakfastPrint = true; 
                 lunchPrint = true;
                 dinnerPrint = true;
-            } else if (choice.equals("d") && breakfastPrint == true || choice.equals("d") && lunchPrint == true || choice.equals("d") && dinnerPrint == true) {
-                System.out.print("Invalid choice. Please enter one of the valid options listed: ");
             } else { // if user enters invalid inputs, loop until the input is accepted
                 System.out.print("Invalid choice. Please enter one of the valid options listed: ");
             }
@@ -461,11 +471,13 @@ public class Main {
             System.out.println();
 
             // print only what user asked for
-            if (isSingleMeal || isFirstAllThree) {
+            if (isSingleMeal || isFirstAllThree) { // if either boolean conditions are met...
+                
                 //valid, proceed
                 System.out.println("Current Meal Plan:\n");
-                if (breakfastPrint == true) {
-                    System.out.println("Breakfast: " + breakfast.getName());
+
+                if (breakfastPrint == true) { // set boolean to true to indicate that meal has already been printed
+                    System.out.println("Breakfast: " + breakfast.getName()); // print
                 }
 
                 if (lunchPrint == true) {
@@ -476,8 +488,8 @@ public class Main {
                     System.out.println("Dinner: " + dinner.getName());
                 }
 
-                System.out.print("\nPlan another meal? (y/n): ");
-                do {
+                System.out.print("\nPlan another meal? (y/n): "); // prompt user again
+                do { // do-while loop to trap error
                     again = in.nextLine().trim().toLowerCase();
                     if (!again.equals("n") && !again.equals("y")) {
                         System.out.print("Invalid input. Please try again (y/n) : ");
@@ -488,9 +500,9 @@ public class Main {
         } while (!again.equals("n")); // keep looping if y or invalid, stop if n
 
         System.out.println("\n----------\n\nHere are your meals for the day:");
-        printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
+        printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint); // call method to print all meals for the day
 
-        System.out.print("\nWould you like to find another recipe by name? (y/n): ");
+        System.out.print("\nWould you like to find another recipe by name? (y/n): "); // ask user if they would like to search for a recipe by key
         String searchRecipe;
         do { // do-while loop to error trap if user enters not y/n
             searchRecipe = in.nextLine().trim().toLowerCase();
@@ -505,7 +517,7 @@ public class Main {
             if (foundRecipe != null) { // if recipe is found...
                 System.out.println("\nRecipe found: " + foundRecipe.getName()); // return the name of the found recipe 
                 
-                System.out.print("\nWould you like to add this to your meal plan for the day? (y/n): ");
+                System.out.print("\nWould you like to add this to your meal plan for the day? (y/n): "); // ask user if they would like to add meal to the plan
                 String addToPlan;
                 do { // do-while loop to error trap if user enters not y/n
                     addToPlan = in.nextLine().trim().toLowerCase();
@@ -514,28 +526,19 @@ public class Main {
                     }
                 } while (!addToPlan.equals("y") && !addToPlan.equals("n"));
             
-                if (addToPlan.equalsIgnoreCase("y")) {
+                if (addToPlan.equalsIgnoreCase("y")) { // if yes...
                     
                     System.out.println("\nWhat meal would you like to switch out? \n\ta) breakfast \n\tb) lunch \n\tc) dinner \nEnter (a/b/c): ");
-                    String mealSwitch;
+                    String mealSwitch; // switch if user enters breakfast/lunch/dinner with an existing plan already, add if user enters a meal of the day that has yet to be planned
                     do {
                         mealSwitch = in.nextLine().trim().toLowerCase();
                         if (mealSwitch.equalsIgnoreCase("a")) {
-                            breakfast = foundRecipe;
-                            System.out.println("\nHere are your updated meals for the day:");
+                            breakfast = foundRecipe; // equate breakfast recipe to be the recipe stored in foundRecipe
+                            breakfastPrint = true; // set boolean to equal true
+                            System.out.println("\n----------\n\nHere are your updated meals for the day:"); // print updated meals
                             printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
                         } else if (mealSwitch.equalsIgnoreCase("b")) {
-                            lunch = foundRecipe;
-                            System.out.println("\nHere are your updated meals for the day:");
-                            printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
-                        } else if (mealSwitch.equalsIgnoreCase("c")) {
-                            dinner = foundRecipe;
-                            System.out.println("\nHere are your updated meals for the day:");
-                            breakfastPrint = true; 
-                            System.out.println("\n----------\n\nHere are your updated meals for the day:");
-                            printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
-                        } else if (mealSwitch.equalsIgnoreCase("b")) {
-                            lunch = foundRecipe;
+                            lunch = foundRecipe; // repeat
                             lunchPrint = true;
                             System.out.println("\n----------\n\nHere are your updated meals for the day:");
                             printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
@@ -544,7 +547,7 @@ public class Main {
                             dinnerPrint = true; 
                             System.out.println("\n----------\n\nHere are your updated meals for the day:");
                             printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
-                        } else {
+                        } else { // else, catch the invalid input
                             System.out.println("\nPlease enter a valid input! (a/b/c) ");
                         }
                     } while(!mealSwitch.equals("a") && !mealSwitch.equals("b") && !mealSwitch.equals("c"));
@@ -563,21 +566,21 @@ public class Main {
                 if (addRecipe.equalsIgnoreCase("y")) {
                     Recipe custom = myAccount.createCustomRecipe(unitsGuide); // if yes, call method
 
-                    System.out.print("\nWould you like to add this to your meal plan for the day? (y/n): ");
+                    System.out.print("\nWould you like to add this to your meal plan for the day? (y/n): "); // prompt user to add their custom recipe
                     String addToPlan = in.nextLine();
                     if (addToPlan.equalsIgnoreCase("y")) {
                         
-                        System.out.print("\nWhat meal would you like to switch out? \n\ta) breakfast \n\tb) lunch \n\tc) dinner \nEnter (a/b/c): ");
+                        System.out.print("\nWhat meal would you like to switch out? \n\ta) breakfast \n\tb) lunch \n\tc) dinner \nEnter (a/b/c): "); // ask user to switch with an existing planned meal
                         String mealSwitch;
 
                         do { 
                             mealSwitch = in.nextLine();
-                            if (mealSwitch.equalsIgnoreCase("a")) {
-                                breakfast = custom;
+                            if (mealSwitch.equalsIgnoreCase("a")) { // if user picks breakfast
+                                breakfast = custom; // equate their custome recipe to be the breakfast recipe
                                 System.out.println("\nAdded your custom recipe: " + custom.getName());
                                 System.out.println("\nHere are your updated meals for the day:");
-                                printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
-                            } else if (mealSwitch.equalsIgnoreCase("b")) {
+                                printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint); // print all meals again
+                            } else if (mealSwitch.equalsIgnoreCase("b")) { // repeat
                                 lunch = custom;
                                 System.out.println("\nAdded your custom recipe: " + custom.getName());
                                 System.out.println("\nHere are your updated meals for the day:");
@@ -588,7 +591,7 @@ public class Main {
                                 System.out.println("\nHere are your updated meals for the day:");
                                 printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
                             } else {
-                                System.out.println("\nPlease enter a valid input! (a/b/c): ");
+                                System.out.println("\nPlease enter a valid input! (a/b/c): "); // check for invalid input
                             }
                         } while (!mealSwitch.equals("a") && !mealSwitch.equals("b") && !mealSwitch.equals("c"));
                     }
@@ -600,41 +603,41 @@ public class Main {
     
     // based on user survey results we equate one of the recipes to equal each: breakfast, lunch, dinner
 
-    public static void setBreakfast() {
-        if (myAccount.isVegetarian()) {
-            if (myAccount.isPreferCarbs()) {
-                breakfast = veggieBagelSandwich;
-            } else if (myAccount.isPreferAltProtein()) {
-                breakfast = beanVeggieScramble;
+    public static void setBreakfast() { // method for setting the breakfast recipe
+        if (myAccount.isVegetarian()) { // if account is vegetarian...
+            if (myAccount.isPreferCarbs()) { // prompt for if user prefers carbs
+                breakfast = veggieBagelSandwich; // if yes, return this recipe
+            } else if (myAccount.isPreferAltProtein()) { // if not, ask for if user prefers alternative protein
+                breakfast = beanVeggieScramble; // return
             } else { // low carb, no alt protein --> pick veg by colour
-                if (myAccount.getPreferVeg().equalsIgnoreCase("green")) {
-                    breakfast = greenEggScramble;
-                } else {
-                    breakfast = redOrangeVeggieSalad;
+                if (myAccount.getPreferVeg().equalsIgnoreCase("green")) { // green vegetables?
+                    breakfast = greenEggScramble; // return
+                } else { // if not...
+                    breakfast = redOrangeVeggieSalad; // return
                 }
             }
-        } else {
-            String meat = myAccount.getPreferMeat().toLowerCase();
-            if (meat.equalsIgnoreCase("red")) {
-                breakfast = steakAndEggs;
-            } else if (meat.equalsIgnoreCase("seafood")) {
-                breakfast = smokedSalmonBagel;
-            } else if (meat.equalsIgnoreCase("poultry")) {
-                breakfast = turkeyBaconAndEggs;
-            } else {
-                if (meat.equalsIgnoreCase("carbs")) {
-                    breakfast = pancakes;
+        } else { // if user doesn't want a vegetarian meal...
+            String meat = myAccount.getPreferMeat().toLowerCase(); // get user's prefered meat dish category
+            if (meat.equalsIgnoreCase("red")) { // if red meat...
+                breakfast = steakAndEggs; // return
+            } else if (meat.equalsIgnoreCase("seafood")) { // if seafood...
+                breakfast = smokedSalmonBagel; // return
+            } else if (meat.equalsIgnoreCase("poultry")) { // if poultry...
+                breakfast = turkeyBaconAndEggs; // return
+            } else { // if no meat prefered...
+                if (meat.equalsIgnoreCase("carbs")) { // ask for carb preference
+                    breakfast = pancakes; // return pancakes if prefer carbs
                 } else {
-                    breakfast = crustlessQuiche;
+                    breakfast = crustlessQuiche; // otherwise, return
                 }
             }
         }
     }
 
-    public static void setLunch() {
-        if (myAccount.isVegetarian()) {
+    public static void setLunch() { // method for setting lunch recipe
+        if (myAccount.isVegetarian()) { // similar logic to breakfast recipe selection...
             if (myAccount.isPreferCarbs()) {
-                lunch = veggieWrap;
+                lunch = veggieWrap; // ... with different recipes for lunch
             } else if (myAccount.isPreferAltProtein()) {
                 lunch = edamameSpinachSalad;
             } else { // low carb, no alt protein --> pick veg by colour
@@ -662,10 +665,10 @@ public class Main {
         }
     }
 
-    public static void setDinner() {
-        if (myAccount.isVegetarian()) {
+    public static void setDinner() { // method for setting dinner recipe
+        if (myAccount.isVegetarian()) { // similar logic to breakfast + lunch recipe selection...
             if (myAccount.isPreferCarbs()) {
-                dinner = vegetarianPizza;
+                dinner = vegetarianPizza; // ... with a different menu for dinner!
             } else if (myAccount.isPreferAltProtein()) {
                 dinner = riceAndBeans;
             } else { // low carb, no alt protein --> pick veg by colour
@@ -693,61 +696,10 @@ public class Main {
         }
     }
 
-    public static HashMap <String, Integer> createGroceryList(boolean printBreakfast, boolean printLunch, boolean printDinner, ArrayList <Ingredient> breakfastList, ArrayList <Ingredient> lunchList, ArrayList <Ingredient> dinnerList) {
-
-      HashMap <String, Integer> groceryList = new HashMap <>();
-      if (printBreakfast == true) {
-          addToGroceryList(breakfastList);
-        } 
-        if (printLunch == true) {
-          addToGroceryList(lunchList);
-        }
-        if (printDinner == true) {
-          addToGroceryList(dinnerList);
-        }
-        return groceryList;
-    }
-
-    public static void addToGroceryList (ArrayList <Ingredient> breakfast) {
-        for (Ingredient i : breakfast) {
-
-            String name = i.getName();
-            String qty = i.getQty();
-
-            if (groceryList.containsKey(name)) {
-
-                Ingredient fromList = groceryList.get(name);
-                String qtyFromList = fromList.getQty();
-
-                String [] arrQtyFromList = qtyFromList.split(" ");
-                double numQtyFromList = Double.parseDouble(arrQtyFromList[0]);
-                double numQtyToAdd = Double.parseDouble(qty.split(" ")[0]);
-
-                String temp = String.valueOf(numQtyFromList + numQtyToAdd);
-                if (arrQtyFromList.length > 1) {
-                    for (int j = 1; j < arrQtyFromList.length-1; j++) {
-                        temp += " " + arrQtyFromList[j];
-                    }
-                }
-                fromList.setQty(temp);
-                groceryList.replace(name, fromList);
-            } else {
-                groceryList.put(name, i); 
-            }
-        }
-    }
-
-    public static void printGroceryList() {
-        System.out.println("GROCERY LIST:");
-        System.out.println("\nINGREDIENTS: \n");
-        for (String i : groceryList.keySet()) { //for each Ingredient object in the recipe's ingredient list 
-            System.out.println("\t- " + i + ", " + groceryList.get(i) + " " + unitsGuide.get(i));
-        }
-    }
-
+    // method for printing the meals for the day
     public static void printMealsForTheDay(boolean breakfastPrint, boolean lunchPrint, boolean dinnerPrint) {
-        if (breakfastPrint == true) {
-            Recipe.printRecipe(breakfast, "breakfast");
+        if (breakfastPrint == true) { // if the boolean is set to true...
+            Recipe.printRecipe(breakfast, "breakfast"); // call method to print the recipe
         }
         if (lunchPrint == true) {
             Recipe.printRecipe(lunch, "lunch");
