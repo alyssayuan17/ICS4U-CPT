@@ -31,8 +31,8 @@ public class Account {
         String firstName = in.nextLine();
         System.out.print("Enter last name: ");
         String lastName = in.nextLine(); 
-        System.out.println("\nHello " + firstName + " " + lastName + ", welcome to Plate Pal!\n" );
-        return new Account(firstName, lastName);
+        System.out.println("\nHello " + firstName + " " + lastName + ", welcome to Plate Pal!\n" ); // message to user!
+        return new Account(firstName, lastName); // return new account
     }
 
     public Account(String firstName, String lastName) { // account name constructor
@@ -46,7 +46,7 @@ public class Account {
         String input = "";
         boolean vegetarian = false; 
 
-        do {
+        do { // do-while loop to catch invalid inputs
             input = in.nextLine();
             if (input.equalsIgnoreCase("y")) {
                 vegetarian = true; 
@@ -142,7 +142,7 @@ public class Account {
         this.preferCarbs = preferCarbs;
         this.preferAltProtein = preferAltProtein;
         this.preferVeg = preferVeg;
-        return this;
+        return this; // return current instance of the class from within the method
     }
 
     // account preference survey constructor

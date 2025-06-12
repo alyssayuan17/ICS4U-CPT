@@ -4,11 +4,14 @@ public class Ingredient {
     private String name; 
     private String qty;
 
+    // constructor
     public Ingredient(String name, String qty) {
         this.name = name;
         this.qty = qty;
         //to do: maybe add ingredient type 
     }
+
+    // getters 
 
     public String getName() {
         return name;
@@ -18,6 +21,8 @@ public class Ingredient {
         return qty;
     }
 
+    // setters
+
     public void setName(String name) {
         this.name = name;
     }
@@ -25,6 +30,5 @@ public class Ingredient {
     public void setQty(String qty) {
         this.qty = qty;
     }
-    
     
 }

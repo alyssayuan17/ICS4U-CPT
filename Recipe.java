@@ -14,11 +14,12 @@ public class Recipe {
         this.name = name; 
     }
 
+    // method for printing recipe
     public static void printRecipe(Recipe recipe, String meal) {
         System.out.println("\n" + meal.toUpperCase() + ": " + recipe.getName());
         System.out.println("\nINGREDIENTS: \n");
-        for (Ingredient i : recipe.getIngredients()) { //for each Ingredient object in the recipe's ingredient list 
-            System.out.println("\t- " + i.getName() + ", " + i.getQty());
+        for (Ingredient i : recipe.getIngredients()) { // for each Ingredient object in the recipe's ingredient list 
+            System.out.println("\t- " + i.getName() + ", " + i.getQty()); // print the ingredients
         }
     }
 
