@@ -412,6 +412,24 @@ public class Main {
 
         // initiate program
 
+        System.out.println("\n==================================================");
+        System.out.println("               Welcome to Plate Pal               ");
+        System.out.println("                  Meal Planner!                   ");
+        System.out.println("==================================================");
+        System.out.println("This program will:");
+        System.out.println("  • Let you choose which meal to plan:");
+        System.out.println("    breakfast, lunch, dinner, or all three at once");
+        System.out.println("  • Ask for your dietary preferences (vegetarian");
+        System.out.println("    or meat type, carb vs low-carb, preferred veggies)");
+        System.out.println("  • Recommend recipes tailored to your preferences,");
+        System.out.println("    and display the ingredients with quantities");
+        System.out.println("    needed to make each dish");
+        System.out.println("  • Allow you to re-plan/replace additional meals");
+        System.out.println("    in your plan in the same session");
+        System.out.println("  • Search for recipes by name or let you add your");
+        System.out.println("    own custom creations at the end!");
+        System.out.println("==================================================\n");
+
         myAccount = Account.askForName(in); // call method to ask for name, store into static field
 
         myAccount.setRecipes(recipes); // call setter from Account.java
