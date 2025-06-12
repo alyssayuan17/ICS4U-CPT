@@ -432,6 +432,8 @@ public class Main {
 
         myAccount = Account.askForName(in); // call method to ask for name, store into static field
 
+        System.out.println("==================================================");
+
         myAccount.setRecipes(recipes); // call setter from Account.java
 
         String again = ""; // initialize variable
@@ -616,7 +618,7 @@ public class Main {
                 } 
             }
         }
-        System.out.println("\nThank you for using our Meal Planner :) - minnalyssa"); // cute finishing note!!
+        System.out.println("\nThank you for using Plate Pal - Happy eating! :)"); // cute finishing note!!
     }
     
     // based on user survey results we equate one of the recipes to equal each: breakfast, lunch, dinner

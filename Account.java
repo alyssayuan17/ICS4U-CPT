@@ -31,6 +31,7 @@ public class Account {
         String firstName = in.nextLine();
         System.out.print("Enter last name: ");
         String lastName = in.nextLine(); 
+        System.out.println("\nHello " + firstName + " " + lastName + ", welcome to Plate Pal!\n" );
         return new Account(firstName, lastName);
     }
 
