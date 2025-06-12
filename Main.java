@@ -430,7 +430,7 @@ public class Main {
             System.out.println();
 
             boolean isSingleMeal = choice.matches("[abc]");
-            boolean isFirstAllThree = choice.equals("d") && !(breakfastPrint && lunchPrint && dinnerPrint); // only first time that all three is requested
+            boolean isFirstAllThree = choice.equals("d") && !(breakfastPrint || lunchPrint || dinnerPrint); // only first time that all three is requested
 
             if (isSingleMeal || isFirstAllThree) {
                 myAccount = myAccount.askForPrefs(in);
