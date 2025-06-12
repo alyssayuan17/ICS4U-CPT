@@ -1,6 +1,6 @@
-<img width="643" alt="Screenshot 2025-06-12 at 2 02 18 AM" src="https://github.com/user-attachments/assets/7a38fe12-af19-44b4-a428-edf3e415761a" />
 # Plate Pal — An Interactive Meal Planner  
 *by Minna & Alyssa*
+<img width="643" alt="Screenshot 2025-06-12 at 2 02 18 AM" src="https://github.com/user-attachments/assets/338f40ab-754f-4c77-967d-86ec49f87a27" />
 
 Plate Pal is a Java console application that guides you through planning your daily meals based on your dietary preferences. It recommends recipes tailored to you and displays the ingredients and quantities needed to make each dish.
 
