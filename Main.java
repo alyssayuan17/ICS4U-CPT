@@ -482,10 +482,6 @@ public class Main {
                     System.out.println("Dinner: " + dinner.getName());
                 }
 
-                if (breakfastPrint == true && lunchPrint == true && dinnerPrint == true) {
-                    break;
-                }
-
                 System.out.print("\nPlan another meal? (y/n): ");
                 do {
                     again = in.nextLine().trim().toLowerCase();
@@ -495,7 +491,7 @@ public class Main {
                 } while (!again.equals("y") && !again.equals("n"));
             }
 
-        } while (!again.equals("n")); // if user enters 'exit', exit the do-while loop
+        } while (!again.equals("n")); // keep looping if y or invalid, stop if n
 
         System.out.println("\n----------\n\nHere are your meals for the day:");
         printMealsForTheDay(breakfastPrint, lunchPrint, dinnerPrint);
