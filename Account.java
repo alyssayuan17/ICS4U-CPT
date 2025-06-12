@@ -159,7 +159,7 @@ public class Account {
     }
 
     public Recipe findRecipeByName() { // linear search method for user recipe search
-        System.out.println("What is the name of the recipe you wish to search for? ");
+        System.out.println("\nWhat is the name of the recipe you wish to search for? ");
         String searchKey = in.nextLine().trim().toLowerCase();
 
         // loop keys only
