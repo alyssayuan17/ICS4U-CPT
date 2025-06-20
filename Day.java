@@ -1,4 +1,3 @@
-import java.util.HashMap; 
 
 public class Day {
     private Recipe breakfast; 
@@ -6,7 +5,7 @@ public class Day {
     private Recipe dinner;
 
     // constructor
-    public Day(Recipe breakfast, Recipe lunch, Recipe dinner, HashMap <String, Ingredient> groceryList) {
+    public Day(Recipe breakfast, Recipe lunch, Recipe dinner) {
         this.breakfast = breakfast;
         this.lunch = lunch;
         this.dinner = dinner;

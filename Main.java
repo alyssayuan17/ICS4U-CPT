@@ -18,7 +18,6 @@ public class Main {
     static Recipe dinner; 
 
     // class-level hashmaps to be accessed throughout Main.java
-    static HashMap <String, Ingredient> groceryList = new HashMap <>(); 
     static HashMap <String, String> unitsGuide =  new HashMap <>();
     static HashMap <String, Recipe> recipes = new HashMap<>(); // hashmap to store recipes
 
